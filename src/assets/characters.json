@@ -1,0 +1,26 @@
+[
+  {
+    "name": "Brute",
+    "icon": "/assets/character-icons/brute.jpg"
+  },
+  {
+    "name": "Cragheart",
+    "icon": "/assets/character-icons/cragheart.jpg"
+  },
+  {
+    "name": "mindthief",
+    "icon": "/assets/character-icons/mindthief.jpg"
+  },
+  {
+    "name": "Scoundrel",
+    "icon": "/assets/character-icons/scoundrel.jpg"
+  },
+  {
+    "name": "Spellweaver",
+    "icon": "/assets/character-icons/spellweaver.jpg"
+  },
+  {
+    "name": "Tinkerer",
+    "icon": "/assets/character-icons/tinkerer.jpg"
+  }
+]
