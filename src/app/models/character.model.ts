@@ -1,11 +1,11 @@
 export class Character {
-  characterType: string;
+  type: string;
   name: string;
   initative: number;
   icon: string;
 
-  constructor(characterType: string, name: string, icon: string, initative?: number) {
-    this.characterType = characterType;
+  constructor(type: string, name: string, icon: string, initative?: number) {
+    this.type = type;
     this.name = name;
     this.icon = icon;
     this.initative = initative || 0;
@@ -14,12 +14,12 @@ export class Character {
 
 export class Monster extends Character {
   constructor(name: string, icon: string, initative?: number) {
-    super('Monster', name, icon, initative);
+    super('monster', name, icon, initative);
   }
 }
 
 export class Player extends Character {
   constructor(name: string, icon: string, initative?: number) {
-    super('Player', name, icon, initative);
+    super('player', name, icon, initative);
   }
 }
