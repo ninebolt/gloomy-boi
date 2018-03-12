@@ -20,6 +20,10 @@
       "icon": "/assets/character-icons/spellweaver.jpg"
     },
     {
+      "name": "Tinkerer",
+      "icon": "/assets/character-icons/tinkerer.jpg"
+    },
+    {
       "name": "Circle",
       "icon": "/assets/character-icons/circle.jpg"
     },
