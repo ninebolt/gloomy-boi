@@ -15,13 +15,13 @@ import { Character, Player, Monster } from '../../models/character.model';
   `
 })
 export class InitativeTrackerComponent implements OnInit {
-  
+
   characters: Character[];
 
   ngOnInit() {
     this.characters = [
-      new Player(rawCharacters[0].name, rawCharacters[0].icon, 18),
-      new Player(rawCharacters[4].name, rawCharacters[4].icon, 18)
+      new Player(rawCharacters['characters'][0].name, rawCharacters['characters'][0].icon, 18),
+      new Player(rawCharacters['characters'][4].name, rawCharacters['characters'][4].icon, 18)
     ];
     console.log(this.characters);
   }
