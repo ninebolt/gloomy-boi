@@ -3,3 +3,9 @@
     grid-template-columns: 275px;
     margin: 3em auto;
 }
+
+.card-container {
+    grid-row: 1;
+    grid-column: 1;
+    perspective: 800px;
+}

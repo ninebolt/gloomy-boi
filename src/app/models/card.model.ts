@@ -1,12 +1,16 @@
 export class Card {
-    cardType: string;
-    deckOrder: number;
+    type: string;
+    order: number;
     icon: string;
+    facing: string = 'down';
+    shuffle: boolean = false;
 
-    constructor(cardType: string, deckOrder: number, icon: string) {
-        this.cardType = cardType;
-        this.deckOrder = deckOrder;
+    constructor(type: string, order: number, icon: string, shuffle?: boolean, facing?: string) {
+        this.type = type;
+        this.order = order;
         this.icon = icon;
+        this.shuffle = shuffle;
+        this.facing = facing;
     }
 }
 
@@ -14,15 +18,15 @@ export class MonsterCard extends Card {
     title: string;
     body: string;
 
-    constructor(title: string, deckOrder: number, icon: string, body: string) {
-        super('MonsterCard', deckOrder, icon);
+    constructor(title: string, order: number, icon: string, body: string, shuffle?: boolean, facing?: string) {
+        super('MonsterCard', order, icon, shuffle, facing);
         this.title = title;
         this.body = body;
     }
 }
 
 export class CombatCard extends Card {
-    constructor(deckOrder: number, icon: string) {
-        super('CombatCard', deckOrder, icon);
+    constructor(order: number, icon: string, shuffle?: boolean, facing?: string) {
+        super('CombatCard', order, icon, shuffle, facing);
     }
 }
