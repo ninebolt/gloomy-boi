@@ -16,6 +16,7 @@
   .card-band {
     grid-area: card-band;
     border-bottom: solid 0.5px #cccccc;
+    display: flex;
   }
 
   .health-band {
