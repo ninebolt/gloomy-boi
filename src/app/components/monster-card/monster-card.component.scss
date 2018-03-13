@@ -6,7 +6,7 @@
 }
 
 :host.flipped {
-  transform: rotateX(180deg);
+  transform: translate(5px, -5px) rotateX(180deg);
 }
 
 :host.flip-to-front {
@@ -67,7 +67,7 @@
     transform: translate(0px, 0px) rotateX( 0deg);
   }
   50% {
-    transform: translate(10px, -50px) rotateX( 90deg);
+    transform: translate(10px, 50px) rotateX( 90deg);
   }
   100% {
     transform: translate(0px, 0px) rotateX( 180deg);
@@ -88,12 +88,12 @@
 
 @keyframes shuffle {
     0% {
-        transform: translate( 0, 0 ) rotateZ( 0 );
+        transform: rotateZ( 0 );
     }
     50% {
-        transform: translate( random(5) + px, random(5) + px ) rotateZ( random(10) + deg );
+        transform: rotateZ( 5deg );
     }
     100% {
-        transform: translate( 0, 0 ) rotateZ( 0 );
+        transform: rotateZ( 0 );
     }
 }

@@ -2,13 +2,12 @@
   display: grid;
   grid-template-rows: 33vh 67vh;
   grid-template-columns: 12rem auto;
-  grid-template-areas: 
+  grid-template-areas:
     "initative-band card-band"
     "initative-band health-band";
-  
+
   .initative-band {
     grid-area: initative-band;
-    
     // border-right: solid 0.5px #cccccc;
     box-shadow: 0px 10px 20px 0px #000000;
   }
@@ -16,7 +15,9 @@
   .card-band {
     grid-area: card-band;
     border-bottom: solid 0.5px #cccccc;
-    display: flex;
+    display: grid;
+    grid-template:
+      "combat-deck" "monster-deck" 1fr 1fr
   }
 
   .health-band {
