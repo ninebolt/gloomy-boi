@@ -8,7 +8,7 @@
         "attack": 5,
         "range": 7,
         "attributes": [
-          "Target 2"
+          "<target> 2"
         ]
       }
     },
@@ -20,7 +20,7 @@
         "attack": 5,
         "range": 6,
         "attributes": [
-          "Poison"
+          "<poison>"
         ]
       }
     },
@@ -32,8 +32,8 @@
         "attack": 5,
         "range": 0,
         "attributes": [
-          "Muddle",
-          "Shield 3"
+          "<muddle>",
+          "<shield> 3"
         ]
       }
     },
@@ -46,7 +46,7 @@
         "range": 5,
         "attributes": [
           "Attackers gain Disadvantage",
-          "Poison"
+          "<poison>"
         ]
       }
     },
@@ -58,7 +58,7 @@
         "attack": 7,
         "range": 0,
         "attributes": [
-          "Wound"
+          "<wound>"
         ]
       }
     },
@@ -70,8 +70,8 @@
         "attack": 6,
         "range": 7,
         "attributes": [
-          "Pierce 3",
-          "Shield 3"
+          "<pierce> 3",
+          "<shield> 3"
         ]
       }
     },
@@ -83,8 +83,8 @@
         "attack": 6,
         "range": 0,
         "attributes": [
-          "Retaliate 3",
-          "Shield 3"
+          "<retaliate> 3",
+          "<shield> 3"
         ]
       }
     },
@@ -96,7 +96,7 @@
         "attack": 4,
         "range": 0,
         "attributes": [
-          "Curse"
+          "<curse>"
         ]
       }
     },
@@ -108,7 +108,7 @@
         "attack": 6,
         "range": 0,
         "attributes": [
-          "Retaliate 4"
+          "<retaliate> 4"
         ]
       }
     },
@@ -120,7 +120,7 @@
         "attack": 6,
         "range": 0,
         "attributes": [
-          "Immobilize"
+          "<immobilize>"
         ]
       }
     },
@@ -132,9 +132,9 @@
         "attack": 5,
         "range": 6,
         "attributes": [
-          "Flying",
-          "Retaliate 5, Range 4",
-          "Shield 5"
+          "<fly>",
+          "<retaliate> 5, Range 4",
+          "<shield> 5"
         ]
       }
     },
@@ -146,7 +146,7 @@
         "attack": 5,
         "range": 0,
         "attributes": [
-          "Retaliate 4"
+          "<retaliate> 4"
         ]
       }
     },
@@ -158,8 +158,8 @@
         "attack": 4,
         "range": 4,
         "attributes": [
-          "Curse",
-          "Shield 2"
+          "<curse>",
+          "<shield> 2"
         ]
       }
     },
@@ -171,7 +171,7 @@
         "attack": 4,
         "range": 0,
         "attributes": [
-          "Poison"
+          "<poison>"
         ]
       }
     },
@@ -183,7 +183,7 @@
         "attack": 5,
         "range": 0,
         "attributes": [
-          "Retaliate 4"
+          "<retaliate> 4"
         ]
       }
     },
@@ -195,7 +195,7 @@
         "attack": 5,
         "range": 0,
         "attributes": [
-          "Retaliate 4"
+          "<retaliate> 4"
         ]
       }
     },
@@ -207,7 +207,7 @@
         "attack": 5,
         "range": 5,
         "attributes": [
-          "Wound"
+          "<wound>"
         ]
       }
     },
@@ -219,7 +219,7 @@
         "attack": 6,
         "range": 0,
         "attributes": [
-          "Retaliate 4"
+          "<retaliate> 4"
         ]
       }
     },
@@ -243,8 +243,8 @@
         "attack": 4,
         "range": 0,
         "attributes": [
-          "Target 3",
-          "Shield 2"
+          "<target> 3",
+          "<shield> 2"
         ]
       }
     },
@@ -256,7 +256,7 @@
         "attack": 6,
         "range": 0,
         "attributes": [
-          "Poison"
+          "<poison>"
         ]
       }
     },
@@ -268,7 +268,7 @@
         "attack": 5,
         "range": 5,
         "attributes": [
-          "Shield 4"
+          "<shield> 4"
         ]
       }
     },
@@ -280,9 +280,9 @@
         "attack": 5,
         "range": 0,
         "attributes": [
-          "Target 2",
-          "Pierce 4",
-          "Shield 2"
+          "<target> 2",
+          "<pierce> 4",
+          "<shield> 2"
         ]
       }
     },
@@ -294,8 +294,8 @@
         "attack": 5,
         "range": 4,
         "attributes": [
-          "Poison",
-          "Shield 2"
+          "<poison>",
+          "<shield> 2"
         ]
       }
     },
@@ -319,7 +319,7 @@
         "attack": 7,
         "range": 0,
         "attributes": [
-          "Wound"
+          "<wound>"
         ]
       }
     },
@@ -331,8 +331,8 @@
         "attack": 6,
         "range": 6,
         "attributes": [
-          "Pierce 4",
-          "Shield 3"
+          "<pierce> 4",
+          "<shield> 3"
         ]
       }
     },
@@ -344,8 +344,8 @@
         "attack": 6,
         "range": 0,
         "attributes": [
-          "Poison",
-          "Wound"
+          "<poison>",
+          "<wound>"
         ]
       }
     },
@@ -357,7 +357,7 @@
         "attack": 7,
         "range": 5,
         "attributes": [
-          "Muddle"
+          "<muddle>"
         ]
       }
     },
@@ -369,7 +369,7 @@
         "attack": 7,
         "range": 0,
         "attributes": [
-          "Shield 4"
+          "<shield> 4"
         ]
       }
     },
@@ -382,7 +382,7 @@
         "range": 0,
         "attributes": [
           "Advantage",
-          "Shield 2"
+          "<shield> 2"
         ]
       }
     },
@@ -406,8 +406,8 @@
         "attack": 4,
         "range": 4,
         "attributes": [
-          "Muddle",
-          "Shield 5"
+          "<muddle>",
+          "<shield> 5"
         ]
       }
     },
@@ -419,8 +419,8 @@
         "attack": 5,
         "range": 4,
         "attributes": [
-          "Disarm",
-          "Shield 3"
+          "<disarm>",
+          "<shield> 3"
         ]
       }
     }

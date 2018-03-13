@@ -128,8 +128,8 @@
         "attack": 2,
         "range": 3,
         "attributes": [
-          "Flying",
-          "Shield 2"
+          "<fly>",
+          "<shield> 2"
         ]
       }
     },
@@ -153,7 +153,7 @@
         "attack": 1,
         "range": 3,
         "attributes": [
-          "Shield 1"
+          "<shield> 1"
         ]
       }
     },
@@ -165,7 +165,7 @@
         "attack": 1,
         "range": 0,
         "attributes": [
-          "Poison"
+          "<poison>"
         ]
       }
     },
@@ -237,7 +237,7 @@
         "attack": 1,
         "range": 0,
         "attributes": [
-          "Target 2"
+          "<target> 2"
         ]
       }
     },
@@ -261,7 +261,7 @@
         "attack": 2,
         "range": 2,
         "attributes": [
-          "Shield 1"
+          "<shield> 1"
         ]
       }
     },
@@ -273,7 +273,7 @@
         "attack": 2,
         "range": 0,
         "attributes": [
-          "Target 2"
+          "<target> 2"
         ]
       }
     },
@@ -321,7 +321,7 @@
         "attack": 2,
         "range": 3,
         "attributes": [
-          "Pierce 3"
+          "<pierce> 3"
         ]
       }
     },
@@ -370,7 +370,7 @@
         "range": 0,
         "attributes": [
           "Advantage",
-          "Shield 1"
+          "<shield> 1"
         ]
       }
     },
@@ -394,7 +394,7 @@
         "attack": 1,
         "range": 3,
         "attributes": [
-          "Shield 2"
+          "<shield> 2"
         ]
       }
     },
@@ -406,7 +406,7 @@
         "attack": 2,
         "range": 3,
         "attributes": [
-          "Shield 1"
+          "<shield> 1"
         ]
       }
     }

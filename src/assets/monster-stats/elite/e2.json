@@ -32,7 +32,7 @@
         "attack": 4,
         "range": 0,
         "attributes": [
-          "Shield 1"
+          "<shield> 1"
         ]
       }
     },
@@ -44,7 +44,7 @@
         "attack": 2,
         "range": 4,
         "attributes": [
-          "Poison"
+          "<poison>"
         ]
       }
     },
@@ -68,8 +68,8 @@
         "attack": 4,
         "range": 5,
         "attributes": [
-          "Pierce 2",
-          "Shield 1"
+          "<pierce> 2",
+          "<shield> 1"
         ]
       }
     },
@@ -81,7 +81,7 @@
         "attack": 3,
         "range": 0,
         "attributes": [
-          "Shield 2"
+          "<shield> 2"
         ]
       }
     },
@@ -105,7 +105,7 @@
         "attack": 4,
         "range": 0,
         "attributes": [
-          "Retaliate 1"
+          "<retaliate> 1"
         ]
       }
     },
@@ -129,9 +129,9 @@
         "attack": 3,
         "range": 4,
         "attributes": [
-          "Flying",
-          "Retaliate 3, Range 2",
-          "Shield 4"
+          "<fly>",
+          "<retaliate> 3, Range 2",
+          "<shield> 4"
         ]
       }
     },
@@ -143,7 +143,7 @@
         "attack": 4,
         "range": 0,
         "attributes": [
-          "Retaliate 2"
+          "<retaliate> 2"
         ]
       }
     },
@@ -155,8 +155,8 @@
         "attack": 2,
         "range": 3,
         "attributes": [
-          "Curse",
-          "Shield 1"
+          "<curse>",
+          "<shield> 1"
         ]
       }
     },
@@ -168,7 +168,7 @@
         "attack": 2,
         "range": 0,
         "attributes": [
-          "Poison"
+          "<poison>"
         ]
       }
     },
@@ -180,7 +180,7 @@
         "attack": 3,
         "range": 0,
         "attributes": [
-          "Retaliate 2"
+          "<retaliate> 2"
         ]
       }
     },
@@ -192,7 +192,7 @@
         "attack": 3,
         "range": 0,
         "attributes": [
-          "Retaliate 2"
+          "<retaliate> 2"
         ]
       }
     },
@@ -216,7 +216,7 @@
         "attack": 4,
         "range": 0,
         "attributes": [
-          "Retaliate 2"
+          "<retaliate> 2"
         ]
       }
     },
@@ -240,8 +240,8 @@
         "attack": 3,
         "range": 0,
         "attributes": [
-          "Target 3",
-          "Shield 1"
+          "<target> 3",
+          "<shield> 1"
         ]
       }
     },
@@ -265,7 +265,7 @@
         "attack": 3,
         "range": 4,
         "attributes": [
-          "Shield 3"
+          "<shield> 3"
         ]
       }
     },
@@ -277,9 +277,9 @@
         "attack": 3,
         "range": 0,
         "attributes": [
-          "Target 2",
-          "Pierce 2",
-          "Shield 1"
+          "<target> 2",
+          "<pierce> 2",
+          "<shield> 1"
         ]
       }
     },
@@ -291,7 +291,7 @@
         "attack": 3,
         "range": 3,
         "attributes": [
-          "Shield 1"
+          "<shield> 1"
         ]
       }
     },
@@ -315,7 +315,7 @@
         "attack": 5,
         "range": 0,
         "attributes": [
-          "Wound"
+          "<wound>"
         ]
       }
     },
@@ -327,8 +327,8 @@
         "attack": 3,
         "range": 5,
         "attributes": [
-          "Pierce 3",
-          "Shield 1"
+          "<pierce> 3",
+          "<shield> 1"
         ]
       }
     },
@@ -340,8 +340,8 @@
         "attack": 3,
         "range": 0,
         "attributes": [
-          "Poison",
-          "Wound"
+          "<poison>",
+          "<wound>"
         ]
       }
     },
@@ -353,7 +353,7 @@
         "attack": 5,
         "range": 4,
         "attributes": [
-          "Muddle"
+          "<muddle>"
         ]
       }
     },
@@ -365,7 +365,7 @@
         "attack": 5,
         "range": 0,
         "attributes": [
-          "Shield 2"
+          "<shield> 2"
         ]
       }
     },
@@ -378,7 +378,7 @@
         "range": 0,
         "attributes": [
           "Advantage",
-          "Shield 1"
+          "<shield> 1"
         ]
       }
     },
@@ -402,7 +402,7 @@
         "attack": 2,
         "range": 4,
         "attributes": [
-          "Shield 3"
+          "<shield> 3"
         ]
       }
     },
@@ -414,7 +414,7 @@
         "attack": 3,
         "range": 4,
         "attributes": [
-          "Shield 2"
+          "<shield> 2"
         ]
       }
     }
