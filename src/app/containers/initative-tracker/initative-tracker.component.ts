@@ -9,11 +9,15 @@ import { Character, Player, Monster } from '../../models/character.model';
   selector: 'initative-tracker',
   styleUrls: ['initative-tracker.component.scss'],
   template: `
-    <div class="name">
-      Initative Tracker
-    </div>
-    <div *ngFor="let c of characters">
-      <character-initative [character]="c" (resort)="sortCards(1000)"></character-initative>
+    <div class="tracker">
+      <div class="characters">
+        <div *ngFor="let c of characters">
+          <character-initative [character]="c" (resort)="sortCards(100)"></character-initative>
+        </div>
+      </div>
+      <span class="name">
+        Initative Tracker
+      </span>
     </div>
   `,
   providers: [OrderByPipe]

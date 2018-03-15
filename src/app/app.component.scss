@@ -1,21 +1,27 @@
 .container {
   display: grid;
-  grid-template-rows: 33vh 67vh;
+  grid-template-rows: 50px 250px auto;
   grid-template-columns: 12rem auto;
-  grid-template-areas: 
+  grid-template-areas:
+    "action-bar action-bar"
     "initative-band card-band"
     "initative-band health-band";
-  
+
+  height: 100vh;
+
+  .action-bar {
+    grid-area: action-bar;
+    border-bottom: solid 1px #eeeeee;
+  }
+
   .initative-band {
     grid-area: initative-band;
-    
-    // border-right: solid 0.5px #cccccc;
-    box-shadow: 0px 10px 20px 0px #000000;
+    border-right: solid 1px #eeeeee;
   }
 
   .card-band {
     grid-area: card-band;
-    border-bottom: solid 0.5px #cccccc;
+    border-bottom: solid 1px #eeeeee;
   }
 
   .health-band {
