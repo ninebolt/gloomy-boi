@@ -4,6 +4,7 @@ import { OrderByPipe } from '../../pipes/order-by.pipe';
 
 import * as rawCharacters from '../../../assets/characters.json';
 import { Character, Player, Monster } from '../../models/character.model';
+import { LineParserService } from '../../services/line-parser.service';
 
 @Component({
   selector: 'initative-tracker',
@@ -27,7 +28,8 @@ export class InitativeTrackerComponent implements OnInit {
   characters: Character[];
 
   constructor(
-    private orderByPipe: OrderByPipe
+    private orderByPipe: OrderByPipe,
+    private lineParser: LineParserService
   ) { }
 
   ngOnInit() {
