@@ -1,6 +1,6 @@
 .container {
   display: grid;
-  grid-template-rows: 33vh 67vh;
+  grid-template-rows: auto 67vh;
   grid-template-columns: 12rem auto;
   grid-template-areas:
     "initative-band card-band"

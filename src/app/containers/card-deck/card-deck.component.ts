@@ -1,74 +1,65 @@
-import { Component, OnInit, Renderer2 } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+
+import { MonsterDeck } from "../../models/deck.model";
 import { MonsterCard } from '../../models/card.model';
 
 @Component({
     selector: 'card-deck',
     styleUrls: ['card-deck.component.scss'],
     template: `
-        <div *ngFor="let c of monsterCards" class="card-container">
-            <monster-card (click)="cardClick(c)"
+        <div *ngFor="let card of monsterDeck.cards;let i = index;" class="card-container">
+            <monster-card *ngIf="i > monsterDeck.cards.length - 4"
+                (click)="flip(card)"
                 [ngClass]="{
-                    'flipped flip-to-front': c.facing === 'up',
-                    'send-to-back': c.facing === 'down'
-                }"
-                [title]="c.title"
-                [order]="c.order"
-                [icon]="c.icon"
-                [body]="c.body"
-                [facing]="c.facing"
-            ></monster-card>
+                    'flipped flip-to-front': card.faceUp === true,
+                    'send-to-back': card.faceUp === false
+                }">
+                <h2 class="card-name">{{card.monsterName}} - {{card.monsterLevel}}</h2>
+                <p class="card-content">{{card.content}}</p>
+            </monster-card>
         </div>
-    `,
+    `
 })
 
 export class CardDeckComponent implements OnInit{
 
-    monsterCards: MonsterCard[] = [];
-
-    shuffleTrigger: boolean = false;
+    monsterDeck: MonsterDeck = new MonsterDeck([]);
 
     constructor() { }
 
     ngOnInit() {
 
         // generate some gloomy test cards
+
         for (let i = 0; i < 10; i++) {
-            let ord = Math.floor(Math.random() * 100);
-            this.monsterCards.push(new MonsterCard('Flame Demon - 1', ord, 'icon ' + i.toString(), 'Some card description ' + i.toString()))
+            this.monsterDeck.insertCard(
+                new MonsterCard(
+                    'Bandit Archer',
+                    4,
+                    ['<h1>Some title here</h1><p>body content here</p>', '<p>more body content here'],
+                    false
+                )
+            )
         }
 
-        this.sortInOrder(this.monsterCards, 'order');
+        console.table(this.monsterDeck.cards);
 
         // add in a test shuffle card
-        this.monsterCards[5].shuffle = true;
+        this.monsterDeck.cards[5].shuffle = true;
     }
 
-    private cardClick(card) {
+    private flip(card: MonsterCard) {
         if (card.shuffle === true) {
-            // TODO: what is this trigger used for
-            this.shuffleTrigger = true;
+            this.monsterDeck.shuffleMe = true;
         }
-        if (card.facing === 'up') {
-            // flip the first card down
-            card.facing = 'down';
-            // wait while the card animates
+        if (card.faceUp === true) {
+            card.faceUp = false;
             setTimeout( () => {
-                // send the top card to the back
-                this.monsterCards.unshift(this.monsterCards[this.monsterCards.length - 1]);
-                this.monsterCards.pop();
-                // flip the top card
-                this.monsterCards[this.monsterCards.length - 1].facing = 'up';
-            }, 0);
+                this.monsterDeck.discardCard(card);
+                this.monsterDeck.cards[this.monsterDeck.cards.length - 1].faceUp = true;
+            }, 350);
         } else {
-            // the deck is new, just flip the top card
-            card.facing = 'up';
+            card.faceUp = true;
         }
-    }
-
-    public sortInOrder(cards, key) {
-        return cards.sort(function(a, b) {
-            var x = a[key]; var y = b[key];
-            return ((x < y) ? -1 : ((x > y) ? 1 : 0));
-        });
     }
 }
