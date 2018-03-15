@@ -4,16 +4,21 @@ import { OrderByPipe } from '../../pipes/order-by.pipe';
 
 import * as rawCharacters from '../../../assets/characters.json';
 import { Character, Player, Monster } from '../../models/character.model';
+import { LineParserService } from '../../services/line-parser.service';
 
 @Component({
   selector: 'initative-tracker',
   styleUrls: ['initative-tracker.component.scss'],
   template: `
-    <div class="name">
-      Initative Tracker
-    </div>
-    <div *ngFor="let c of characters">
-      <character-initative [character]="c" (resort)="sortCards(1000)"></character-initative>
+    <div class="tracker">
+      <div class="characters">
+        <div *ngFor="let c of characters">
+          <character-initative [character]="c" (resort)="sortCards(100)"></character-initative>
+        </div>
+      </div>
+      <span class="name">
+        Initative Tracker
+      </span>
     </div>
   `,
   providers: [OrderByPipe]
@@ -23,7 +28,8 @@ export class InitativeTrackerComponent implements OnInit {
   characters: Character[];
 
   constructor(
-    private orderByPipe: OrderByPipe
+    private orderByPipe: OrderByPipe,
+    private lineParser: LineParserService
   ) { }
 
   ngOnInit() {
