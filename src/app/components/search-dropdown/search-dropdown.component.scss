@@ -1,0 +1,21 @@
+.search {
+  position: relative;
+
+  .character-list {
+    position: absolute;
+    width: 100%;
+
+    background-color: white;
+    border: solid 1px #eeeeee;
+    border-top: none;
+
+    .character {
+      padding: 2px 4px;
+      cursor: pointer;
+
+      &:hover {
+        background-color: lightblue;
+      }
+    }
+  }
+}
