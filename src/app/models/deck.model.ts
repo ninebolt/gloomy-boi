@@ -41,7 +41,7 @@ export class Deck {
 // }
 
 export class MonsterDeck extends Deck {
-    constructor (cards: MonsterCard[]) {
+    constructor (cards?: MonsterCard[]) {
         super(cards)
     }
 }

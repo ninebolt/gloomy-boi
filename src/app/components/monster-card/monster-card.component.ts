@@ -12,13 +12,4 @@ import { Component, Input} from '@angular/core';
         </div>
     `
 })
-export class MonsterCardComponent {
-    @Input() title: string;
-    @Input() facing: string;
-    @Input() order: number;
-    @Input() icon: string;
-    @Input() body: string;
-
-    constructor() { }
-
-}
+export class MonsterCardComponent { }

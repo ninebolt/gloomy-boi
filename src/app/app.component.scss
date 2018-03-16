@@ -1,12 +1,11 @@
 .container {
   display: grid;
-  grid-template-rows: 50px 250px auto;
+  grid-template-rows: 50px 393px auto;
   grid-template-columns: 12rem auto;
   grid-template-areas:
     "action-bar action-bar"
     "initative-band card-band"
     "initative-band health-band";
-
   height: 100vh;
 
   .action-bar {
