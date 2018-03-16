@@ -12,7 +12,7 @@ import { SearchDropdownComponent } from './components/search-dropdown/search-dro
 import { NameFilterPipe } from './pipes/name-filter.pipe';
 import { OrderByPipe } from './pipes/order-by.pipe';
 
-import { LineParserServer } from './services/line-parser.service';
+import { LineParserService } from './services/line-parser/line-parser.service';
 
 @NgModule({
   declarations: [
@@ -30,7 +30,7 @@ import { LineParserServer } from './services/line-parser.service';
     FormsModule
   ],
   providers: [
-    LineParserServer
+    LineParserService
   ],
   bootstrap: [AppComponent]
 })
