@@ -31,36 +31,45 @@ export class InitativeTrackerComponent implements OnInit {
     private lineParser: LineParserService,
     private orderByPipe: OrderByPipe
   ) {
-    let cards = [
-      [64, false, 'x1 $attack$ +3', 'x1 $earth$']
-    ];
+
+    let card = {
+      "shuffle": false,
+      "initiative": "14",
+      "lines": [
+        "x1 $move$ -1",
+        "x1 $attack$ -1",
+        "x2 $range$ +0",
+        "x1 $attack$ -1 $aoe-triangle-large-self$ ",
+        "x1 <span class='small'> Create a 3 damage trap in an adjacent empty hex closest to an enemy </span>"
+      ]
+    };
 
     let monster = {
       "Bandit Guard":
       {
-        "normalStats": {
-          "health": 14,
-          "move": 3,
-          "attack": 5,
-          "range": 0,
-          "attributes": [
+      "normalStats": {
+        "health": 6,
+        "move": 1,
+        "attack": 3,
+        "range": 4,
+        "attributes": [
 
-          ]
-        },
-        "eliteStats": {
-          "health": 14,
-          "move": 3,
-          "attack": 6,
-          "range": 0,
-          "attributes": [
-            "$muddle$",
-            "$shield$ 3"
-          ]
-        }
+        ]
+      },
+      "eliteStats": {
+        "health": 7,
+        "move": 1,
+        "attack": 4,
+        "range": 5,
+        "attributes": [
+          "$pierce$ 2",
+          "$shield$ 1"
+        ]
       }
+    }
     };
 
-    console.log(lineParser.parseCurrentCard(cards[0], monster["Bandit Guard"]));
+    console.log(lineParser.parseCurrentCard(card, monster["Bandit Guard"]));
     console.log(lineParser.parseAttributes(monster["Bandit Guard"]));
   }
 

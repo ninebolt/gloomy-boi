@@ -6,6 +6,8 @@ import { AppComponent } from './app.component';
 import { ActionBarComponent } from './containers/action-bar/action-bar.component';
 import { InitativeTrackerComponent } from './containers/initative-tracker/initative-tracker.component';
 import { CharacterInitativeComponent } from './components/character-initative/character-initative.component';
+import { DeckComponent } from './containers/deck/deck.component';
+import { MonsterCardComponent } from './components/monster-card/monster-card.component';
 import { ActionButtonComponent } from './components/action-button/action-button.component';
 import { SearchDropdownComponent } from './components/search-dropdown/search-dropdown.component';
 
@@ -20,6 +22,8 @@ import { LineParserService } from './services/line-parser/line-parser.service';
     ActionBarComponent,
     InitativeTrackerComponent,
     CharacterInitativeComponent,
+    DeckComponent,
+    MonsterCardComponent,
     ActionButtonComponent,
     SearchDropdownComponent,
     NameFilterPipe,

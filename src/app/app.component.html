@@ -5,8 +5,10 @@
   <div class="initative-band">
     <initative-tracker></initative-tracker>
   </div>
-  <div class="card-band">
-    Card Band
+  <div class="card-band" *ngFor="let deck of decks">
+    <deck
+      [deck]="deck"
+    ></deck>
   </div>
   <div class="health-band">
     Health Band

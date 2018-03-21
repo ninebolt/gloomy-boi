@@ -1,764 +1,696 @@
 {
-  "monsters": [
-    {
-      "Ancient Artillery": {
-        "normalStats": {
-          "health": 6,
-          "move": 0,
-          "attack": 2,
-          "range": 4,
-          "attributes": [
+  "monsters": {
+    "Ancient Artillery": {
+      "normalStats": {
+        "health": 6,
+        "move": 0,
+        "attack": 2,
+        "range": 4,
+        "attributes": [
 
-          ]
-        },
-        "eliteStats": {
-          "health": 9,
-          "move": 0,
-          "attack": 3,
-          "range": 5,
-          "attributes": [
+        ]
+      },
+      "eliteStats": {
+        "health": 9,
+        "move": 0,
+        "attack": 3,
+        "range": 5,
+        "attributes": [
 
-          ]
-        }
+        ]
       }
     },
-    {
-      "Bandit Archer": {
-        "normalStats": {
-          "health": 5,
-          "move": 2,
-          "attack": 2,
-          "range": 4,
-          "attributes": [
+    "Bandit Archer": {
+      "normalStats": {
+        "health": 5,
+        "move": 2,
+        "attack": 2,
+        "range": 4,
+        "attributes": [
 
-          ]
-        },
-        "eliteStats": {
-          "health": 7,
-          "move": 2,
-          "attack": 3,
-          "range": 5,
-          "attributes": [
+        ]
+      },
+      "eliteStats": {
+        "health": 7,
+        "move": 2,
+        "attack": 3,
+        "range": 5,
+        "attributes": [
 
-          ]
-        }
+        ]
       }
     },
-    {
-      "Bandit Guard": {
-        "normalStats": {
-          "health": 6,
-          "move": 3,
-          "attack": 2,
-          "range": 0,
-          "attributes": [
+    "Bandit Guard": {
+      "normalStats": {
+        "health": 6,
+        "move": 3,
+        "attack": 2,
+        "range": 0,
+        "attributes": [
 
-          ]
-        },
-        "eliteStats": {
-          "health": 9,
-          "move": 2,
-          "attack": 3,
-          "range": 0,
-          "attributes": [
-            "$shield$ 1"
-          ]
-        }
+        ]
+      },
+      "eliteStats": {
+        "health": 9,
+        "move": 2,
+        "attack": 3,
+        "range": 0,
+        "attributes": [
+          "$shield$ 1"
+        ]
       }
     },
-    {
-      "Black Imp": {
-        "normalStats": {
-          "health": 4,
-          "move": 1,
-          "attack": 1,
-          "range": 3,
-          "attributes": [
-            "$poison$"
-          ]
-        },
-        "eliteStats": {
-          "health": 6,
-          "move": 1,
-          "attack": 2,
-          "range": 3,
-          "attributes": [
-            "$poison$"
-          ]
-        }
+    "Black Imp": {
+      "normalStats": {
+        "health": 4,
+        "move": 1,
+        "attack": 1,
+        "range": 3,
+        "attributes": [
+          "$poison$"
+        ]
+      },
+      "eliteStats": {
+        "health": 6,
+        "move": 1,
+        "attack": 2,
+        "range": 3,
+        "attributes": [
+          "$poison$"
+        ]
       }
     },
-    {
-      "Cave Bear": {
-        "normalStats": {
-          "health": 9,
-          "move": 3,
-          "attack": 3,
-          "range": 0,
-          "attributes": [
+    "Cave Bear": {
+      "normalStats": {
+        "health": 9,
+        "move": 3,
+        "attack": 3,
+        "range": 0,
+        "attributes": [
 
-          ]
-        },
-        "eliteStats": {
-          "health": 14,
-          "move": 3,
-          "attack": 4,
-          "range": 0,
-          "attributes": [
+        ]
+      },
+      "eliteStats": {
+        "health": 14,
+        "move": 3,
+        "attack": 4,
+        "range": 0,
+        "attributes": [
 
-          ]
-        }
+        ]
       }
     },
-    {
-      "City Archer": {
-        "normalStats": {
-          "health": 5,
-          "move": 1,
-          "attack": 2,
-          "range": 4,
-          "attributes": [
+    "City Archer": {
+      "normalStats": {
+        "health": 5,
+        "move": 1,
+        "attack": 2,
+        "range": 4,
+        "attributes": [
 
-          ]
-        },
-        "eliteStats": {
-          "health": 6,
-          "move": 1,
-          "attack": 3,
-          "range": 5,
-          "attributes": [
-            "$pierce$ 1",
-            "$shield$ 1"
-          ]
-        }
+        ]
+      },
+      "eliteStats": {
+        "health": 6,
+        "move": 1,
+        "attack": 3,
+        "range": 5,
+        "attributes": [
+          "$pierce$ 1",
+          "$shield$ 1"
+        ]
       }
     },
-    {
-      "City Guard": {
-        "normalStats": {
-          "health": 5,
-          "move": 2,
-          "attack": 2,
-          "range": 0,
-          "attributes": [
-            "$shield$ 1"
-          ]
-        },
-        "eliteStats": {
-          "health": 6,
-          "move": 2,
-          "attack": 3,
-          "range": 0,
-          "attributes": [
-            "$shield$ 2"
-          ]
-        }
+    "City Guard": {
+      "normalStats": {
+        "health": 5,
+        "move": 2,
+        "attack": 2,
+        "range": 0,
+        "attributes": [
+          "$shield$ 1"
+        ]
+      },
+      "eliteStats": {
+        "health": 6,
+        "move": 2,
+        "attack": 3,
+        "range": 0,
+        "attributes": [
+          "$shield$ 2"
+        ]
       }
     },
-    {
-      "Cultist": {
-        "normalStats": {
-          "health": 5,
-          "move": 2,
-          "attack": 1,
-          "range": 0,
-          "attributes": [
+    "Cultist": {
+      "normalStats": {
+        "health": 5,
+        "move": 2,
+        "attack": 1,
+        "range": 0,
+        "attributes": [
 
-          ]
-        },
-        "eliteStats": {
-          "health": 9,
-          "move": 2,
-          "attack": 2,
-          "range": 0,
-          "attributes": [
+        ]
+      },
+      "eliteStats": {
+        "health": 9,
+        "move": 2,
+        "attack": 2,
+        "range": 0,
+        "attributes": [
 
-          ]
-        }
+        ]
       }
     },
-    {
-      "Deep Terror": {
-        "normalStats": {
-          "health": 4,
-          "move": 0,
-          "attack": 2,
-          "range": 0,
-          "attributes": [
-            "$retaliate$ 1"
-          ]
-        },
-        "eliteStats": {
-          "health": 6,
-          "move": 0,
-          "attack": 3,
-          "range": 0,
-          "attributes": [
-            "$retaliate$ 1"
-          ]
-        }
+    "Deep Terror": {
+      "normalStats": {
+        "health": 4,
+        "move": 0,
+        "attack": 2,
+        "range": 0,
+        "attributes": [
+          "$retaliate$ 1"
+        ]
+      },
+      "eliteStats": {
+        "health": 6,
+        "move": 0,
+        "attack": 3,
+        "range": 0,
+        "attributes": [
+          "$retaliate$ 1"
+        ]
       }
     },
-    {
-      "Earth Demon": {
-        "normalStats": {
-          "health": 9,
-          "move": 1,
-          "attack": 3,
-          "range": 0,
-          "attributes": [
+    "Earth Demon": {
+      "normalStats": {
+        "health": 9,
+        "move": 1,
+        "attack": 3,
+        "range": 0,
+        "attributes": [
 
-          ]
-        },
-        "eliteStats": {
-          "health": 13,
-          "move": 2,
-          "attack": 4,
-          "range": 0,
-          "attributes": [
+        ]
+      },
+      "eliteStats": {
+        "health": 13,
+        "move": 2,
+        "attack": 4,
+        "range": 0,
+        "attributes": [
 
-          ]
-        }
+        ]
       }
     },
-    {
-      "Flame Demon": {
-        "normalStats": {
-          "health": 2,
-          "move": 3,
-          "attack": 2,
-          "range": 3,
-          "attributes": [
-            "$fly$",
-            "$shield$ 3"
-          ]
-        },
-        "eliteStats": {
-          "health": 3,
-          "move": 3,
-          "attack": 2,
-          "range": 4,
-          "attributes": [
-            "$fly$",
-            "$retaliate$ 2, Range 2",
-            "$shield$ 4"
-          ]
-        }
+    "Flame Demon": {
+      "normalStats": {
+        "health": 2,
+        "move": 3,
+        "attack": 2,
+        "range": 3,
+        "attributes": [
+          "$fly$",
+          "$shield$ 3"
+        ]
+      },
+      "eliteStats": {
+        "health": 3,
+        "move": 3,
+        "attack": 2,
+        "range": 4,
+        "attributes": [
+          "$fly$",
+          "$retaliate$ 2, Range 2",
+          "$shield$ 4"
+        ]
       }
     },
-    {
-      "Frost Demon": {
-        "normalStats": {
-          "health": 6,
-          "move": 2,
-          "attack": 3,
-          "range": 0,
-          "attributes": [
-            "$retaliate$ 1"
-          ]
-        },
-        "eliteStats": {
-          "health": 10,
-          "move": 3,
-          "attack": 3,
-          "range": 0,
-          "attributes": [
-            "$retaliate$ 2"
-          ]
-        }
+    "Frost Demon": {
+      "normalStats": {
+        "health": 6,
+        "move": 2,
+        "attack": 3,
+        "range": 0,
+        "attributes": [
+          "$retaliate$ 1"
+        ]
+      },
+      "eliteStats": {
+        "health": 10,
+        "move": 3,
+        "attack": 3,
+        "range": 0,
+        "attributes": [
+          "$retaliate$ 2"
+        ]
       }
     },
-    {
-      "Forest Imp": {
-        "normalStats": {
-          "health": 2,
-          "move": 3,
-          "attack": 1,
-          "range": 3,
-          "attributes": [
-            "$shield$ 1"
-          ]
-        },
-        "eliteStats": {
-          "health": 5,
-          "move": 3,
-          "attack": 2,
-          "range": 3,
-          "attributes": [
-            "$shield$ 1"
-          ]
-        }
+    "Forest Imp": {
+      "normalStats": {
+        "health": 2,
+        "move": 3,
+        "attack": 1,
+        "range": 3,
+        "attributes": [
+          "$shield$ 1"
+        ]
+      },
+      "eliteStats": {
+        "health": 5,
+        "move": 3,
+        "attack": 2,
+        "range": 3,
+        "attributes": [
+          "$shield$ 1"
+        ]
       }
     },
-    {
-      "Giant Viper": {
-        "normalStats": {
-          "health": 3,
-          "move": 2,
-          "attack": 1,
-          "range": 0,
-          "attributes": [
-            "$poison$"
-          ]
-        },
-        "eliteStats": {
-          "health": 5,
-          "move": 2,
-          "attack": 2,
-          "range": 0,
-          "attributes": [
-            "$poison$"
-          ]
-        }
+    "Giant Viper": {
+      "normalStats": {
+        "health": 3,
+        "move": 2,
+        "attack": 1,
+        "range": 0,
+        "attributes": [
+          "$poison$"
+        ]
+      },
+      "eliteStats": {
+        "health": 5,
+        "move": 2,
+        "attack": 2,
+        "range": 0,
+        "attributes": [
+          "$poison$"
+        ]
       }
     },
-    {
-      "Harrower Infester": {
-        "normalStats": {
-          "health": 7,
-          "move": 2,
-          "attack": 2,
-          "range": 0,
-          "attributes": [
-            "$retaliate$ 1"
-          ]
-        },
-        "eliteStats": {
-          "health": 12,
-          "move": 3,
-          "attack": 2,
-          "range": 0,
-          "attributes": [
-            "$retaliate$ 2"
-          ]
-        }
+    "Harrower Infester": {
+      "normalStats": {
+        "health": 7,
+        "move": 2,
+        "attack": 2,
+        "range": 0,
+        "attributes": [
+          "$retaliate$ 1"
+        ]
+      },
+      "eliteStats": {
+        "health": 12,
+        "move": 3,
+        "attack": 2,
+        "range": 0,
+        "attributes": [
+          "$retaliate$ 2"
+        ]
       }
     },
-    {
-      "Hound": {
-        "normalStats": {
-          "health": 4,
-          "move": 4,
-          "attack": 2,
-          "range": 0,
-          "attributes": [
-            "$retaliate$ 1"
-          ]
-        },
-        "eliteStats": {
-          "health": 6,
-          "move": 5,
-          "attack": 2,
-          "range": 0,
-          "attributes": [
-            "$retaliate$ 2"
-          ]
-        }
+    "Hound": {
+      "normalStats": {
+        "health": 4,
+        "move": 4,
+        "attack": 2,
+        "range": 0,
+        "attributes": [
+          "$retaliate$ 1"
+        ]
+      },
+      "eliteStats": {
+        "health": 6,
+        "move": 5,
+        "attack": 2,
+        "range": 0,
+        "attributes": [
+          "$retaliate$ 2"
+        ]
       }
     },
-    {
-      "Inox Archer": {
-        "normalStats": {
-          "health": 6,
-          "move": 2,
-          "attack": 2,
-          "range": 3,
-          "attributes": [
+    "Inox Archer": {
+      "normalStats": {
+        "health": 6,
+        "move": 2,
+        "attack": 2,
+        "range": 3,
+        "attributes": [
 
-          ]
-        },
-        "eliteStats": {
-          "health": 8,
-          "move": 2,
-          "attack": 3,
-          "range": 4,
-          "attributes": [
+        ]
+      },
+      "eliteStats": {
+        "health": 8,
+        "move": 2,
+        "attack": 3,
+        "range": 4,
+        "attributes": [
 
-          ]
-        }
+        ]
       }
     },
-    {
-      "Inox Guard": {
-        "normalStats": {
-          "health": 8,
-          "move": 2,
-          "attack": 2,
-          "range": 0,
-          "attributes": [
+    "Inox Guard": {
+      "normalStats": {
+        "health": 8,
+        "move": 2,
+        "attack": 2,
+        "range": 0,
+        "attributes": [
 
-          ]
-        },
-        "eliteStats": {
-          "health": 10,
-          "move": 2,
-          "attack": 3,
-          "range": 0,
-          "attributes": [
-            "$retaliate$ 2"
-          ]
-        }
+        ]
+      },
+      "eliteStats": {
+        "health": 10,
+        "move": 2,
+        "attack": 3,
+        "range": 0,
+        "attributes": [
+          "$retaliate$ 2"
+        ]
       }
     },
-    {
-      "Inox Shaman": {
-        "normalStats": {
-          "health": 6,
-          "move": 1,
-          "attack": 2,
-          "range": 3,
-          "attributes": [
+    "Inox Shaman": {
+      "normalStats": {
+        "health": 6,
+        "move": 1,
+        "attack": 2,
+        "range": 3,
+        "attributes": [
 
-          ]
-        },
-        "eliteStats": {
-          "health": 9,
-          "move": 2,
-          "attack": 3,
-          "range": 3,
-          "attributes": [
+        ]
+      },
+      "eliteStats": {
+        "health": 9,
+        "move": 2,
+        "attack": 3,
+        "range": 3,
+        "attributes": [
 
-          ]
-        }
+        ]
       }
     },
-    {
-      "Living Bones": {
-        "normalStats": {
-          "health": 5,
-          "move": 3,
-          "attack": 1,
-          "range": 0,
-          "attributes": [
-            "$target$ 2",
-            "$shield$ 1"
-          ]
-        },
-        "eliteStats": {
-          "health": 6,
-          "move": 4,
-          "attack": 2,
-          "range": 0,
-          "attributes": [
-            "$target$ 3",
-            "$shield$ 1"
-          ]
-        }
+    "Living Bones": {
+      "normalStats": {
+        "health": 5,
+        "move": 3,
+        "attack": 1,
+        "range": 0,
+        "attributes": [
+          "$target$ 2",
+          "$shield$ 1"
+        ]
+      },
+      "eliteStats": {
+        "health": 6,
+        "move": 4,
+        "attack": 2,
+        "range": 0,
+        "attributes": [
+          "$target$ 3",
+          "$shield$ 1"
+        ]
       }
     },
-    {
-      "Living Corpse": {
-        "normalStats": {
-          "health": 7,
-          "move": 1,
-          "attack": 3,
-          "range": 0,
-          "attributes": [
+    "Living Corpse": {
+      "normalStats": {
+        "health": 7,
+        "move": 1,
+        "attack": 3,
+        "range": 0,
+        "attributes": [
 
-          ]
-        },
-        "eliteStats": {
-          "health": 10,
-          "move": 1,
-          "attack": 4,
-          "range": 0,
-          "attributes": [
+        ]
+      },
+      "eliteStats": {
+        "health": 10,
+        "move": 1,
+        "attack": 4,
+        "range": 0,
+        "attributes": [
 
-          ]
-        }
+        ]
       }
     },
-    {
-      "Living Spirit": {
-        "normalStats": {
-          "health": 2,
-          "move": 2,
-          "attack": 2,
-          "range": 2,
-          "attributes": [
-            "$shield$ 2"
-          ]
-        },
-        "eliteStats": {
-          "health": 3,
-          "move": 3,
-          "attack": 3,
-          "range": 3,
-          "attributes": [
-            "$shield$ 3"
-          ]
-        }
+    "Living Spirit": {
+      "normalStats": {
+        "health": 2,
+        "move": 2,
+        "attack": 2,
+        "range": 2,
+        "attributes": [
+          "$shield$ 2"
+        ]
+      },
+      "eliteStats": {
+        "health": 3,
+        "move": 3,
+        "attack": 3,
+        "range": 3,
+        "attributes": [
+          "$shield$ 3"
+        ]
       }
     },
-    {
-      "Lurker": {
-        "normalStats": {
-          "health": 7,
-          "move": 2,
-          "attack": 2,
-          "range": 0,
-          "attributes": [
-            "$target$ 2",
-            "$pierce$ 1"
-          ]
-        },
-        "eliteStats": {
-          "health": 9,
-          "move": 2,
-          "attack": 3,
-          "range": 0,
-          "attributes": [
-            "$target$ 2",
-            "$pierce$ 1",
-            "$shield$ 1"
-          ]
-        }
+    "Lurker": {
+      "normalStats": {
+        "health": 7,
+        "move": 2,
+        "attack": 2,
+        "range": 0,
+        "attributes": [
+          "$target$ 2",
+          "$pierce$ 1"
+        ]
+      },
+      "eliteStats": {
+        "health": 9,
+        "move": 2,
+        "attack": 3,
+        "range": 0,
+        "attributes": [
+          "$target$ 2",
+          "$pierce$ 1",
+          "$shield$ 1"
+        ]
       }
     },
-    {
-      "Ooze": {
-        "normalStats": {
-          "health": 5,
-          "move": 1,
-          "attack": 2,
-          "range": 2,
-          "attributes": [
-            "$shield$ 1"
-          ]
-        },
-        "eliteStats": {
-          "health": 9,
-          "move": 1,
-          "attack": 2,
-          "range": 3,
-          "attributes": [
-            "$shield$ 1"
-          ]
-        }
+    "Ooze": {
+      "normalStats": {
+        "health": 5,
+        "move": 1,
+        "attack": 2,
+        "range": 2,
+        "attributes": [
+          "$shield$ 1"
+        ]
+      },
+      "eliteStats": {
+        "health": 9,
+        "move": 1,
+        "attack": 2,
+        "range": 3,
+        "attributes": [
+          "$shield$ 1"
+        ]
       }
     },
-    {
-      "Night Demon": {
-        "normalStats": {
-          "health": 5,
-          "move": 3,
-          "attack": 3,
-          "range": 0,
-          "attributes": [
-            "Attackers gain Disadvantage"
-          ]
-        },
-        "eliteStats": {
-          "health": 8,
-          "move": 4,
-          "attack": 4,
-          "range": 0,
-          "attributes": [
-            "Attackers gain Disadvantage"
-          ]
-        }
+    "Night Demon": {
+      "normalStats": {
+        "health": 5,
+        "move": 3,
+        "attack": 3,
+        "range": 0,
+        "attributes": [
+          "Attackers gain Disadvantage"
+        ]
+      },
+      "eliteStats": {
+        "health": 8,
+        "move": 4,
+        "attack": 4,
+        "range": 0,
+        "attributes": [
+          "Attackers gain Disadvantage"
+        ]
       }
     },
-    {
-      "Rending Drake": {
-        "normalStats": {
-          "health": 6,
-          "move": 3,
-          "attack": 3,
-          "range": 0,
-          "attributes": [
-            "$wound$"
-          ]
-        },
-        "eliteStats": {
-          "health": 7,
-          "move": 4,
-          "attack": 5,
-          "range": 0,
-          "attributes": [
-            "$wound$"
-          ]
-        }
+    "Savvas Icestorm": {
+      "normalStats": {
+        "health": 10,
+        "move": 2,
+        "attack": 2,
+        "range": 4,
+        "attributes": [
+          "$pierce$ 3"
+        ]
+      },
+      "eliteStats": {
+        "health": 12,
+        "move": 2,
+        "attack": 3,
+        "range": 5,
+        "attributes": [
+          "$pierce$ 3",
+          "$shield$ 1"
+        ]
       }
     },
-    {
-      "Savvas Icestorm": {
-        "normalStats": {
-          "health": 10,
-          "move": 2,
-          "attack": 2,
-          "range": 4,
-          "attributes": [
-            "$pierce$ 3"
-          ]
-        },
-        "eliteStats": {
-          "health": 12,
-          "move": 2,
-          "attack": 3,
-          "range": 5,
-          "attributes": [
-            "$pierce$ 3",
-            "$shield$ 1"
-          ]
-        }
+    "Savvas Lavaflow": {
+      "normalStats": {
+        "health": 9,
+        "move": 3,
+        "attack": 2,
+        "range": 0,
+        "attributes": [
+          "$poison$"
+        ]
+      },
+      "eliteStats": {
+        "health": 15,
+        "move": 3,
+        "attack": 3,
+        "range": 0,
+        "attributes": [
+          "$wound$"
+        ]
       }
     },
-    {
-      "Savvas Lavaflow": {
-        "normalStats": {
-          "health": 9,
-          "move": 3,
-          "attack": 2,
-          "range": 0,
-          "attributes": [
-            "$poison$"
-          ]
-        },
-        "eliteStats": {
-          "health": 15,
-          "move": 3,
-          "attack": 3,
-          "range": 0,
-          "attributes": [
-            "$wound$"
-          ]
-        }
-      }
-    },
-    {
-      "Spitting Drake": {
-        "normalStats": {
-          "health": 6,
-          "move": 3,
-          "attack": 3,
-          "range": 3,
-          "attributes": [
+    "Spitting Drake": {
+      "normalStats": {
+        "health": 6,
+        "move": 3,
+        "attack": 3,
+        "range": 3,
+        "attributes": [
 
-          ]
-        },
-        "eliteStats": {
-          "health": 9,
-          "move": 3,
-          "attack": 4,
-          "range": 4,
-          "attributes": [
-            "$muddle$"
-          ]
-        }
+        ]
+      },
+      "eliteStats": {
+        "health": 9,
+        "move": 3,
+        "attack": 4,
+        "range": 4,
+        "attributes": [
+          "$muddle$"
+        ]
       }
     },
-    {
-      "Stone Golem": {
-        "normalStats": {
-          "health": 10,
-          "move": 1,
-          "attack": 3,
-          "range": 0,
-          "attributes": [
-            "$shield$ 1"
-          ]
-        },
-        "eliteStats": {
-          "health": 11,
-          "move": 2,
-          "attack": 4,
-          "range": 0,
-          "attributes": [
-            "$shield$ 2"
-          ]
-        }
+    "Stone Golem": {
+      "normalStats": {
+        "health": 10,
+        "move": 1,
+        "attack": 3,
+        "range": 0,
+        "attributes": [
+          "$shield$ 1"
+        ]
+      },
+      "eliteStats": {
+        "health": 11,
+        "move": 2,
+        "attack": 4,
+        "range": 0,
+        "attributes": [
+          "$shield$ 2"
+        ]
       }
     },
-    {
-      "Sun Demon": {
-        "normalStats": {
-          "health": 7,
-          "move": 2,
-          "attack": 2,
-          "range": 0,
-          "attributes": [
-            "Advantage",
-            "$shield$ 1"
-          ]
-        },
-        "eliteStats": {
-          "health": 12,
-          "move": 2,
-          "attack": 3,
-          "range": 0,
-          "attributes": [
-            "Advantage",
-            "$shield$ 1"
-          ]
-        }
+    "Sun Demon": {
+      "normalStats": {
+        "health": 7,
+        "move": 2,
+        "attack": 2,
+        "range": 0,
+        "attributes": [
+          "Advantage",
+          "$shield$ 1"
+        ]
+      },
+      "eliteStats": {
+        "health": 12,
+        "move": 2,
+        "attack": 3,
+        "range": 0,
+        "attributes": [
+          "Advantage",
+          "$shield$ 1"
+        ]
       }
     },
-    {
-      "Vermling Scout": {
-        "normalStats": {
-          "health": 3,
-          "move": 3,
-          "attack": 1,
-          "range": 0,
-          "attributes": [
+    "Vermling Scout": {
+      "normalStats": {
+        "health": 3,
+        "move": 3,
+        "attack": 1,
+        "range": 0,
+        "attributes": [
 
-          ]
-        },
-        "eliteStats": {
-          "health": 5,
-          "move": 3,
-          "attack": 2,
-          "range": 0,
-          "attributes": [
+        ]
+      },
+      "eliteStats": {
+        "health": 5,
+        "move": 3,
+        "attack": 2,
+        "range": 0,
+        "attributes": [
 
-          ]
-        }
+        ]
       }
     },
-    {
-      "Vermling Shaman": {
-        "normalStats": {
-          "health": 2,
-          "move": 2,
-          "attack": 1,
-          "range": 3,
-          "attributes": [
-            "$shield$ 3"
-          ]
-        },
-        "eliteStats": {
-          "health": 3,
-          "move": 3,
-          "attack": 2,
-          "range": 3,
-          "attributes": [
-            "$shield$ 3"
-          ]
-        }
+    "Vermling Shaman": {
+      "normalStats": {
+        "health": 2,
+        "move": 2,
+        "attack": 1,
+        "range": 3,
+        "attributes": [
+          "$shield$ 3"
+        ]
+      },
+      "eliteStats": {
+        "health": 3,
+        "move": 3,
+        "attack": 2,
+        "range": 3,
+        "attributes": [
+          "$shield$ 3"
+        ]
       }
     },
-    {
-      "Wind Demon": {
-        "normalStats": {
-          "health": 3,
-          "move": 3,
-          "attack": 2,
-          "range": 3,
-          "attributes": [
-            "$shield$ 2"
-          ]
-        },
-        "eliteStats": {
-          "health": 5,
-          "move": 4,
-          "attack": 3,
-          "range": 4,
-          "attributes": [
-            "$shield$ 2"
-          ]
-        }
+    "Vicious Drake": {
+      "normalStats": {
+        "health": 6,
+        "move": 3,
+        "attack": 3,
+        "range": 0,
+        "attributes": [
+          "$wound$"
+        ]
+      },
+      "eliteStats": {
+        "health": 7,
+        "move": 4,
+        "attack": 5,
+        "range": 0,
+        "attributes": [
+          "$wound$"
+        ]
+      }
+    },
+    "Wind Demon": {
+      "normalStats": {
+        "health": 3,
+        "move": 3,
+        "attack": 2,
+        "range": 3,
+        "attributes": [
+          "$shield$ 2"
+        ]
+      },
+      "eliteStats": {
+        "health": 5,
+        "move": 4,
+        "attack": 3,
+        "range": 4,
+        "attributes": [
+          "$shield$ 2"
+        ]
       }
     }
-  ]
+  }
 }

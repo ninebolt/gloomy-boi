@@ -1,12 +1,11 @@
 .container {
   display: grid;
-  grid-template-rows: 50px 250px auto;
+  grid-template-rows: 50px 393px auto;
   grid-template-columns: 12rem auto;
   grid-template-areas:
     "action-bar action-bar"
     "initative-band card-band"
     "initative-band health-band";
-
   height: 100vh;
 
   .action-bar {
@@ -21,6 +20,10 @@
 
   .card-band {
     grid-area: card-band;
+    border-bottom: solid 0.5px #cccccc;
+    display: grid;
+    grid-template:
+      "combat-deck" "monster-deck" 1fr 1fr;
     border-bottom: solid 1px #eeeeee;
   }
 
