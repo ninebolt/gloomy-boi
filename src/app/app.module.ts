@@ -10,6 +10,8 @@ import { DeckComponent } from './containers/deck/deck.component';
 import { MonsterCardComponent } from './components/monster-card/monster-card.component';
 import { ActionButtonComponent } from './components/action-button/action-button.component';
 import { SearchDropdownComponent } from './components/search-dropdown/search-dropdown.component';
+import { HealthTrackerComponent } from "./containers/health-tracker/health-tracker.component";
+import { CharacterHealthComponent } from "./components/character-health/character-health.component";
 
 import { NameFilterPipe } from './pipes/name-filter.pipe';
 import { OrderByPipe } from './pipes/order-by.pipe';
@@ -26,6 +28,8 @@ import { LineParserService } from './services/line-parser.service';
     MonsterCardComponent,
     ActionButtonComponent,
     SearchDropdownComponent,
+    HealthTrackerComponent,
+    CharacterHealthComponent,
     NameFilterPipe,
     OrderByPipe
   ],
