@@ -9,22 +9,22 @@ export class LineParserService {
     'aoe-triangle-large-self', 'aoe-cone-2-self', 'aoe-straight-2', 'aoe-straight-3', 'aoe-straight-5'];
   private ELEMENTS = ['all', 'dark', 'earth', 'fire', 'ice', 'light', 'wind'];
 
-  private LINE_FORMAT_REGEX = "(x[1-4](?: elite)?) (.*)";
-  private ACTION_REGEX = "\\$(attack|move|heal|range|target|pierce|heal|shield|retaliate|loot|push|pull)\\$ ?([\\+|-])?(\\d+)?";
-  private STATUS_REGEX = "\\$(bless|curse|immobilize|invisible|muddle|poison|strengthen|stun|wound)\\$";
-  private ELEMENT_REGEX = "\\$(all|dark|earth|fire|ice|light|wind)\\$";
-  private AOE_REGEX = "\\$(aoe-[^\\$]*)\\$";
+  private LINE_FORMAT_REGEX = '(x[1-4](?: elite)?) (.*)';
+  private ACTION_REGEX = '\\$(attack|move|heal|range|target|pierce|heal|shield|retaliate|loot|push|pull)\\$ ?([\\+|-])?(\\d+)?';
+  private STATUS_REGEX = '\\$(bless|curse|immobilize|invisible|muddle|poison|strengthen|stun|wound)\\$';
+  private ELEMENT_REGEX = '\\$(all|dark|earth|fire|ice|light|wind)\\$';
+  private AOE_REGEX = '\\$(aoe-[^\\$]*)\\$';
 
   private KEYWORDS = {
-    "BASE": "<span class='$lineSize$'>$base$</span>",
-    "ELITE": "<span class='elite'>$eliteValue$</span>",
-    "ACTION": "$actionCap$ <img src='assets/icons/$action$.png'> $value$",
-    "AOE": "<img class='$aoeClass$' src='assets/icons/$AOE$.png'>",
-    "ELEMENT": "<img class='element' src='assets/elements/$element$.png'>",
-    "STATUS": "$statusCap$ <img src='assets/status/$status$.png'>",
-    "$consume$": "<img class='element consume' src='assets/elements/consume.png'>",
-    "$fly$": "<img src='assets/icons/fly.png'>",
-    "$jump$": "<img src='assets/icons/jump.png'>"
+    BASE: '<span class="$lineSize$">$base$</span>',
+    ELITE: '<span class="elite">$eliteValue$</span>',
+    ACTION: '$actionCap$ <img src="assets/icons/$action$.png"> $value$',
+    AOE: '<img class="$aoeClass$" src="assets/icons/$AOE$.png">',
+    ELEMENT: '<img class="element" src="assets/elements/$element$.png">',
+    STATUS: '$statusCap$ <img src="assets/status/$status$.png">',
+    $consume$: '<img class="element consume" src="assets/elements/consume.png">',
+    $fly$: '<img src="assets/icons/fly.png">',
+    $jump$: '<img src="assets/icons/jump.png">'
   };
 
   constructor() { }
@@ -47,21 +47,21 @@ export class LineParserService {
       return null;
     }
 
-    let lines = [this.parseLine("x1 Attributes", monster)];
+    let lines = [this.parseLine('x1 Attributes', monster)];
     let normal = [];
     let elite = [];
 
     normalAttributes.forEach(x => normal.push(x));
     eliteAttributes.forEach(x => elite.push(x));
 
-    normal.length > 0 && lines.push(this.parseLine("x2 " + normal.join(", "), monster));
-    elite.length > 0 && lines.push(this.parseLine("x2 elite " + elite.join(", "), monster));
+    normal.length > 0 && lines.push(this.parseLine('x2 ' + normal.join(', '), monster));
+    elite.length > 0 && lines.push(this.parseLine('x2 elite ' + elite.join(', '), monster));
 
     return lines;
   }
 
   parseLine(cardLine, monster) {
-    let re = new RegExp(this.LINE_FORMAT_REGEX, "g");
+    let re = new RegExp(this.LINE_FORMAT_REGEX, 'g');
     let parsed = re.exec(cardLine);
 
     let lineSize = parsed[1];
@@ -94,7 +94,7 @@ export class LineParserService {
   }
 
   private checkForActions(line, monster) {
-    let re = new RegExp(this.ACTION_REGEX, "g");
+    let re = new RegExp(this.ACTION_REGEX, 'g');
     let parsedLine;
 
     // Basic action; get monster's stats and put both normal and elite number
@@ -113,7 +113,7 @@ export class LineParserService {
         }
 
         if (eliteValue !== value) {
-          stringVal = value + " / " + this.KEYWORDS['ELITE'].replace('$eliteValue$', eliteValue.toString());
+          stringVal = value + ' / ' + this.KEYWORDS['ELITE'].replace('$eliteValue$', eliteValue.toString());
         } else {
           stringVal = value.toString();
         }
@@ -134,7 +134,7 @@ export class LineParserService {
   }
 
   private checkForStatuses(line) {
-    let re = new RegExp(this.STATUS_REGEX, "g");
+    let re = new RegExp(this.STATUS_REGEX, 'g');
     let parsedLine;
 
     while (parsedLine = re.exec(line)) {
@@ -150,7 +150,7 @@ export class LineParserService {
   }
 
   private checkForAoE(line) {
-    let re = new RegExp(this.AOE_REGEX, "g");
+    let re = new RegExp(this.AOE_REGEX, 'g');
     let parsedLine;
 
     while (parsedLine = re.exec(line)) {
@@ -166,7 +166,7 @@ export class LineParserService {
   }
 
   private checkForElements(line) {
-    let re = new RegExp(this.ELEMENT_REGEX, "g");
+    let re = new RegExp(this.ELEMENT_REGEX, 'g');
     let parsedLine;
 
     while (parsedLine = re.exec(line)) {

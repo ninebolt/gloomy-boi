@@ -4,7 +4,7 @@ import { OrderByPipe } from '../../pipes/order-by.pipe';
 
 import * as rawCharacters from '../../../assets/characters.json';
 import { Character, Player, Monster } from '../../models/character.model';
-import { LineParserService } from '../../services/line-parser/line-parser.service';
+import { LineParserService } from '../../services/line-parser.service';
 
 @Component({
   selector: 'initative-tracker',
