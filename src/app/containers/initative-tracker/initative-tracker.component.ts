@@ -28,9 +28,50 @@ export class InitativeTrackerComponent implements OnInit {
   characters: Character[];
 
   constructor(
-    private orderByPipe: OrderByPipe,
-    private lineParser: LineParserService
-  ) { }
+    private lineParser: LineParserService,
+    private orderByPipe: OrderByPipe
+  ) {
+
+    let card = {
+      "shuffle": false,
+      "initiative": "14",
+      "lines": [
+        "x1 $move$ -1",
+        "x1 $attack$ -1",
+        "x2 $range$ +0",
+        "x1 $attack$ -1 $aoe-triangle-large-self$ ",
+        "x1 <span class='small'> Create a 3 damage trap in an adjacent empty hex closest to an enemy </span>"
+      ]
+    };
+
+    let monster = {
+      "Bandit Guard":
+      {
+      "normalStats": {
+        "health": 6,
+        "move": 1,
+        "attack": 3,
+        "range": 4,
+        "attributes": [
+
+        ]
+      },
+      "eliteStats": {
+        "health": 7,
+        "move": 1,
+        "attack": 4,
+        "range": 5,
+        "attributes": [
+          "$pierce$ 2",
+          "$shield$ 1"
+        ]
+      }
+    }
+    };
+
+    console.log(lineParser.parseCurrentCard(card, monster["Bandit Guard"]));
+    console.log(lineParser.parseAttributes(monster["Bandit Guard"]));
+  }
 
   ngOnInit() {
     this.characters = [
@@ -38,7 +79,6 @@ export class InitativeTrackerComponent implements OnInit {
       new Monster(2, 'Character', rawCharacters[5].name, rawCharacters[5].icon, 11, 12, [], 52),
       new Monster(3, 'Character', rawCharacters[4].name, rawCharacters[4].icon, 11, 12, [], 24)
     ];
-
     this.sortCards();
   }
 
