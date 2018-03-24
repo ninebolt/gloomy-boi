@@ -37,14 +37,10 @@ export class MonsterHealthComponent implements OnInit {
   @Input()
   monster: Monster;
 
-  imageURL: SafeStyle;
-
   constructor(private sanitizer: DomSanitizer) {
   }
 
-  ngOnInit() {
-    this.imageURL = this.sanitizer.bypassSecurityTrustStyle('url(' + this.monster.image + ')');
-  }
+  ngOnInit() { }
 
   addHealth() {
     this.monster.health++;
