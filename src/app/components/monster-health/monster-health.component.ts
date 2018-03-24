@@ -7,7 +7,7 @@ import { Monster } from '../../models/character.model';
   selector: 'monster-health',
   styleUrls: ['monster-health.component.scss'],
   template: `
-    <div class="health-wrapper">
+    <!-- <div class="health-wrapper">
       <div class="icon" [style.background-image]="imageURL"></div>
       <h5 class="id">{{monster.id}}</h5>
       <button class="plus-ticker" (click)="addHealth()">+</button>
@@ -21,6 +21,20 @@ import { Monster } from '../../models/character.model';
       <div class="status strengthen" title="Strengthen" (click)="setStatus($event)"></div>
       <div class="status stun" title="Stun" (click)="setStatus($event)"></div>
       <div class="status wound" title="Wound" (click)="setStatus($event)"></div>
+    </div> -->
+
+    <div class="health-wrapper">
+      <div class="monster-image">
+        <img [src]="monster.image" />
+      </div>
+      <div class="health">
+        <span class="current-health">{{ monster.health }}</span>
+        <div class="health-buttons">
+          <span class="button top" (click)="addHealth()">+</span>
+          <span class="button bottom" (click)="subtractHealth()">-</span>
+        </div>
+      </div>
+      <div class="conditions"></div>
     </div>
   `
 })

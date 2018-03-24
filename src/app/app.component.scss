@@ -4,7 +4,7 @@
   grid-template-columns: 12rem auto;
   grid-template-areas:
     "action-bar action-bar"
-    "initative-band combat-band"
+    "initative-band monster-band"
     "initative-band monster-band";
   height: 100vh;
 
@@ -18,29 +18,9 @@
     border-right: solid 1px #eeeeee;
   }
 
-  .combat-band {
-    grid-area: combat-band;
-    border-bottom: solid 0.5px #cccccc;
-    display: grid;
-    grid-template:
-      "combat-deck" "monster-deck" 1fr 1fr;
-    border-bottom: solid 1px #eeeeee;
-  }
-
   .monster-band {
     grid-area: monster-band;
-    display: grid;
-    grid-template-rows: 340px;
-    grid-template-columns: 500px auto;
-    grid-template-areas:
-      "monster-deck health-tracker";
-
-    [deck] {
-      grid-area: monster-deck;
-    }
-
-    [health-tracker] {
-      grid-area: health-tracker;
-    }
+    display: flex;
+    flex-direction: column;
   }
 }

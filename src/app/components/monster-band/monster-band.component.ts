@@ -7,12 +7,10 @@ import { MonsterCard } from '../../models/card.model';
   selector: 'monster-band',
   styleUrls: ['monster-band.component.scss'],
   template: `
-    <div>
-      <deck
-        [deck]="deck"
-      ></deck>
-      <div *ngFor="let c of monsters">
-        <monster-health [monster]="c"></monster-health>
+    <div class="monster-band">
+      <deck [deck]="deck"></deck>
+      <div class="monster-healths">
+        <monster-health  *ngFor="let m of monsters" [monster]="m"></monster-health>
       </div>
     </div>
   `
