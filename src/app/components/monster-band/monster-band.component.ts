@@ -39,6 +39,6 @@ export class MonsterBandComponent implements OnInit {
               false
           )
       )
-  }
+    }
   }
 }

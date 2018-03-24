@@ -7,4 +7,9 @@
   padding: 15px 15px;
   display: flex;
   flex-wrap: wrap;
+  height: fit-content;
+
+  monster-health {
+    margin: 10px 0;
+  }
 }
