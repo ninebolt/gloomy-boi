@@ -8,10 +8,7 @@
   <div class="combat-band">
     <!-- <deck [deck]="actionDeck"></deck> -->
   </div>
-  <div class="monster-band" *ngFor="let deck of decks">
-    <deck
-      [deck]="deck"
-    ></deck>
-    <health-tracker></health-tracker>
+  <div class="monster-band">
+    <monster-case></monster-case>
   </div>
 </div>

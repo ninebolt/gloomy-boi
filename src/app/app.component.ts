@@ -11,8 +11,6 @@ import { MonsterCard } from './models/card.model';
 })
 
 export class AppComponent implements OnInit {
-  title = 'app';
-
   deck: MonsterDeck = new MonsterDeck([]);
 
   decks: MonsterDeck[] = [this.deck];
