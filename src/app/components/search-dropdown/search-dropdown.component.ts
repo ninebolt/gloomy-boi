@@ -1,7 +1,6 @@
 import { Component, Input, Output, EventEmitter, HostListener, ViewChild, ElementRef, OnInit } from '@angular/core';
 import { Character, Player, Monster } from '../../models/character.model';
-
-import * as rawCharacters from '../../../assets/characters.json';
+import { Observable } from 'rxjs/Observable';
 
 @Component({
   selector: 'search-dropdown',
@@ -10,7 +9,7 @@ import * as rawCharacters from '../../../assets/characters.json';
     <div class="search">
       <input #input type="text" [placeholder]="placeholder" [(ngModel)]="characterName">
       <div class="character-list">
-        <div *ngFor="let c of characterList| nameFilter:characterName; let i = index;" class="character" (click)="characterSelected(c)">
+        <div *ngFor="let c of searchTerms | nameFilter:characterName; let i = index;" class="character" (click)="characterSelected(c)">
           {{ c.name }}
         </div>
       </div>
@@ -21,8 +20,8 @@ export class SearchDropdownComponent implements OnInit {
 
   @ViewChild('input') inputComponent: ElementRef;
 
-  @Input()
-  placeholder: string = '';
+  @Input() placeholder: string = '';
+  @Input('searchTerms') searchTerms:any;
 
   @Output()
   selected: EventEmitter<Character> = new EventEmitter();
@@ -35,11 +34,6 @@ export class SearchDropdownComponent implements OnInit {
 
   ngOnInit() {
     this.inputComponent.nativeElement.focus();
-    this.characterList = [
-      new Player(rawCharacters[0].name, rawCharacters[0].icon, 70),
-      new Monster(rawCharacters[5].name, rawCharacters[5].icon, 52),
-      new Monster(rawCharacters[4].name, rawCharacters[4].icon, 24)
-    ];
   }
 
   characterSelected(c: Character) {

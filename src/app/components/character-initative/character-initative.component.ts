@@ -6,7 +6,7 @@ import { Character } from '../../models/character.model';
   styleUrls: ['character-initative.component.scss'],
   template: `
     <div class="character">
-      <img class="icon" [ngClass]="character.type" [src]="character.icon" />
+      <img class="icon" [ngClass]="character.type" [src]="character.image" />
       <span class="name">{{character.name}}</span>
       <input class="initative" type="number" value="character.initative" [(ngModel)]="character.initative" (blur)="sortCards()"/>
     </div>

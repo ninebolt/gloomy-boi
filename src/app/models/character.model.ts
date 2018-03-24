@@ -2,24 +2,31 @@ export class Character {
   type: string;
   name: string;
   initative: number;
-  icon: string;
+  image: string;
 
-  constructor(type: string, name: string, icon: string, initative?: number) {
+  constructor(type: string, name: string, image: string, initative?: number) {
     this.type = type;
     this.name = name;
-    this.icon = icon;
+    this.image = image;
     this.initative = initative || 0;
   }
 }
 
 export class Monster extends Character {
-  constructor(name: string, icon: string, initative?: number) {
-    super('monster', name, icon, initative);
+  health: number;
+  move: number;
+  attack: number;
+  range: number;
+  elite: boolean;
+
+  constructor(name: string, image: string,  elite?: boolean) {
+    super('monster', name, image);
+    this.elite = elite || false;
   }
 }
 
 export class Player extends Character {
-  constructor(name: string, icon: string, initative?: number) {
-    super('player', name, icon, initative);
+  constructor(name: string, image: string, initative?: number) {
+    super('player', name, image, initative);
   }
 }
