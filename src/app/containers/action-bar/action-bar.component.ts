@@ -32,8 +32,11 @@ export class ActionBarComponent implements OnInit {
     this.basicCharacterInfo = this.characterService.getBasicMonsterInfo();
   }
 
-  addCharacter(monster: Character) {
-    const monsters = this.characterService.createMonsters(monster.name, 2, 1, monster.image);
+  addCharacter(character: Character) {
+    if (character.type === 'player') {
+      return;
+    }
+    const monsters = this.characterService.createMonsters(character.name, 2, 1, character.image);
     this.scenarioService.addNewMonsters(monsters);
   }
 }
