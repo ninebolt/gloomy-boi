@@ -16,7 +16,11 @@ export class MonsterCard extends Card {
 }
 
 export class CombatCard extends Card {
-    constructor(public order: number, public icon: string, public discard?: boolean, public shuffle?: boolean) {
+    constructor(
+        public order: number,
+        public icon: string,
+        public discard?: boolean,
+        public shuffle?: boolean) {
         super('CombatCard', shuffle);
     }
 }

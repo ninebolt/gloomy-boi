@@ -26,20 +26,12 @@ export class CharacterService {
     const stats = this.getMonster(name);
 
     for (let i = 0; i < amountOfNormal; i++) {
-      const tempMonster = new Monster(name, monsterImage);
-      tempMonster.health = stats.normalStats.health;
-      tempMonster.move = stats.normalStats.move;
-      tempMonster.attack = stats.normalStats.attack;
-      tempMonster.range = stats.normalStats.range;
+      const tempMonster = new Monster(i, name, monsterImage, stats.normalStats.health, 0);
       monsters.push(tempMonster);
     }
 
     for (let i = 0; i < amountOfElite; i++) {
-      const tempMonster = new Monster(name, monsterImage, true);
-      tempMonster.health = stats.eliteStats.health;
-      tempMonster.move = stats.eliteStats.move;
-      tempMonster.attack = stats.eliteStats.attack;
-      tempMonster.range = stats.eliteStats.range;
+      const tempMonster = new Monster(i, name, monsterImage, stats.normalStats.health, 0, true);
       monsters.push(tempMonster);
     }
     return monsters;

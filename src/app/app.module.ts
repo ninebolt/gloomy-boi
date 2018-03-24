@@ -11,6 +11,8 @@ import { DeckComponent } from './containers/deck/deck.component';
 import { MonsterCardComponent } from './components/monster-card/monster-card.component';
 import { ActionButtonComponent } from './components/action-button/action-button.component';
 import { SearchDropdownComponent } from './components/search-dropdown/search-dropdown.component';
+import { HealthTrackerComponent } from "./containers/health-tracker/health-tracker.component";
+import { MonsterHealthComponent } from "./components/monster-health/monster-health.component";
 
 import { NameFilterPipe } from './pipes/name-filter.pipe';
 import { OrderByPipe } from './pipes/order-by.pipe';
@@ -29,6 +31,8 @@ import { ScenarioService } from './services/scenario.service';
     MonsterCardComponent,
     ActionButtonComponent,
     SearchDropdownComponent,
+    HealthTrackerComponent,
+    MonsterHealthComponent,
     NameFilterPipe,
     OrderByPipe
   ],

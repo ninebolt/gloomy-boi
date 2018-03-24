@@ -75,9 +75,8 @@ export class InitativeTrackerComponent implements OnInit {
 
   ngOnInit() {
     this.characters = [
-      new Player(rawCharacters[0].name, rawCharacters[0].icon, 70),
-      new Monster(rawCharacters[5].name, rawCharacters[5].icon, 52),
-      new Monster(rawCharacters[4].name, rawCharacters[4].icon, 24)
+      new Monster(2, rawCharacters[5].name, rawCharacters[5].image, 11, 0, true, [], 52),
+      new Monster(3, rawCharacters[4].name, rawCharacters[4].image, 11, 1, false, [], 24)
     ];
     this.sortCards();
   }

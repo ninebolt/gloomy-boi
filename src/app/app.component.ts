@@ -1,6 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-
-import { SearchDropdownComponent } from "./components/search-dropdown/search-dropdown.component";
 import { DeckComponent } from "./containers/deck/deck.component";
 
 import { MonsterDeck } from "./models/deck.model";
@@ -9,8 +7,7 @@ import { MonsterCard } from './models/card.model';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss'],
-  providers: [ SearchDropdownComponent ]
+  styleUrls: ['./app.component.scss']
 })
 
 export class AppComponent implements OnInit {
@@ -20,13 +17,7 @@ export class AppComponent implements OnInit {
 
   decks: MonsterDeck[] = [this.deck];
 
-  constructor(search: SearchDropdownComponent) {
-    search.selected.subscribe((event) => {
-      if (event.type === 'Monster') {
-        this.decks.push(event.deck)
-      }
-    })
-  }
+  constructor() { }
 
   ngOnInit() {
 

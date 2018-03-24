@@ -1,0 +1,122 @@
+.health-wrapper {
+  height: 120px;
+  text-align: center;
+  margin: 15px;
+  border: 1px solid grey;
+  display: grid;
+  grid-template-areas:
+    "id  plus-ticker    disarm      poison"
+    ".   health         immobilize  strengthen"
+    ".   health         invisible   stun"
+    ".   minus-ticker   muddle      wound";
+  grid-template-rows: repeat(4, 1fr);
+  grid-template-columns: 30px 100px auto auto;
+
+  * {
+    margin: 0;
+    align-self: center;
+  }
+}
+
+.health-wrapper:hover > .status {
+  display: inherit;
+}
+
+.player-container,
+.monster-container {
+  display: flex;
+}
+
+.elite {
+  box-shadow: 0px 0px 20px Black;
+}
+
+.icon {
+  grid-area: health;
+  opacity: 0.2;
+  height: 100%;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.health {
+  grid-area: health;
+  color: white;
+  text-shadow:
+        -1px -1px 0px #000,
+         0px -1px 0px #000,
+         1px -1px 0px #000,
+        -1px  0px 0px #000,
+         1px  0px 0px #000,
+        -1px  1px 0px #000,
+         0px  1px 0px #000,
+         1px  1px 0px #000;
+  z-index: 1;
+}
+
+.id { grid-area: id; }
+
+.plus-ticker,
+.minus-ticker {
+  height: 100%;
+  background-color: white;
+  border: 1px solid #eee;
+}
+
+.plus-ticker { grid-area: plus-ticker; }
+
+.minus-ticker { grid-area: minus-ticker; }
+
+.status {
+  width:30px;
+  height: 30px;
+  background-size: contain;
+  opacity: 0.1;
+  display: none;
+}
+
+.status.active {
+  opacity: 1;
+  display: inherit;
+}
+
+.disarm {
+  grid-area: disarm;
+  background-image: url('/assets/status/disarm.png')
+}
+
+.immobilize {
+  grid-area: immobilize;
+  background-image: url('/assets/status/immobilize.png')
+}
+
+.invisible {
+  grid-area: invisible;
+  background-image: url('/assets/status/invisible.png')
+}
+
+.muddle {
+  grid-area: muddle;
+  background-image: url('/assets/status/muddle.png')
+}
+
+.poison {
+  grid-area: poison;
+  background-image: url('/assets/status/poison.png')
+}
+
+.strengthen {
+  grid-area: strengthen;
+  background-image: url('/assets/status/strengthen.png')
+}
+
+.stun {
+  grid-area: stun;
+  background-image: url('/assets/status/stun.png')
+}
+
+.wound {
+  grid-area: wound;
+  background-image: url('/assets/status/wound.png')
+}

@@ -20,7 +20,7 @@ export class Deck {
         this.cards = this.cards.filter((c) => c !== card);
     }
 
-    shuffle () {
+    shuffle() {
         this.cards = [...this.cards, ...this.discardPile];
         for (let i = this.cards.length; i > 0; i--) {
             let j = Math.floor(Math.random() * (i + 1));
@@ -29,16 +29,16 @@ export class Deck {
     }
 }
 
-// export class CombatDeck extends Deck {
-//     super
+export class CombatDeck extends Deck {
+    super
 
-// removeCard() {
-//     this.cards.splice(
-//         this.cards.findIndex((element) => {return element.type === name}
-//     ), 1);
-// }
+    removeCard() {
+        this.cards.splice(
+            this.cards.findIndex((element) => {return element.type === name}
+        ), 1);
+}
 
-// }
+}
 
 export class MonsterDeck extends Deck {
     constructor (cards?: MonsterCard[]) {

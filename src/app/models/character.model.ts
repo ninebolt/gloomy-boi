@@ -1,32 +1,35 @@
 export class Character {
-  type: string;
-  name: string;
-  initative: number;
-  image: string;
-
-  constructor(type: string, name: string, image: string, initative?: number) {
-    this.type = type;
-    this.name = name;
-    this.image = image;
+  constructor(
+    public type: string,
+    public name: string,
+    public image: string,
+    public initative?: number) {
     this.initative = initative || 0;
   }
 }
 
 export class Monster extends Character {
-  health: number;
-  move: number;
-  attack: number;
-  range: number;
-  elite: boolean;
-
-  constructor(name: string, image: string,  elite?: boolean) {
-    super('monster', name, image);
+  constructor(
+    public id: number,
+    public name: string,
+    public image: string,
+    public health: number,
+    public armor: number,
+    public elite?: boolean,
+    public status?: string[],
+    public initative?: number) {
+    super('monster', name, image, initative);
+    this.initative = initative || 0;
     this.elite = elite || false;
   }
 }
 
 export class Player extends Character {
-  constructor(name: string, image: string, initative?: number) {
+  constructor(
+    public name: string,
+    public image: string,
+    public initative?: number) {
     super('player', name, image, initative);
+    this.initative = initative || 0;
   }
 }

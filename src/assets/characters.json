@@ -1,70 +1,70 @@
 [
     {
       "name": "Brute",
-      "icon": "/assets/character-icons/brute.png"
+      "image": "/assets/character-icons/brute.png"
     },
     {
       "name": "Cragheart",
-      "icon": "/assets/character-icons/cragheart.png"
+      "image": "/assets/character-icons/cragheart.png"
     },
     {
       "name": "Mindthief",
-      "icon": "/assets/character-icons/mindthief.png"
+      "image": "/assets/character-icons/mindthief.png"
     },
     {
       "name": "Scoundrel",
-      "icon": "/assets/character-icons/scoundrel.png"
+      "image": "/assets/character-icons/scoundrel.png"
     },
     {
       "name": "Spellweaver",
-      "icon": "/assets/character-icons/spellweaver.png"
+      "image": "/assets/character-icons/spellweaver.png"
     },
     {
       "name": "Tinkerer",
-      "icon": "/assets/character-icons/tinkerer.png"
+      "image": "/assets/character-icons/tinkerer.png"
     },
     {
       "name": "Circle",
-      "icon": "/assets/character-icons/circle.png"
+      "image": "/assets/character-icons/circle.png"
     },
     {
       "name": "Cocentric Circles",
-      "icon": "/assets/character-icons/cocentric-circles.png"
+      "image": "/assets/character-icons/cocentric-circles.png"
     },
     {
       "name": "Dragon",
-      "icon": "/assets/character-icons/dragon.png"
+      "image": "/assets/character-icons/dragon.png"
     },
     {
       "name": "Face",
-      "icon": "/assets/character-icons/face.png"
+      "image": "/assets/character-icons/face.png"
     },
     {
       "name": "Kthulu",
-      "icon": "/assets/character-icons/kthulu.png"
+      "image": "/assets/character-icons/kthulu.png"
     },
     {
       "name": "Lightning Bolts",
-      "icon": "/assets/character-icons/lightning.png"
+      "image": "/assets/character-icons/lightning.png"
     },
     {
       "name": "Music Note",
-      "icon": "/assets/character-icons/music.png"
+      "image": "/assets/character-icons/music.png"
     },
     {
       "name": "Saw",
-      "icon": "/assets/character-icons/saw.png"
+      "image": "/assets/character-icons/saw.png"
     },
     {
       "name": "Spear",
-      "icon": "/assets/character-icons/spear.png"
+      "image": "/assets/character-icons/spear.png"
     },
     {
       "name": "Triforce",
-      "icon": "/assets/character-icons/triforce.png"
+      "image": "/assets/character-icons/triforce.png"
     },
     {
       "name": "Wheel",
-      "icon": "/assets/character-icons/wheel.png"
+      "image": "/assets/character-icons/wheel.png"
     }
   ]
