@@ -8,7 +8,7 @@ import { Character } from '../../models/character.model';
     <div class="character">
       <img class="icon" [ngClass]="character.type" [src]="character.image" />
       <span class="name">{{character.name}}</span>
-      <input class="initative" type="number" value="character.initative" [(ngModel)]="character.initative" (blur)="sortCards()"/>
+      <input class="initative" type="number" value="character.initative" [(ngModel)]="character.initative" (blur)="sortCards()" min="0" max="99" />
     </div>
   `
 })

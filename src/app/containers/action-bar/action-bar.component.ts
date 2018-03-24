@@ -24,9 +24,7 @@ export class ActionBarComponent implements OnInit {
   constructor(
     private characterService: CharacterService,
     private scenarioService: ScenarioService
-  ) {
-    console.log(characterService.getMonster('Bandit Archer'));
-  }
+  ) { }
 
   ngOnInit() {
     this.basicCharacterInfo = this.characterService.getBasicMonsterInfo();
@@ -34,9 +32,10 @@ export class ActionBarComponent implements OnInit {
 
   addCharacter(character: Character) {
     if (character.type === 'player') {
-      return;
+      this.scenarioService.addNewPlayer(character);
+    } else {
+      const monsters = this.characterService.createMonsters(character.name, 2, 1, character.image);
+      this.scenarioService.addNewMonsters(monsters);
     }
-    const monsters = this.characterService.createMonsters(character.name, 2, 1, character.image);
-    this.scenarioService.addNewMonsters(monsters);
   }
 }
