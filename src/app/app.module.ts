@@ -1,6 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 
 import { AppComponent } from './app.component';
 import { ActionBarComponent } from './containers/action-bar/action-bar.component';
@@ -11,12 +12,14 @@ import { MonsterCardComponent } from './components/monster-card/monster-card.com
 import { ActionButtonComponent } from './components/action-button/action-button.component';
 import { SearchDropdownComponent } from './components/search-dropdown/search-dropdown.component';
 import { HealthTrackerComponent } from "./containers/health-tracker/health-tracker.component";
-import { CharacterHealthComponent } from "./components/character-health/character-health.component";
+import { MonsterHealthComponent } from "./components/monster-health/monster-health.component";
 
 import { NameFilterPipe } from './pipes/name-filter.pipe';
 import { OrderByPipe } from './pipes/order-by.pipe';
 
 import { LineParserService } from './services/line-parser.service';
+import { CharacterService } from './services/character.service';
+import { ScenarioService } from './services/scenario.service';
 
 @NgModule({
   declarations: [
@@ -29,16 +32,19 @@ import { LineParserService } from './services/line-parser.service';
     ActionButtonComponent,
     SearchDropdownComponent,
     HealthTrackerComponent,
-    CharacterHealthComponent,
+    MonsterHealthComponent,
     NameFilterPipe,
     OrderByPipe
   ],
   imports: [
     BrowserModule,
-    FormsModule
+    FormsModule,
+    HttpClientModule
   ],
   providers: [
-    LineParserService
+    LineParserService,
+    CharacterService,
+    ScenarioService
   ],
   bootstrap: [AppComponent]
 })

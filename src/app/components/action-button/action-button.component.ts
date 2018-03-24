@@ -1,5 +1,6 @@
-import { Component, Input} from '@angular/core';
+import { Component, Input, Output, EventEmitter } from '@angular/core';
 import { Character } from '../../models/character.model';
+import { Observable } from 'rxjs/Observable';
 
 @Component({
   selector: 'action-button',
@@ -8,17 +9,20 @@ import { Character } from '../../models/character.model';
     <button type="button" *ngIf="!selected" (click)="showInput()">
       <ng-content></ng-content>
     </button>
-    <search-dropdown *ngIf="selected" [placeholder]="placeholder" (selected)="characterSelected($event)" (close)="hideInput()"></search-dropdown>
+    <search-dropdown *ngIf="selected" [placeholder]="placeholder" [searchTerms]="searchTerms" (selected)="characterSelected($event)" (close)="hideInput()"></search-dropdown>
   `
 })
 export class ActionButtonComponent {
 
   @Input() placeholder = '';
+  @Input('searchTerms') searchTerms: any;
+
+  @Output() characterEmitter: EventEmitter<Character> = new EventEmitter();
 
   selected = false;
 
   characterSelected(character: Character) {
-    console.log(character);
+    this.characterEmitter.emit(character);
     this.hideInput();
   }
 

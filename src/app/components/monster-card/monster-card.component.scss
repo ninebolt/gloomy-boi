@@ -12,7 +12,7 @@
 }
 
 :host.flipped {
-  transform: translate(5px, -5px) rotateX(180deg);
+  transform: translate(10px, -10px) rotateX(180deg);
 }
 
 :host.flip-to-front {
@@ -109,7 +109,7 @@
     transform: translate(10px, 50px) rotateX( 90deg );
   }
   100% {
-    transform: translate(0px, 0px) rotateX( 180deg );
+    transform: translate(10px, -10px) rotateX( 180deg );
   }
 }
 
