@@ -1,0 +1,23 @@
+.action-bar {
+  display: flex;
+  align-items: center;
+
+  height: 100%;
+  padding: 0 20px;
+
+  .name {
+    font-size: 1.2rem;
+  }
+
+  .action-buttons {
+    justify-content: right;
+    margin-left: auto;
+
+    display: flex;
+    align-items: center;
+
+    & > * {
+      margin-left: 10px;
+    }
+  }
+}

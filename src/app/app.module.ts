@@ -16,6 +16,7 @@ import { NameFilterPipe } from './pipes/name-filter.pipe';
 import { OrderByPipe } from './pipes/order-by.pipe';
 
 import { LineParserService } from './services/line-parser.service';
+import { RetrievalService } from './services/retrieval.service';
 
 @NgModule({
   declarations: [
@@ -37,8 +38,7 @@ import { LineParserService } from './services/line-parser.service';
   ],
   providers: [
     LineParserService,
-    CharacterService,
-    ScenarioService
+    RetrievalService
   ],
   bootstrap: [AppComponent]
 })

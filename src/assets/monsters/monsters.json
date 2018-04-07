@@ -1,5 +1,4 @@
-{
-  "monsters": [
+[
     {"name": "Ancient Artillery", "maxAllowed": 6, "type": "monster", "image": "assets/monsters/hexes/ancient-artillery.png"},
     {"name": "Bandit Archer", "maxAllowed": 6, "type": "monster", "image": "assets/monsters/hexes/bandit-archer.png"},
     {"name": "Bandit Guard", "maxAllowed": 6, "type": "monster", "image": "assets/monsters/hexes/bandit-guard.png"},
@@ -53,4 +52,3 @@
     { "name": "Triforce", "type": "player", "image": "/assets/character-icons/triforce.png" },
     { "name": "Wheel", "type": "player", "image": "/assets/character-icons/wheel.png" }
   ]
-}
