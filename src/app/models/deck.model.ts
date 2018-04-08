@@ -16,12 +16,12 @@ export class Deck {
   }
 
   drawCard() {
+    if (this.cards[0].discardMe) {
+      this.discardCard(this.cards[0]);
+    }
     if (this.cards.length <= 0) {
       this.shuffle();
       console.log("Out of cards; forcing reshuffle");
-    }
-    if (this.cards[0].discardMe) {
-      this.discardCard(this.cards[0]);
     }
     this.cards[0].discardMe = true;
     return this.cards[0];
@@ -40,6 +40,7 @@ export class Deck {
       [tempDeck[i], tempDeck[j]] = [tempDeck[j], tempDeck[i]];
     }
     tempDeck.forEach(card => card.discardMe = false);
+    this.shuffleMe = false;
     this.cards = tempDeck;
   }
 }

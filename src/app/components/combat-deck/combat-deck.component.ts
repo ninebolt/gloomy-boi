@@ -74,13 +74,12 @@ export class CombatDeckComponent implements OnInit{
         this.toFlip = true;
       }, 500);
 
-      this.deck.shuffleMe = this.activeCard.shuffle;
+      this.deck.shuffleMe = this.deck.shuffleMe || this.activeCard.shuffle;
     }
 
     private newRound() {
       if (this.deck.shuffleMe) {
         this.shuffle();
       }
-      this.flip();
     }
 }
