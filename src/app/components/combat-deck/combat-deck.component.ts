@@ -78,7 +78,6 @@ export class CombatDeckComponent implements OnInit{
     private newRound() {
       if (this.deck.shuffleMe) {
         this.shuffle();
-        this.deck.shuffleMe = false;
       }
     }
 }

@@ -67,7 +67,6 @@ export class MonsterDeckComponent implements OnInit {
   private newRound() {
     if (this.deck.shuffleMe) {
       this.shuffle();
-      this.deck.shuffleMe = false;
     }
     this.flip();
   }

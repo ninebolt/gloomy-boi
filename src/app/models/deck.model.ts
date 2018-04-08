@@ -40,6 +40,7 @@ export class Deck {
       [tempDeck[i], tempDeck[j]] = [tempDeck[j], tempDeck[i]];
     }
     tempDeck.forEach(card => card.discardMe = false);
+    this.shuffleMe = false;
     this.cards = tempDeck;
   }
 }
