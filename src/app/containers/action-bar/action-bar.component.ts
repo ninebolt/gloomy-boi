@@ -27,12 +27,12 @@ export class ActionBarComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-    this.retrieve.getMonsterNames()
+    this.retrieve.getCharacterNames('monster')
       .subscribe((monster) => {
         this.monsters.push(monster);
       });
 
-    this.retrieve.getPlayableClassNames()
+    this.retrieve.getCharacterNames('player')
       .subscribe((playableClass) => {
         this.players.push(playableClass);
       })
