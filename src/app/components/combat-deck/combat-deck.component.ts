@@ -1,4 +1,5 @@
 import { Component, OnInit, Input, OnChanges } from '@angular/core';
+import { Observable } from 'rxjs/Observable';
 
 import { CombatDeck } from "../../models/deck.model";
 import { Card, CombatCard } from '../../models/card.model';
@@ -19,18 +20,19 @@ import { Card, CombatCard } from '../../models/card.model';
 
 export class CombatDeckComponent implements OnInit{
 
+    @Input() newRoundListener$: Observable<any>;
+
     deck: CombatDeck;
     private activeCard: CombatCard;
     private toFlip: boolean;
-
-    constructor() {
-      // Create blank card to squash errors
+  
+    ngOnInit() {
       this.activeCard = new CombatCard(null, '');
+      this.newRoundListener$
+        .subscribe(() => {
+          this.newRound();
+        });
     }
-
-    ngOnInit() {}
-
-    ngOnChanges() {}
 
     shuffle() {
       this.deck.shuffle();

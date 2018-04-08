@@ -12,7 +12,7 @@ import { RetrievalService } from '../../services/retrieval.service';
       <div class="action-buttons">
         <action-button placeholder="Search Classes" [searchTerms]="players" (selected)="playerSearched($event)">Add Player</action-button>
         <action-button placeholder="Search Monsters" [searchTerms]="monsters" (selected)="monsterSearched($event)">Add Monster</action-button>
-        <button>New Round</button>
+        <button (click)="triggerNewRound()">New Round</button>
       </div>
     </div>
   `
@@ -23,6 +23,7 @@ export class ActionBarComponent implements OnInit {
   monsters: string[] = [];
   @Output('monsterSearched') monsterEmitter: EventEmitter<string> = new EventEmitter();
   @Output('playerSearched') playerEmitter: EventEmitter<string> = new EventEmitter();
+  @Output() newRound: EventEmitter<any> = new EventEmitter();
 
   constructor (
     private retrieve: RetrievalService
@@ -46,5 +47,9 @@ export class ActionBarComponent implements OnInit {
 
   playerSearched(name: string) {
     this.playerEmitter.emit(name);
+  }
+
+  triggerNewRound() {
+    this.newRound.emit();
   }
 }

@@ -1,4 +1,6 @@
 import { Component, OnInit, Input, ViewChild } from '@angular/core';
+import { Observable } from 'rxjs/Observable';
+
 import { CombatDeck } from '../../models/deck.model';
 import { CombatCard } from '../../models/card.model';
 
@@ -12,7 +14,7 @@ import 'rxjs/add/operator/map';
   styleUrls: ['combat-band.component.scss'],
   template: `
     <div class="combat-band">
-      <combat-deck></combat-deck>
+      <combat-deck [newRoundListener$]="newRoundListener$"></combat-deck>
       <div class="actions">
         <div class="icon curse" (click)="addTempCard('curse')"></div>
         <div class="icon bless" (click)="addTempCard('bless')"></div>
@@ -25,6 +27,7 @@ import 'rxjs/add/operator/map';
 })
 export class CombatBandComponent implements OnInit {
 
+  @Input() newRoundListener$: Observable<any>;
   @ViewChild(CombatDeckComponent) combatDeck: CombatDeckComponent;
 
   constructor(private combatCardService: CombatCardService) { }

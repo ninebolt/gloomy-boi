@@ -39,6 +39,7 @@ export interface CharacterInitative {
   name: string;
   initative: number;
   image: string;
+  type: string;
 }
 
 export interface Stats {

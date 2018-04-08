@@ -1,4 +1,5 @@
 import { Component, Input, Output, EventEmitter, ViewChild } from '@angular/core';
+import { Observable } from 'rxjs/Observable';
 
 import { MonsterDeckComponent} from '../../components/monster-deck/monster-deck.component';
 
@@ -16,7 +17,7 @@ import { RetrievalService } from '../../services/retrieval.service';
   template: `
     <div class="monster-band">
       <div class="monster-deck">
-        <monster-deck *ngIf="monsterDeckCreated" [deck]="monster.deck"></monster-deck>
+        <monster-deck *ngIf="monsterDeckCreated" [deck]="monster.deck" [newRoundListener$]="newRoundListener$"></monster-deck>
       </div>
       <div class="monster-healths">
         <monster-health *ngFor="let m of monster.entities | orderBy:'id'; let i = index;" [monster]="m" [image]="monster.image" (healthDepleted)="removeMonster($event)"></monster-health>
@@ -27,6 +28,7 @@ import { RetrievalService } from '../../services/retrieval.service';
 export class MonsterBandComponent {
 
   @Input() monster: Monster;
+  @Input() newRoundListener$: Observable<any>;
   @Output() destroyMonster: EventEmitter<string> = new EventEmitter();
 
   monsterDeckCreated: boolean = false;

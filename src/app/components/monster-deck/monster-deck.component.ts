@@ -1,4 +1,5 @@
 import { Component, OnInit, Input, OnChanges, ViewChild, ElementRef } from '@angular/core';
+import { Observable } from 'rxjs/Observable';
 
 import { MonsterDeck } from "../../models/deck.model";
 import { MonsterCard } from '../../models/card.model';
@@ -27,16 +28,19 @@ import { MonsterCard } from '../../models/card.model';
 export class MonsterDeckComponent implements OnInit {
 
   @Input() deck: MonsterDeck;
+  @Input() newRoundListener$: Observable<any>;
 
   @ViewChild('cardlines') cardLines: ElementRef;
 
   private activeCard: MonsterCard;
   private toFlip: boolean;
 
-  constructor() { }
-
   ngOnInit() {
     this.shuffle();
+    this.newRoundListener$
+      .subscribe(() => {
+        this.newRound();
+      });
   }
 
   ngOnChanges() { }

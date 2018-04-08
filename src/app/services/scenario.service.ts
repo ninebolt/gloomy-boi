@@ -101,8 +101,8 @@ export class ScenarioService {
 
   updateInitatives() {
     const initatives: CharacterInitative[] = [];
-    this.scenarioState.monsters.forEach((m) => initatives.push({ name: m.name, initative: m.initative, image: m.image }));
-    this.scenarioState.players.forEach((p) => initatives.push({ name: p.name, initative: p.initative, image: p.image }));
+    this.scenarioState.monsters.forEach((m) => initatives.push({ name: m.name, initative: m.initative, image: m.image, type: 'monster' }));
+    this.scenarioState.players.forEach((p) => initatives.push({ name: p.name, initative: p.initative, image: p.image, type: 'player' }));
     this.initativeSubject.next(initatives);
   }
 

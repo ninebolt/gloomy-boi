@@ -1,6 +1,6 @@
 .container {
   display: grid;
-  grid-template-rows: 50px 393px auto;
+  grid-template-rows: 50px auto 1fr;
   grid-template-columns: 12rem auto;
   grid-template-areas:
     "action-bar action-bar"
@@ -22,6 +22,7 @@
     grid-area: monster-band;
     display: flex;
     flex-direction: column;
+    overflow-y: scroll;
   }
 
   .combat-band {
