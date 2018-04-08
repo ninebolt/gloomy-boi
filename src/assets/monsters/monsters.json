@@ -33,22 +33,5 @@
     {"name": "Vermling Scout", "maxAllowed": 10, "type": "monster", "image": "assets/monsters/hexes/vermling-scout.png"},
     {"name": "Vermling Shaman", "maxAllowed": 6, "type": "monster", "image": "assets/monsters/hexes/vermling-shaman.png"},
     {"name": "Vicious Drake", "maxAllowed": 6, "type": "monster", "image": "assets/monsters/hexes/vicious-drake.png"},
-    {"name": "Wind Demon", "maxAllowed": 6, "type": "monster", "image": "assets/monsters/hexes/wind-demon.png"},
-    { "name": "Brute", "type": "player", "image": "/assets/character-icons/brute.png" },
-    { "name": "Cragheart", "type": "player", "image": "/assets/character-icons/cragheart.png" },
-    { "name": "Mindthief", "type": "player", "image": "/assets/character-icons/mindthief.png" },
-    { "name": "Scoundrel", "type": "player", "image": "/assets/character-icons/scoundrel.png" },
-    { "name": "Spellweaver", "type": "player", "image": "/assets/character-icons/spellweaver.png" },
-    { "name": "Tinkerer", "type": "player", "image": "/assets/character-icons/tinkerer.png" },
-    { "name": "Circle", "type": "player", "image": "/assets/character-icons/circle.png" },
-    { "name": "Cocentric Circles", "type": "player", "image": "/assets/character-icons/cocentric-circles.png" },
-    { "name": "Dragon", "type": "player", "image": "/assets/character-icons/dragon.png" },
-    { "name": "Face", "type": "player", "image": "/assets/character-icons/face.png" },
-    { "name": "Kthulu", "type": "player", "image": "/assets/character-icons/kthulu.png" },
-    { "name": "Lightning Bolts", "type": "player", "image": "/assets/character-icons/lightning.png" },
-    { "name": "Music Note", "type": "player", "image": "/assets/character-icons/music.png" },
-    { "name": "Saw", "type": "player", "image": "/assets/character-icons/saw.png" },
-    { "name": "Spear", "type": "player", "image": "/assets/character-icons/spear.png" },
-    { "name": "Triforce", "type": "player", "image": "/assets/character-icons/triforce.png" },
-    { "name": "Wheel", "type": "player", "image": "/assets/character-icons/wheel.png" }
+    {"name": "Wind Demon", "maxAllowed": 6, "type": "monster", "image": "assets/monsters/hexes/wind-demon.png"}
   ]

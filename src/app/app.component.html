@@ -1,11 +1,13 @@
 <div class="container">
   <div class="action-bar">
-    <action-bar></action-bar>
+    <action-bar (monsterSearched)="monsterSearched($event)" (playerSearched)="addPlayer($event)"></action-bar>
   </div>
   <div class="initative-band">
+    <initative-tracker [characters]="initatives"></initative-tracker>
   </div>
   <div class="monster-band">
+    <monster-band [monsters]="monsters"></monster-band>
   </div>
 
-  <monster-modal></monster-modal>
+  <monster-modal *ngIf="modalVisible" [monster]="currentMonster" (addMonsters)="addMonsters($event)"></monster-modal>
 </div>

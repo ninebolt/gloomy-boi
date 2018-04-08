@@ -17,7 +17,7 @@ export class ActionButtonComponent {
   @Input() placeholder = '';
   @Input('searchTerms') searchTerms: string[];
 
-  @Output() characterEmitter: EventEmitter<Character> = new EventEmitter();
+  @Output('selected') characterEmitter: EventEmitter<Character> = new EventEmitter();
 
   selected = false;
 

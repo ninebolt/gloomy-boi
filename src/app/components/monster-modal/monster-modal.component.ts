@@ -1,66 +1,72 @@
-import { Component, OnInit, Input } from '@angular/core';
-import { FormBuilder, Validators } from '@angular/forms';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import { Monster, NewMonster } from '../../models/state.model';
 
 @Component({
   selector: 'monster-modal',
   styleUrls: ['monster-modal.component.scss'],
   template: `
-    <div class="monster-modal">
+    <div class="monster-modal" *ngIf="monster">
       <div class="monster-info">
         <div class="monster-name">
-          <strong>Monster:</strong> {{ name }}
+          <strong>Monster:</strong> {{ monster.name }}
         </div>
         <div class="monster-level">
           <strong>Level:</strong>
-          <input [(ngModel)]="level" type="number" min="0" max="7"/>
+          <input [(ngModel)]="monster.level" type="number" min="0" max="7"/>
         </div>
       </div>
-      <div class="monster-adder">
-        <div *ngFor="let i of potentialMonsters">
-          Hi
+      <div class="monster-list">
+        <div class="monster-row" *ngFor="let m of monsterList" [ngClass]="{ 'disabled' : m.disabled}">
+          <span>ID {{ m.id }}</span>
+          <div class="monster-buttons">
+            <div>
+              <input [(ngModel)]="m.status" [disabled]="m.disabled" type="radio" [name]="m.id" [id]="m.id + 'dead'" value="dead">
+              <label [for]="m.id + 'dead'">Dead</label>
+            </div>
+            <div>
+              <input [(ngModel)]="m.status" [disabled]="m.disabled" type="radio" [name]="m.id" [id]="m.id + 'normal'" value="normal">
+              <label [for]="m.id + 'normal'">Normal</label>
+            </div>
+            <div>
+              <input [(ngModel)]="m.status" [disabled]="m.disabled" type="radio" [name]="m.id" [id]="m.id + 'elite'" value="elite">
+              <label [for]="m.id + 'elite'" class="elite">Elite</label>
+            </div>
+          </div>
         </div>
+      </div>
+      <div class="buttons">
+        <button (click)="addMonster()">Add/Update Monsters</button>
       </div>
     </div>
   `
 })
 export class MonsterModalComponent implements OnInit {
 
-  @Input() name: string = 'Bandit Archer';
-  @Input() level: number;
-  @Input() maxAllowed: number = 5;
-
-  potentialMonsters: number[];
-  monsterType: string = 'normal';
-  monsters: any[] = [];
-
-  monsterForm = this.fb.group({
-    monsterNumber: [0, Validators.required],
-    monsterType: ['', Validators.required]
-  });
-
-  constructor (
-    private fb: FormBuilder
-  ) { }
+  @Input() monster: Monster;
+  @Output() addMonsters: EventEmitter<NewMonster[]> = new EventEmitter();
+  monsterList: NewMonster[] = [];
 
   ngOnInit() {
-    if (!this.level) {
-      this.level = 0;
+    this.populateMonsterList(this.monster);
+    if (!this.monster.level) {
+      this.monster.level = 1;
     }
-    this.potentialMonsters = Array.apply(null, {length: this.maxAllowed}).map(Function.call, Number);
-    this.monsterForm.patchValue({ 'monsterNumber': 1 });
-    this.monsterForm.patchValue({ 'monsterType': 'normal' });
   }
 
-  changeMonsterType(e: boolean) {
-    this.monsterType = e ? 'elite' : 'normal';
-    this.monsterForm.patchValue({ 'monsterType': this.monsterType });
+  populateMonsterList(monster: Monster) {
+    for (var i = 1; i <= monster.maxAllowed; i++) {
+      this.monsterList.push({ id: i, status: 'dead', disabled: false });
+    }
+    if (monster.entities) {
+      monster.entities.forEach((m) => {
+        this.monsterList[m.id - 1].status = m.isElite ? 'elite' : 'normal';
+        this.monsterList[m.id - 1].disabled = true;
+      });
+    }
   }
 
   addMonster() {
-    this.monsters.push(this.monsterForm.value());
-    this.monsterForm.patchValue({
-      'monsterNumber': 1,
-      'monsterType': 'normal'
-    });
+    this.monsterList = this.monsterList.filter((m) => m.disabled === false && m.status !== 'dead');
+    this.addMonsters.emit(this.monsterList);
   }
 }

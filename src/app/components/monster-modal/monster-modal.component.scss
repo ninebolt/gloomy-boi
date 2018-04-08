@@ -4,7 +4,8 @@
   left: 18.5%;
   z-index: 1050;
   width: 80%;
-  height: 80%;
+  height: fit-content;
+  max-height: 80%;
   margin-left: -10%;
 
   border: solid 1px #cccccc;
@@ -36,10 +37,35 @@
     }
   }
 
-  .monster-adder {
+  .monster-list {
+    padding: 20px 30px;
     display: flex;
-    align-items: center;
-    justify-content: center;
-    margin: 10px 5px;
+    flex-direction: column;
+
+    .monster-row {
+      display: flex;
+      align-items: space-evenly;
+
+      .monster-buttons {
+        display: flex;
+        flex-grow: 1;
+        justify-content: space-around;
+        align-items: center;
+      }
+
+      &.disabled {
+        background-color: rgba(153, 153, 153, 0.3);
+      }
+    }
   }
+
+  .buttons {
+    display: flex;
+    flex-direction: row-reverse;
+    padding: 0 30px 20px 0;
+  }
+}
+
+.elite {
+  color: gold;
 }

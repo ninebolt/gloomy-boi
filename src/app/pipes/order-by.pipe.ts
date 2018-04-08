@@ -8,9 +8,6 @@ export class OrderByPipe implements PipeTransform {
     if (!value || !args) {
       return value;
     }
-    if (!Object.keys(value[0]).includes(args)) {
-      return value;
-    }
 
     value.sort((a: any, b: any) => {
       if (a[args] > b[args]) {
