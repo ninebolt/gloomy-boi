@@ -26,6 +26,7 @@ export class AppComponent implements OnInit {
 
   ngOnInit() {
     this.scenario.initative$.subscribe((initatives) => this.initatives = initatives);
+    this.scenario.monsters$.subscribe((monsters) => this.monsters = monsters);
   }
 
   monsterSearched(name: string) {
@@ -34,11 +35,6 @@ export class AppComponent implements OnInit {
         this.currentMonster = monster;
         this.modalVisible = true;
       });
-
-    this.scenario.monsters$
-      .subscribe((monsters) => {
-        this.monsters = monsters;
-      });
   }
 
   addMonsters($event) {
@@ -46,6 +42,10 @@ export class AppComponent implements OnInit {
     if ($event.length > 0) {
       this.scenario.addMonster(this.currentMonster, $event);
     }
+  }
+
+  removeMonster($event) {
+    this.scenario.removeMonter($event);
   }
 
   addPlayer($event) {

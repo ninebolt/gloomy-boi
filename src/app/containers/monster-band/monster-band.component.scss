@@ -1,0 +1,30 @@
+.monster-band {
+  display: flex;
+  flex-wrap: nowrap;
+}
+
+.monster-deck {
+  margin-left: 20px;
+}
+
+.monster-healths {
+  padding: 0 10px 10px 10px;
+  margin-left: -20px;
+  display: flex;
+  flex-wrap: wrap;
+  flex-grow: 1;
+  height: fit-content;
+
+  monster-health {
+    margin: 10px 0;
+  }
+}
+
+.monster-attributes {
+  font-family: 'PirataOne';
+  font-size: 1.5em;
+
+  .h2 {
+    font-family: 'Nyala';
+  }
+}

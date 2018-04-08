@@ -1,5 +1,5 @@
 export class Card {
-    public faceUp: boolean = null;
+    public discardMe: boolean = false;
     constructor(public type: string, public shuffle?: boolean) {
     }
 }
@@ -17,7 +17,7 @@ export class MonsterCard extends Card {
 
 export class CombatCard extends Card {
     constructor(
-        public order: number,
+        public value: string,
         public icon: string,
         public discard?: boolean,
         public shuffle?: boolean) {

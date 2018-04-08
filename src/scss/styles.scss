@@ -1,8 +1,103 @@
 /* You can add global styles to this file, and also import other style files */
-@import '../assets/fonts/high-tower.ttf';
-@import '../assets/fonts/nyala.ttf';
-@import '../assets/fonts/pirata-one.ttf';
+@import "/_variables";
+
+@font-face {
+  font-family: 'HighTower';
+  src: url('../assets/fonts/high-tower.ttf');
+}
+
+@font-face {
+  font-family: 'Nyala';
+  src: url('../assets/fonts/nyala.ttf');
+}
+
+@font-face {
+  font-family: 'PirataOne';
+  src: url('../assets/fonts/pirata-one.ttf');
+}
 
 body {
   margin: 0;
+}
+
+.x1 {
+  font-size: 1.4em;
+  font-family: 'Nyala';
+}
+
+.x2 {
+  font-size: 0.9em;
+  font-family: 'Nyala';
+}
+
+.elite {
+  color: gold;
+}
+
+.icon {
+  width: 1.3em;
+  height: 1.3em;
+  top: 0.3em;
+  position: relative;
+
+  &-element {
+    width: 1.5em;
+    height: 1.5em;
+    top: 0.3em;
+    position: relative;
+  }
+}
+
+.consume {
+  margin-left: -1.5em;
+  z-index: 1;
+}
+
+.aoe {
+  width: 4.0em;
+  height: 4.0em;
+}
+
+
+@keyframes flipToFront {
+  0% {
+    transform: translate(0px, 0px) rotateX( 0deg );
+  }
+  50% {
+    transform: translate(10px, 50px) rotateX( 90deg );
+  }
+  100% {
+    transform: translate(10px, -10px) rotateX( 180deg );
+  }
+}
+
+@keyframes sendToBack {
+  0% {
+    transform: translate(0px, 0px) rotateX( 180deg );
+    z-index: 1;
+  }
+  50% {
+    transform: translate(150px, 0px) rotateX( 60deg );
+    z-index: 0;
+  }
+  75% {
+    transform: rotateX( 0deg );
+    z-index: 0;
+  }
+  100% {
+    transform: translate(0px, 0px) rotateX( 0deg );
+    z-index: 0;
+  }
+}
+
+@keyframes shuffle {
+  0% {
+      transform: rotateZ( 0 );
+  }
+  50% {
+      transform: rotateZ( 5deg );
+  }
+  100% {
+      transform: rotateZ( 0 );
+  }
 }

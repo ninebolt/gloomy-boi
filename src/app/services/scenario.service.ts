@@ -46,8 +46,18 @@ export class ScenarioService {
           m.entities = [];
         }
         m.entities.push(...this.createMonsterEntities(newMonsters, stats.normalStats, stats.eliteStats));
+        m.entities = this.sortMonsterEntities(m.entities);
         this.updateScenarioWithMonster(m);
       });
+  }
+
+  removeMonter(name: string) {
+    const monsterIndex = this.findCharacterIndex(name, 'monsters');
+    if (monsterIndex !== -1) {
+      this.scenarioState.monsters.splice(monsterIndex, 1);
+      this.monsterSubject.next(this.scenarioState.monsters);
+      this.updateInitatives();
+    }
   }
 
   getMonster(name: string) {
@@ -68,6 +78,19 @@ export class ScenarioService {
       }
     });
     return e;
+  }
+
+  sortMonsterEntities(entities: Entity[]): Entity[] {
+    entities.sort((a: any, b: any) => {
+      if (a.id > b.id) {
+        return 1;
+      } else if (a.id < b.id) {
+        return -1;
+      } else {
+        return 0;
+      }
+    });
+    return entities;
   }
 
   findCharacterIndex(name: string, type: string) {

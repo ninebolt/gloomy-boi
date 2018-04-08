@@ -6,7 +6,7 @@
     <initative-tracker [characters]="initatives"></initative-tracker>
   </div>
   <div class="monster-band">
-    <monster-band [monsters]="monsters"></monster-band>
+    <monster-band *ngFor="let m of monsters" [monster]="m" (destroyMonster)="removeMonster($event)"></monster-band>
   </div>
 
   <monster-modal *ngIf="modalVisible" [monster]="currentMonster" (addMonsters)="addMonsters($event)"></monster-modal>

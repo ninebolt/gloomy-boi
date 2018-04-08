@@ -1,19 +1,19 @@
-import { Component, Input, Output, OnInit } from '@angular/core';
-import { DomSanitizer, SafeStyle } from "@angular/platform-browser";
+import { Component, Input, Output, EventEmitter } from '@angular/core';
 
 import { Monster } from '../../models/character.model';
+import { Entity } from '../../models/state.model';
 
 @Component({
   selector: 'monster-health',
   styleUrls: ['monster-health.component.scss'],
   template: `
     <div class="health-wrapper">
-      <div class="monster-id">{{ monster.id }}</div>
+      <div class="monster-id" [ngClass]="{ 'elite': monster.isElite }">{{ monster.id }}</div>
       <div class="monster-image">
-        <img [src]="monster.image" />
+        <img [src]="image" />
       </div>
       <div class="health">
-        <span class="current-health">{{ monster.health }}</span>
+        <span class="current-health">{{ monster.currentHealth }}</span>
         <div class="health-buttons">
           <span class="button top" (click)="addHealth()">+</span>
           <span class="button bottom" (click)="subtractHealth()">-</span>
@@ -33,24 +33,22 @@ import { Monster } from '../../models/character.model';
   `
 })
 
-export class MonsterHealthComponent implements OnInit {
-  @Input()
-  monster: Monster;
+export class MonsterHealthComponent {
 
-  constructor(private sanitizer: DomSanitizer) {
-  }
+  @Input() monster: Entity;
+  @Input() image: string;
 
-  ngOnInit() { }
+  @Output() healthDepleted: EventEmitter<any> = new EventEmitter();
 
   addHealth() {
-    this.monster.health++;
+    this.monster.currentHealth++;
   }
 
   subtractHealth() {
-    if (this.monster.health === 1) {
-
+    if (this.monster.currentHealth === 1) {
+      this.healthDepleted.emit(this.monster.id);
     } else {
-      this.monster.health--;
+      this.monster.currentHealth--;
     }
   }
 
