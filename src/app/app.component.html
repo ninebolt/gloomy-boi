@@ -9,7 +9,7 @@
     <combat-band [newRoundListener$]="newRound$"></combat-band>
   </div>
   <div class="monster-band">
-    <monster-band *ngFor="let m of monsters" [monster]="m" (destroyMonster)="removeMonster($event)" [newRoundListener$]="newRound$"></monster-band>
+    <monster-band *ngFor="let m of monsters" [monster]="m" (destroyMonster)="removeMonster($event)" [newRoundListener$]="newRound$" (initative)="initativeChange($event, m.name)"></monster-band>
   </div>
 
   <monster-modal *ngIf="modalVisible" [monster]="currentMonster" (addMonsters)="addMonsters($event)" ></monster-modal>

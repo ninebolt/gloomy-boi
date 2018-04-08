@@ -84,4 +84,13 @@ export class AppComponent implements OnInit {
       return includes;
     });
   }
+
+  initativeChange(initative: number, monsterName: string) {
+    const index = this.initatives.findIndex((initative) => {
+      return initative.name === monsterName;
+    });
+    if (index !== -1) {
+      this.initatives[index].initative = initative;
+    }
+  }
 }

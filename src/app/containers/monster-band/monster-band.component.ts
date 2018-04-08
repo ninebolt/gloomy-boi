@@ -17,7 +17,7 @@ import { RetrievalService } from '../../services/retrieval.service';
   template: `
     <div class="monster-band">
       <div class="monster-deck">
-        <monster-deck *ngIf="monsterDeckCreated" [deck]="monster.deck" [newRoundListener$]="newRoundListener$"></monster-deck>
+        <monster-deck *ngIf="monsterDeckCreated" [deck]="monster.deck" [newRoundListener$]="newRoundListener$" (initative)="initativeChange($event)"></monster-deck>
       </div>
       <div class="monster-healths">
         <monster-health *ngFor="let m of monster.entities | orderBy:'id'; let i = index;" [monster]="m" [image]="monster.image" (healthDepleted)="removeMonster($event)"></monster-health>
@@ -30,6 +30,7 @@ export class MonsterBandComponent {
   @Input() monster: Monster;
   @Input() newRoundListener$: Observable<any>;
   @Output() destroyMonster: EventEmitter<string> = new EventEmitter();
+  @Output() initative: EventEmitter<number> = new EventEmitter();
 
   monsterDeckCreated: boolean = false;
   attributes: string[] = [];
@@ -67,5 +68,9 @@ export class MonsterBandComponent {
         this.destroyMonster.emit(this.monster.name);
       }
     }, 100);
+  }
+
+  initativeChange(initative: number) {
+    this.initative.emit(initative);
   }
 }

@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, OnChanges, ViewChild, ElementRef } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter, ViewChild, ElementRef } from '@angular/core';
 import { Observable } from 'rxjs/Observable';
 
 import { MonsterDeck } from "../../models/deck.model";
@@ -29,6 +29,7 @@ export class MonsterDeckComponent implements OnInit {
 
   @Input() deck: MonsterDeck;
   @Input() newRoundListener$: Observable<any>;
+  @Output() initative: EventEmitter<number> = new EventEmitter();
 
   @ViewChild('cardlines') cardLines: ElementRef;
 
@@ -58,11 +59,11 @@ export class MonsterDeckComponent implements OnInit {
     setTimeout(() => {
       this.activeCard = this.deck.drawCard() as MonsterCard;
       this.cardLines.nativeElement.innerHTML = "";
-      console.log(this.activeCard);
       this.activeCard.content.forEach(line => {
         this.cardLines.nativeElement.insertAdjacentHTML('beforeend', line);
       });
       this.toFlip = true;
+      this.initative.emit(this.activeCard.initiative);
     }, 500);
 
     this.deck.shuffleMe = this.deck.shuffleMe || this.activeCard.shuffle;
