@@ -33,8 +33,8 @@ export class MonsterDeckComponent implements OnInit {
 
   @ViewChild('cardlines') cardLines: ElementRef;
 
-  private activeCard: MonsterCard;
-  private toFlip: boolean;
+  activeCard: MonsterCard;
+  toFlip: boolean;
 
   ngOnInit() {
     this.shuffle();
@@ -52,7 +52,7 @@ export class MonsterDeckComponent implements OnInit {
     this.toFlip = false;
   }
 
-  private flip() {
+  flip() {
     // Flip over previous card, show current one
     this.toFlip = false;
 
@@ -69,7 +69,7 @@ export class MonsterDeckComponent implements OnInit {
     this.deck.shuffleMe = this.deck.shuffleMe || this.activeCard.shuffle;
   }
 
-  private newRound() {
+  newRound() {
     if (this.deck.shuffleMe) {
       this.shuffle();
     }

@@ -1,7 +1,7 @@
 import { Card, MonsterCard, CombatCard } from "./card.model"
 
 export class Deck {
-  private discardPile: Card[];
+  discardPile: Card[];
 
   public shuffleMe: boolean;
 

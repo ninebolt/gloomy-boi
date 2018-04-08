@@ -37,19 +37,19 @@ export class CombatBandComponent implements OnInit {
     this.combatDeck.shuffle();
   }
 
-  private addTempCard(type) {
+  addTempCard(type) {
     type === 'curse' ? this.combatDeck.deck.addCurse() : this.combatDeck.deck.addBless();
   }
 
-  private shuffleDeck() {
+  shuffleDeck() {
     this.combatDeck.shuffle();
   }
 
-  private drawTwo() {
+  drawTwo() {
     this.combatDeck.drawTwo();
   }
 
-  private resetDeck() {
+  resetDeck() {
     this.combatDeck.resetDeck();
   }
 

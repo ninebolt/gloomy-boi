@@ -19,7 +19,7 @@ export class CombatCardComponent {
 
   constructor() {}
 
-  private getCardValue() {
+  getCardValue() {
     return this.card.value;
   }
 

@@ -23,8 +23,8 @@ export class CombatDeckComponent implements OnInit{
     @Input() newRoundListener$: Observable<any>;
 
     deck: CombatDeck;
-    private activeCard: CombatCard;
-    private toFlip: boolean;
+    activeCard: CombatCard;
+    toFlip: boolean;
   
     ngOnInit() {
       this.activeCard = new CombatCard(null, '');
@@ -62,7 +62,7 @@ export class CombatDeckComponent implements OnInit{
       this.shuffle();
     }
 
-    private flip() {
+    flip() {
       // Flip over previous card, show current one
       this.toFlip = false;
       if (['curse', 'bless'].includes(this.activeCard.value)) {
@@ -77,7 +77,7 @@ export class CombatDeckComponent implements OnInit{
       this.deck.shuffleMe = this.deck.shuffleMe || this.activeCard.shuffle;
     }
 
-    private newRound() {
+    newRound() {
       if (this.deck.shuffleMe) {
         this.shuffle();
       }
