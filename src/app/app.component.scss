@@ -4,7 +4,7 @@
   grid-template-columns: 12rem auto;
   grid-template-areas:
     "action-bar action-bar"
-    "initative-band monster-band"
+    "initative-band combat-band"
     "initative-band monster-band";
   height: 100vh;
 
@@ -24,7 +24,9 @@
     flex-direction: column;
   }
 
-  monster-modal {
-    position: absolute;
+  .combat-band {
+    grid-area: combat-band;
+    display: flex;
+    flex-direction: column;
   }
 }

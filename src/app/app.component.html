@@ -5,6 +5,9 @@
   <div class="initative-band">
     <initative-tracker [characters]="initatives"></initative-tracker>
   </div>
+  <div class="combat-band">
+    <combat-band></combat-band>
+  </div>
   <div class="monster-band">
     <monster-band *ngFor="let m of monsters" [monster]="m" (destroyMonster)="removeMonster($event)"></monster-band>
   </div>

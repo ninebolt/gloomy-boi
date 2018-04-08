@@ -17,6 +17,9 @@ import { HealthTrackerComponent } from './containers/health-tracker/health-track
 import { MonsterHealthComponent } from './components/monster-health/monster-health.component';
 import { MonsterBandComponent } from './containers/monster-band/monster-band.component';
 import { MonsterDeckComponent } from './components/monster-deck/monster-deck.component';
+import { CombatBandComponent } from './containers/combat-band/combat-band.component';
+import { CombatDeckComponent } from './components/combat-deck/combat-deck.component';
+import { CombatCardComponent } from './components/combat-card/combat-card.component';
 
 import { FilterPipe } from './pipes/filter.pipe';
 import { OrderByPipe } from './pipes/order-by.pipe';
@@ -25,6 +28,7 @@ import { LineParserService } from './services/line-parser.service';
 import { RetrievalService } from './services/retrieval.service';
 import { ScenarioService } from './services/scenario.service';
 import { MonsterCardService } from './services/monster-card.service';
+import { CombatCardService } from './services/combat-card.service';
 
 @NgModule({
   declarations: [
@@ -37,6 +41,9 @@ import { MonsterCardService } from './services/monster-card.service';
     MonsterCardComponent,
     MonsterDeckComponent,
     MonsterCardComponent,
+    CombatBandComponent,
+    CombatDeckComponent,
+    CombatCardComponent,
     ActionButtonComponent,
     SearchDropdownComponent,
     HealthTrackerComponent,
@@ -55,7 +62,8 @@ import { MonsterCardService } from './services/monster-card.service';
     LineParserService,
     RetrievalService,
     ScenarioService,
-    MonsterCardService
+    MonsterCardService,
+    CombatCardService
   ],
   bootstrap: [AppComponent]
 })
