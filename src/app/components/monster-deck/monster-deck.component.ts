@@ -44,8 +44,6 @@ export class MonsterDeckComponent implements OnInit {
       });
   }
 
-  ngOnChanges() { }
-
   shuffle() {
     this.deck.shuffle();
     this.activeCard = this.deck.drawCard() as MonsterCard;

@@ -1,4 +1,4 @@
-import { Component, Input, Output, EventEmitter, ViewChild } from '@angular/core';
+import { Component, Input, Output, EventEmitter, OnInit } from '@angular/core';
 import { Observable } from 'rxjs/Observable';
 
 import { MonsterDeckComponent} from '../../components/monster-deck/monster-deck.component';
@@ -20,12 +20,18 @@ import { RetrievalService } from '../../services/retrieval.service';
         <monster-deck *ngIf="monsterDeckCreated" [deck]="monster.deck" [newRoundListener$]="newRoundListener$" (initative)="initativeChange($event)"></monster-deck>
       </div>
       <div class="monster-healths">
-        <monster-health *ngFor="let m of monster.entities | orderBy:'id'; let i = index;" [monster]="m" [image]="monster.image" (healthDepleted)="removeMonster($event)"></monster-health>
+        <div class="attributes" *ngIf="attributes">
+          <span class="title">Attributes:</span>
+          <span [innerHTML]="attributes"></span>
+        </div>
+        <div class="healths">
+          <monster-health *ngFor="let m of monster.entities | orderBy:'id'; let i = index;" [monster]="m" [image]="monster.image" (healthDepleted)="removeMonster($event)"></monster-health>
+        </div>
       </div>
     </div>
   `,
 })
-export class MonsterBandComponent {
+export class MonsterBandComponent implements OnInit {
 
   @Input() monster: Monster;
   @Input() newRoundListener$: Observable<any>;

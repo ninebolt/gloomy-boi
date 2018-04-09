@@ -55,6 +55,7 @@ export class ScenarioService {
     const monsterIndex = this.findCharacterIndex(name, 'monsters');
     if (monsterIndex !== -1) {
       this.scenarioState.monsters.splice(monsterIndex, 1);
+      console.log(this.scenarioState);
       this.monsterSubject.next(this.scenarioState.monsters);
       this.updateInitatives();
     }

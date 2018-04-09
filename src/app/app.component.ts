@@ -72,12 +72,16 @@ export class AppComponent implements OnInit {
 
   updateInitatives(newInitatives: CharacterInitative[]) {
     const current = [];
+    const newInit = []
     for (var i = 0; i < this.initatives.length; i++) {
       current.push(this.initatives[i].name);
     }
-    console.log(current.includes(newInitatives[0]));
+    for (var i = 0; i < newInitatives.length; i++) {
+      newInit.push(newInitatives[i].name);
+    }
     const filteredInitative = newInitatives.filter((c) => current.indexOf(c.name) === -1);
-    this.initatives = this.initatives.concat(filteredInitative);
+    const temp = this.initatives.concat(filteredInitative);
+    this.initatives = temp.filter((t) => newInit.indexOf(t.name) === -1);
     this.sortSubject.next();
   }
 

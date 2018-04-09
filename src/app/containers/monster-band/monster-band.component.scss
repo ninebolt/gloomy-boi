@@ -8,15 +8,26 @@
 }
 
 .monster-healths {
+
+  .attributes {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    background-color: rgba(157, 157, 157, 1);
+  }
+
   padding: 0 10px 10px 10px;
   margin-left: -20px;
   display: flex;
   flex-wrap: wrap;
+  flex-direction: column;
   flex-grow: 1;
   height: fit-content;
 
-  monster-health {
-    margin: 10px 0;
+  .healths {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
   }
 }
 
@@ -27,4 +38,8 @@
   .h2 {
     font-family: 'Nyala';
   }
+}
+
+monster-health {
+  margin: 10px 0;
 }
