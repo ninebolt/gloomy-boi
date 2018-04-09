@@ -62,11 +62,10 @@ export class MonsterDeckComponent implements OnInit {
       this.activeCard.content.forEach(line => {
         this.cardLines.nativeElement.insertAdjacentHTML('beforeend', line);
       });
+      this.deck.shuffleMe = this.deck.shuffleMe || this.activeCard.shuffle;
       this.toFlip = true;
       this.initative.emit(this.activeCard.initiative);
     }, 500);
-
-    this.deck.shuffleMe = this.deck.shuffleMe || this.activeCard.shuffle;
   }
 
   newRound() {
