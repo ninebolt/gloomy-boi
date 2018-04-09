@@ -25,7 +25,7 @@ export class CombatDeckComponent implements OnInit{
     deck: CombatDeck;
     activeCard: CombatCard;
     toFlip: boolean;
-  
+
     ngOnInit() {
       this.activeCard = new CombatCard(null, '');
       this.newRoundListener$
@@ -69,10 +69,9 @@ export class CombatDeckComponent implements OnInit{
 
       setTimeout(() => {
         this.activeCard = this.deck.drawCard() as CombatCard;
+        this.deck.shuffleMe = this.deck.shuffleMe || this.activeCard.shuffle;
         this.toFlip = true;
       }, 500);
-
-      this.deck.shuffleMe = this.deck.shuffleMe || this.activeCard.shuffle;
     }
 
     newRound() {
