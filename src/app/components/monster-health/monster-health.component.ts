@@ -12,7 +12,7 @@ import { Entity } from '../../models/state.model';
       <div class="monster-image">
         <img [src]="image" />
       </div>
-      <div class="health">
+      <div class="health" [ngClass]="{ 'elite': monster.isElite }">
         <span class="current-health">{{ monster.currentHealth }}</span>
         <div class="health-buttons">
           <span class="button top" (click)="addHealth()">+</span>

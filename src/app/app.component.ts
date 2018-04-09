@@ -24,15 +24,19 @@ export class AppComponent implements OnInit {
   newRoundSubject: Subject<any> = new Subject();
   newRound$: Observable<any>;
 
+  sortSubject: Subject<any> = new Subject();
+  sort$: Observable<any>;
+
   constructor(
     private scenario: ScenarioService,
     private retrieval: RetrievalService
   ) { }
 
   ngOnInit() {
-    this.scenario.initative$.subscribe((initatives) => this.initatives = this.updateInitatives(initatives));
+    this.scenario.initative$.subscribe((initatives) => this.updateInitatives(initatives));
     this.scenario.monsters$.subscribe((monsters) => this.monsters = monsters);
     this.newRound$ = this.newRoundSubject.asObservable();
+    this.sort$ = this.sortSubject.asObservable();
   }
 
   monsterSearched(name: string) {
@@ -62,14 +66,19 @@ export class AppComponent implements OnInit {
     this.newRoundSubject.next();
   }
 
-  updateInitatives(newInitatives: CharacterInitative[]): CharacterInitative[] {
+  closeModal() {
+    this.modalVisible = false;
+  }
+
+  updateInitatives(newInitatives: CharacterInitative[]) {
     const current = [];
     for (var i = 0; i < this.initatives.length; i++) {
       current.push(this.initatives[i].name);
     }
     console.log(current.includes(newInitatives[0]));
     const filteredInitative = newInitatives.filter((c) => current.indexOf(c.name) === -1);
-    return this.initatives.concat(filteredInitative);
+    this.initatives = this.initatives.concat(filteredInitative);
+    this.sortSubject.next();
   }
 
   checkIfInInitative(newInitatives: CharacterInitative[]): boolean {
@@ -92,5 +101,6 @@ export class AppComponent implements OnInit {
     if (index !== -1) {
       this.initatives[index].initative = initative;
     }
+    this.sortSubject.next();
   }
 }
