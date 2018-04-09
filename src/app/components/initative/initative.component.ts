@@ -9,6 +9,7 @@ import { CharacterInitative } from '../../models/state.model';
     <img class="icon" [ngClass]="character.type" [src]="character.image" />
     <span class="name">{{ character.name }}</span>
     <input class="initative" type="number" min="0" max="100" value="character.initative" [(ngModel)]="character.initative" (blur)="sortCards()" min="0" max="99" />
+    <img (click)="deleteCharacter()" class="delete" src="/assets/icons/cancel.png" />
   </div>
   `
 })
@@ -17,6 +18,7 @@ export class InitativeComponent implements OnInit {
   @Input() character: CharacterInitative;
 
   @Output() resort: EventEmitter<any> = new EventEmitter();
+  @Output() delete: EventEmitter<CharacterInitative> = new EventEmitter();
 
   ngOnInit() {
     if (!this.character.initative) {
@@ -33,5 +35,9 @@ export class InitativeComponent implements OnInit {
 
   sortCards() {
     this.resort.emit();
+  }
+
+  deleteCharacter() {
+    this.delete.emit(this.character);
   }
 }

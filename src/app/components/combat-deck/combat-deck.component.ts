@@ -50,8 +50,6 @@ export class CombatDeckComponent implements OnInit{
       card1 = this.deck.drawCard() as CombatCard;
       card2 = this.deck.drawCard() as CombatCard;
 
-      console.log(card1.value);
-      console.log(card2.value);
       this.toFlip = true;
 
       this.activeCard = this.deck.drawCard() as CombatCard;

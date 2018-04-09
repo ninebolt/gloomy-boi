@@ -3,7 +3,7 @@
     <action-bar (monsterSearched)="monsterSearched($event)" (playerSearched)="addPlayer($event)" (newRound)="newRound()"></action-bar>
   </div>
   <div class="initative-band">
-    <initative-tracker [characters]="initatives" [newRoundListener$]="newRound$" [sortListener$]="sort$"></initative-tracker>
+    <initative-tracker [characters]="initatives" [newRoundListener$]="newRound$" [sortListener$]="sort$" (delete)="deleteCharacter($event)"></initative-tracker>
   </div>
   <div class="combat-band">
     <combat-band [newRoundListener$]="newRound$"></combat-band>

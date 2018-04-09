@@ -90,19 +90,6 @@ export class AppComponent implements OnInit {
     return -1;
   }
 
-  // checkIfInInitative(newInitatives: CharacterInitative[]): boolean {
-  //   return this.initatives.some((initative) => {
-  //     var includes: boolean = false;
-  //     for (var i = 0; i < newInitatives.length; i++) {
-  //       if (initative.name === newInitatives[i].name) {
-  //         includes = true;
-  //         break;
-  //       }
-  //     }
-  //     return includes;
-  //   });
-  // }
-
   initativeChange(initative: number, monsterName: string) {
     const index = this.initatives.findIndex((initative) => {
       return initative.name === monsterName;
@@ -111,5 +98,13 @@ export class AppComponent implements OnInit {
       this.initatives[index].initative = initative;
     }
     this.sortSubject.next();
+  }
+
+  deleteCharacter(character: CharacterInitative) {
+    if (character.type === 'monster') {
+      this.scenario.removeMonter(character.name);
+    } else if (character.type === 'player') {
+      this.scenario.removePlayer(character.name);
+    }
   }
 }

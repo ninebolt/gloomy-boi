@@ -9,6 +9,8 @@
   padding: 5px 10px;
   border-bottom: solid 1px black;
 
+  position: relative;
+
   &:hover .icon {
     transform: scale(1.2);
   }
@@ -43,6 +45,14 @@
     border: solid 1px #eeeeee;
 
     padding: 3px 0;
+  }
+
+  .delete {
+    position: absolute;
+    right: 2px;
+    bottom: 2px;
+    z-index: 10;
+    cursor: pointer;
   }
 }
 

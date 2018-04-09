@@ -39,6 +39,14 @@ export class ScenarioService {
       });
   }
 
+  removePlayer(name: string) {
+    const playerIndex = this.findCharacterIndex(name, 'players');
+    if (playerIndex !== -1) {
+      this.scenarioState.players.splice(playerIndex, 1);
+      this.updateInitatives();
+    }
+  }
+
   addMonster(m: Monster, newMonsters: NewMonster[]) {
     this.r.getMonsterStats(m.name, m.level)
       .subscribe((stats) => {
@@ -55,7 +63,6 @@ export class ScenarioService {
     const monsterIndex = this.findCharacterIndex(name, 'monsters');
     if (monsterIndex !== -1) {
       this.scenarioState.monsters.splice(monsterIndex, 1);
-      console.log(this.scenarioState);
       this.monsterSubject.next(this.scenarioState.monsters);
       this.updateInitatives();
     }

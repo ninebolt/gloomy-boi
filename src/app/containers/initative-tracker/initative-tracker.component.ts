@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, OnInit, Output, EventEmitter } from '@angular/core';
 import { Observable } from 'rxjs/Observable';
 
 import { OrderByPipe } from '../../pipes/order-by.pipe';
@@ -10,7 +10,7 @@ import { CharacterInitative } from '../../models/state.model';
   template: `
     <div>
       <div *ngFor="let c of characters">
-        <initative [character]="c" (resort)="sortCards(100)"></initative>
+        <initative [character]="c" (resort)="sortCards(100)" (delete)="deleteCharacter($event)"></initative>
       </div>
     </div>
   `,
@@ -21,6 +21,8 @@ export class InitativeTrackerComponent implements OnInit {
   @Input() characters: CharacterInitative[];
   @Input() newRoundListener$: Observable<any>;
   @Input() sortListener$: Observable<any>;
+
+  @Output() delete: EventEmitter<CharacterInitative> = new EventEmitter();
 
   constructor(
     private orderByPipe: OrderByPipe,
@@ -47,5 +49,9 @@ export class InitativeTrackerComponent implements OnInit {
     setTimeout(() => {
       this.characters = this.orderByPipe.transform(this.characters, 'initative');
     }, timeout);
+  }
+
+  deleteCharacter(character: CharacterInitative) {
+    this.delete.emit(character);
   }
 }

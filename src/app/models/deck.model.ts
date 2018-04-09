@@ -21,7 +21,6 @@ export class Deck {
     }
     if (this.cards.length <= 0) {
       this.shuffle();
-      console.log("Out of cards; forcing reshuffle");
     }
     this.cards[0].discardMe = true;
     return this.cards[0];
