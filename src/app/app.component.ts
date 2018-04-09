@@ -71,32 +71,37 @@ export class AppComponent implements OnInit {
   }
 
   updateInitatives(newInitatives: CharacterInitative[]) {
-    const current = [];
-    const newInit = []
-    for (var i = 0; i < this.initatives.length; i++) {
-      current.push(this.initatives[i].name);
-    }
-    for (var i = 0; i < newInitatives.length; i++) {
-      newInit.push(newInitatives[i].name);
-    }
-    const filteredInitative = newInitatives.filter((c) => current.indexOf(c.name) === -1);
-    const temp = this.initatives.concat(filteredInitative);
-    this.initatives = temp.filter((t) => newInit.indexOf(t.name) === -1);
+    newInitatives.forEach((init) => {
+      const oldValue = this.getInitativeFromName(init.name, this.initatives);
+      if (oldValue !== -1) {
+        init.initative = oldValue;
+      }
+    });
+    this.initatives = newInitatives;
     this.sortSubject.next();
   }
 
-  checkIfInInitative(newInitatives: CharacterInitative[]): boolean {
-    return this.initatives.some((initative) => {
-      var includes: boolean = false;
-      for (var i = 0; i < newInitatives.length; i++) {
-        if (initative.name === newInitatives[i].name) {
-          includes = true;
-          break;
-        }
+  getInitativeFromName(name: string, initatives: CharacterInitative[]): number {
+    for (var i = 0; i < initatives.length; i++) {
+      if (initatives[i].name === name) {
+        return initatives[i].initative;
       }
-      return includes;
-    });
+    }
+    return -1;
   }
+
+  // checkIfInInitative(newInitatives: CharacterInitative[]): boolean {
+  //   return this.initatives.some((initative) => {
+  //     var includes: boolean = false;
+  //     for (var i = 0; i < newInitatives.length; i++) {
+  //       if (initative.name === newInitatives[i].name) {
+  //         includes = true;
+  //         break;
+  //       }
+  //     }
+  //     return includes;
+  //   });
+  // }
 
   initativeChange(initative: number, monsterName: string) {
     const index = this.initatives.findIndex((initative) => {
