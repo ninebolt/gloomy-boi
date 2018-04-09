@@ -36,6 +36,7 @@ import { Monster, NewMonster } from '../../models/state.model';
       </div>
       <div class="buttons">
         <button (click)="addMonster()">Add/Update Monsters</button>
+        <button class="cancel" (click)="cancel()">Cancel</button>
       </div>
     </div>
   `
@@ -44,6 +45,7 @@ export class MonsterModalComponent implements OnInit {
 
   @Input() monster: Monster;
   @Output() addMonsters: EventEmitter<NewMonster[]> = new EventEmitter();
+  @Output('cancel') cancelAction: EventEmitter<void> = new EventEmitter();
   monsterList: NewMonster[] = [];
 
   ngOnInit() {
@@ -68,5 +70,9 @@ export class MonsterModalComponent implements OnInit {
   addMonster() {
     this.monsterList = this.monsterList.filter((m) => m.disabled === false && m.status !== 'dead');
     this.addMonsters.emit(this.monsterList);
+  }
+
+  cancel() {
+    this.cancelAction.emit();
   }
 }

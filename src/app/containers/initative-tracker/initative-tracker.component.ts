@@ -20,6 +20,7 @@ export class InitativeTrackerComponent implements OnInit {
 
   @Input() characters: CharacterInitative[];
   @Input() newRoundListener$: Observable<any>;
+  @Input() sortListener$: Observable<any>;
 
   constructor(
     private orderByPipe: OrderByPipe,
@@ -32,9 +33,15 @@ export class InitativeTrackerComponent implements OnInit {
           if (c.type === 'player') {
             c.initative = 0;
           }
+          this.sortCards(100);
         })
       });
+    this.sortListener$
+      .subscribe(() => {
+        this.sortCards(100);
+      });
   }
+
 
   sortCards(timeout: number = 0) {
     setTimeout(() => {
