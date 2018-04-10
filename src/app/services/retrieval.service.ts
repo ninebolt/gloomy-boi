@@ -19,31 +19,31 @@ export class RetrievalService {
   ) { }
 
   getMonsterNames(): Observable<any> {
-    return this.http.get(`/assets/monsters/monsters.json`)
+    return this.http.get(`assets/monsters/monsters.json`)
       .mergeMap((response) => response as Monster[])
       .pipe(pluck('name'));
   }
 
   getMonsterInfo(name: string): Observable<any> {
-    return this.http.get(`/assets/monsters/monsters.json`)
+    return this.http.get(`assets/monsters/monsters.json`)
       .mergeMap((response) => response as Monster[])
       .filter((m) => m.name === name);
   }
 
   getMonsterStats(name: string, level: number): Observable<any> {
-    return this.http.get(`/assets/monsters/stats/level${level}.json`)
+    return this.http.get(`assets/monsters/stats/level${level}.json`)
       .map((response) => response['monsters'] as any[])
       .map((response) => response[name] as any[])
   }
 
   getPlayerNames(): Observable<any> {
-    return this.http.get(`/assets/players.json`)
+    return this.http.get(`assets/players.json`)
       .mergeMap((response) => response as Player[])
       .pipe(pluck('name'));
   }
 
   getPlayerInfo(name: string): Observable<any> {
-    return this.http.get(`/assets/players.json`)
+    return this.http.get(`assets/players.json`)
       .mergeMap((response) => response as Player[])
       .filter((p) => p.name === name);
   }
