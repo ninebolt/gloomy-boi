@@ -1,0 +1,64 @@
+.element-tracker {
+  display: grid;
+  grid-template-rows: 30px 1fr;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-areas:
+    "title title title"
+    "inert waning strong";
+
+  width: 390px;
+  height: 100%;
+  font-family: "PirataOne";
+
+  border: solid 1px #563928;
+}
+
+.title {
+  grid-area: title;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-bottom: solid 1px #563928;
+  background-color: rgba(100, 50, 47, 0.3);
+  font-size: 1.2rem;
+}
+
+.inert-elements {
+  grid-area: inert;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.waning-elements {
+  grid-area: waning;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  border-left: solid 1px #563928;
+  border-right: solid 1px #563928;
+}
+
+.strong-elements {
+  grid-area: strong;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.elements-list {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.element-container {
+  position: absolute;
+}
+
+.element {
+  max-width: 50px;
+  max-height: 50px;
+  position: absolute;
+}

@@ -27,7 +27,12 @@
   .combat-band {
     grid-area: combat-band;
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     border-bottom: solid 1px #eeeeee;
+
+    element-tracker {
+      margin-left: auto;
+      margin-right: 50px;
+    }
   }
 }

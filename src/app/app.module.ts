@@ -20,6 +20,8 @@ import { MonsterDeckComponent } from './components/monster-deck/monster-deck.com
 import { CombatBandComponent } from './containers/combat-band/combat-band.component';
 import { CombatDeckComponent } from './components/combat-deck/combat-deck.component';
 import { CombatCardComponent } from './components/combat-card/combat-card.component';
+import { ElementTrackerComponent } from './containers/element-tracker/element-tracker.component';
+import { ElementComponent } from './components/element/element.component';
 
 import { FilterPipe } from './pipes/filter.pipe';
 import { OrderByPipe } from './pipes/order-by.pipe';
@@ -48,6 +50,8 @@ import { CombatCardService } from './services/combat-card.service';
     SearchDropdownComponent,
     HealthTrackerComponent,
     MonsterHealthComponent,
+    ElementTrackerComponent,
+    ElementComponent,
     FilterPipe,
     OrderByPipe
   ],
