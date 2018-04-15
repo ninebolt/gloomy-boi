@@ -10,6 +10,7 @@ import { pluck } from 'rxjs/operators';
 
 import { SimpleCharacter } from '../models/character.model';
 import { Monster, Player } from '../models/state.model';
+import { Element } from '../models/element.model';
 
 @Injectable()
 export class RetrievalService {
@@ -46,5 +47,10 @@ export class RetrievalService {
     return this.http.get(`assets/players.json`)
       .mergeMap((response) => response as Player[])
       .filter((p) => p.name === name);
+  }
+
+  getElements(): Observable<Element[]> {
+    return this.http.get(`assets/elements/elements.json`)
+      .map((response) => response as Element[])
   }
 }

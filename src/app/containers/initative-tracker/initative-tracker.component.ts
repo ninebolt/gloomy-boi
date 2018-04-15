@@ -10,7 +10,7 @@ import { CharacterInitative } from '../../models/state.model';
   template: `
     <div>
       <div *ngFor="let c of characters">
-        <initative [character]="c" (resort)="sortCards(100)" (delete)="deleteCharacter($event)"></initative>
+        <initative [character]="c" (resort)="sortCards(150)" (delete)="deleteCharacter($event)"></initative>
       </div>
     </div>
   `,
@@ -32,9 +32,6 @@ export class InitativeTrackerComponent implements OnInit {
     this.newRoundListener$
       .subscribe(() => {
         this.characters.forEach((c) => {
-          if (c.type === 'player') {
-            c.initative = 0;
-          }
           this.sortCards(100);
         })
       });

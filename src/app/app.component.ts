@@ -16,7 +16,8 @@ import { RetrievalService } from './services/retrieval.service';
 
 export class AppComponent implements OnInit {
 
-  modalVisible = false;
+  monsterModalVisible = false;
+  playerModalVisible = false;
   currentMonster: Monster;
   initatives: CharacterInitative[] = [];
   monsters: Monster[] = [];
@@ -43,12 +44,12 @@ export class AppComponent implements OnInit {
     this.scenario.getMonster(name)
       .subscribe((monster) => {
         this.currentMonster = monster;
-        this.modalVisible = true;
+        this.monsterModalVisible = true;
       });
   }
 
   addMonsters($event) {
-    this.modalVisible = false;
+    this.monsterModalVisible = false;
     if ($event.length > 0) {
       this.scenario.addMonster(this.currentMonster, $event);
     }
@@ -63,11 +64,20 @@ export class AppComponent implements OnInit {
   }
 
   newRound() {
+    this.playerModalVisible = true;
+  }
+
+  continueNewRound() {
+    this.playerModalVisible = false;
     this.newRoundSubject.next();
   }
 
-  closeModal() {
-    this.modalVisible = false;
+  closeMonsterModal() {
+    this.monsterModalVisible = false;
+  }
+
+  closeInitativeModal() {
+    this.playerModalVisible = false;
   }
 
   updateInitatives(newInitatives: CharacterInitative[]) {
