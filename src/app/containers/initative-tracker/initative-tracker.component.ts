@@ -32,9 +32,6 @@ export class InitativeTrackerComponent implements OnInit {
     this.newRoundListener$
       .subscribe(() => {
         this.characters.forEach((c) => {
-          if (c.type === 'player') {
-            c.initative = 0;
-          }
           this.sortCards(100);
         })
       });
