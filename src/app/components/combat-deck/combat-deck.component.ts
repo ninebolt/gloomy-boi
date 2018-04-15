@@ -13,7 +13,10 @@ import { Card, CombatCard } from '../../models/card.model';
               'flipped flip-to-front': toFlip,
               'send-to-back': !toFlip
           }"
-          [card]="activeCard">
+          [card]="activeCard"
+          [showTwo]="showTwo"
+          [advOne]="card1"
+          [advTwo]="card2">
       </combat-card>
     `
 })
@@ -24,7 +27,10 @@ export class CombatDeckComponent implements OnInit{
 
     deck: CombatDeck;
     activeCard: CombatCard;
-    toFlip: boolean;
+    private toFlip: boolean;
+    private showTwo: boolean = false;
+    private card1: string;
+    private card2 : string;
 
     ngOnInit() {
       this.activeCard = new CombatCard(null, '');
@@ -37,6 +43,7 @@ export class CombatDeckComponent implements OnInit{
     shuffle() {
       this.deck.shuffle();
       this.toFlip = false;
+      this.showTwo = false;
 
       setTimeout(() => {
         this.activeCard = this.deck.drawCard() as CombatCard;
@@ -49,10 +56,14 @@ export class CombatDeckComponent implements OnInit{
       this.toFlip = false;
       card1 = this.deck.drawCard() as CombatCard;
       card2 = this.deck.drawCard() as CombatCard;
+      console.log(card1.value + ", " + card2.value);
+      this.card1 = card1.value;
+      this.card2 = card2.value;
+      this.showTwo = true;
 
       this.toFlip = true;
 
-      this.activeCard = this.deck.drawCard() as CombatCard;
+      // this.activeCard = this.deck.drawCard() as CombatCard;
     }
 
     resetDeck() {
@@ -63,6 +74,7 @@ export class CombatDeckComponent implements OnInit{
     flip() {
       // Flip over previous card, show current one
       this.toFlip = false;
+      this.showTwo = false;
       if (['curse', 'bless'].includes(this.activeCard.value)) {
         this.deck.removeCard(this.activeCard);
       }
