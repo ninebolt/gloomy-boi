@@ -7,13 +7,20 @@ import { Entity } from '../../models/state.model';
   selector: 'monster-health',
   styleUrls: ['monster-health.component.scss'],
   template: `
-    <div class="health-wrapper">
-      <div class="monster-id" [ngClass]="{ 'elite': monster.isElite }">{{ monster.id }}</div>
-      <div class="monster-image">
-        <img [src]="image" />
-      </div>
-      <div class="health" [ngClass]="{ 'elite': monster.isElite }">
-        <span class="current-health">{{ monster.currentHealth }}</span>
+    <div class="monster-health">
+      <div class="health-container" [ngClass]="{ 'elite': monster.isElite }">
+        <div class="monster-id">
+          <span><i class="fa fa-hashtag fa-2x" aria-hidden="true"></i></span>
+          <span>{{ monster.id }}</span>
+        </div>
+        <div class="health">
+          <span><i class="fa fa-heart fa-2x" aria-hidden="true"></i></span>
+          <span>{{ monster.currentHealth }}</span>
+        </div>
+        <div class="shield">
+          <span><i class="fa fa-shield fa-2x" aria-hidden="true"></i></span>
+          <span>{{ monster.shield }}</span>
+        </div>
         <div class="health-buttons">
           <span class="button top" (click)="addHealth()">+</span>
           <span class="button bottom" (click)="subtractHealth()">-</span>
