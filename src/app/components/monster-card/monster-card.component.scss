@@ -123,13 +123,10 @@
   }
 
   .shuffle {
-    grid-column-start: shuffle;
-    grid-column-end: span end-col;
-    grid-row-start: shuffle-row;
-    grid-row-end: span end-row;
     align-self: end;
-    position: relative;
-    top: -1em;
+    position: absolute;
+    top: 82%;
+    left: 89%;
     width: 2em;
     height: 2em;
   }

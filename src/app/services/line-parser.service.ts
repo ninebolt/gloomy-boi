@@ -23,8 +23,8 @@ export class LineParserService {
     ELEMENT: '<img class="icon-element" src="assets/elements/$element$.png">',
     STATUS: '$statusCap$ <img class="icon" src="assets/status/$status$.png">',
     $consume$: '<img class="icon-element consume" src="assets/elements/consume.png">',
-    $fly$: '<img src="assets/icons/fly.png">',
-    $jump$: '<img src="assets/icons/jump.png">'
+    $fly$: '<img class="icon" src="assets/icons/fly.png">',
+    $jump$: '<img class="icon" src="assets/icons/jump.png">'
   };
 
   constructor() { }
