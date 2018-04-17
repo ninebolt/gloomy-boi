@@ -1,32 +1,29 @@
-import { Component, Input, ElementRef, ChangeDetectorRef, AfterViewInit,
+import { Component, Input, ElementRef, ChangeDetectorRef, OnInit,
   ViewChild, Inject, Directive } from "@angular/core";
 import { TooltipDirective } from '../../directives/tooltip.directive';
 
-@Directive({
-  selector: '.tooltip-container'
-})
-export class TooltipContainerDirective {
-}
-
 @Component({
-  styles: ['tooltip.component.scss'],
+  styleUrls: ['tooltip.component.scss'],
   template: `
-    <div class="tooltip-container" [ngStyle]="{top: top}">
+    <div class="tooltip" [ngStyle]="{top: top, left: left}" #tooltipContainer>
       <ng-content></ng-content>
     </div>
   `
 })
-export class TooltipComponent implements AfterViewInit {
-  top: string;
-  @ViewChild(TooltipContainerDirective, { read: ElementRef }) private tooltipContainer;
+export class TooltipComponent implements OnInit {
+  private top: string;
+  private left: string;
+  @ViewChild('tooltipContainer') private tooltipContainer;
 
   constructor(@Inject('tooltipConfig') private config) { }
 
-  ngAfterViewInit() {
+  ngOnInit() {
     const {top} = this.config.host.getBoundingClientRect();
     const {height} = this.tooltipContainer.nativeElement.getBoundingClientRect();
+    const {left} = this.config.host.getBoundingClientRect();
+    const {width} = this.config.host.getBoundingClientRect();
     this.top = `${top - height}px`;
-    console.log("Hello");
+    this.left = `${left - (width)}px`;
   }
 
 }
