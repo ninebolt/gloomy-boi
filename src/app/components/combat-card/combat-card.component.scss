@@ -109,5 +109,92 @@
   height: 100%;
   top: 0;
   background-size: cover;
-  background-image: url(assets/cards/attack-modifiers/card-parts/attack-card-back.jpg);
+  background-image: url('assets/cards/attack-modifiers/card-parts/attack-card-back.jpg');
 }
+
+.blank-front {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-image: url('assets/cards/attack-modifiers/card-parts/attack-card-front.jpg');
+}
+
+.denomination {
+  width: 14em;
+  height: 12em;
+  background-size: cover;
+  position: absolute;
+}
+
+  .denomination--min2 {
+    width: 14em;
+    height: 12em;
+    background-size: cover;
+    position: absolute;
+    background-image: url('assets/cards/attack-modifiers/card-parts/minus2.png');
+  }
+
+  .denomination--min1 {
+    width: 14em;
+    height: 12em;
+    background-size: cover;
+    position: absolute;
+    background-image: url('assets/cards/attack-modifiers/card-parts/minus1.png');
+  }
+
+  .denomination--zero {
+    width: 14em;
+    height: 12em;
+    background-size: cover;
+    position: absolute;
+    background-image: url('assets/cards/attack-modifiers/card-parts/plus0.png');
+  }
+
+  .denomination--plus1 {
+    width: 14em;
+    height: 12em;
+    background-size: cover;
+    position: absolute;
+    background-image: url('assets/cards/attack-modifiers/card-parts/plus1.png');
+  }
+
+  .denomination--plus2 {
+    width: 14em;
+    height: 12em;
+    background-size: cover;
+    position: absolute;
+    background-image: url('assets/cards/attack-modifiers/card-parts/plus2.png');
+  }
+
+  .denomination--crit {
+    width: 14em;
+    height: 12em;
+    background-size: cover;
+    position: absolute;
+    background-image: url('assets/cards/attack-modifiers/card-parts/crit.png');
+  }
+
+  .denomination--whiff {
+    width: 14em;
+    height: 12em;
+    background-size: cover;
+    position: absolute;
+    background-image: url('assets/cards/attack-modifiers/card-parts/whiff.png');
+  }
+
+  .denomination--bless {
+    width: 14em;
+    height: 12em;
+    background-size: cover;
+    position: absolute;
+    background-image: url('assets/cards/attack-modifiers/card-parts/crit-bless.png');
+  }
+
+  .denomination--curse {
+    width: 14em;
+    height: 12em;
+    background-size: cover;
+    position: absolute;
+    background-image: url('assets/cards/attack-modifiers/card-parts/whiff-curse.png');
+  }

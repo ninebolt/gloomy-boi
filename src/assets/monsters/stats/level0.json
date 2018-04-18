@@ -6,6 +6,7 @@
         "move": 0,
         "attack": 2,
         "range": 4,
+        "shield": 0,
         "attributes": [
 
         ]
@@ -15,6 +16,7 @@
         "move": 0,
         "attack": 3,
         "range": 5,
+        "shield": 0,
         "attributes": [
 
         ]
@@ -26,6 +28,7 @@
         "move": 2,
         "attack": 2,
         "range": 3,
+        "shield": 0,
         "attributes": [
 
         ]
@@ -35,6 +38,7 @@
         "move": 2,
         "attack": 3,
         "range": 3,
+        "shield": 0,
         "attributes": [
 
         ]
@@ -46,6 +50,7 @@
         "move": 2,
         "attack": 2,
         "range": 0,
+        "shield": 0,
         "attributes": [
 
         ]
@@ -55,6 +60,7 @@
         "move": 2,
         "attack": 3,
         "range": 0,
+        "shield": 0,
         "attributes": [
 
         ]
@@ -66,6 +72,7 @@
         "move": 1,
         "attack": 1,
         "range": 3,
+        "shield": 0,
         "attributes": [
 
         ]
@@ -75,8 +82,31 @@
         "move": 1,
         "attack": 2,
         "range": 3,
+        "shield": 0,
         "attributes": [
           "$poison$"
+        ]
+      }
+    },
+    "Boss": {
+      "normalStats": {
+        "health": 0,
+        "move": 0,
+        "attack": 0,
+        "range": 0,
+        "shield": 0,
+        "attributes": [
+
+        ]
+      },
+      "eliteStats": {
+        "health": 0,
+        "move": 0,
+        "attack": 0,
+        "range": 0,
+        "shield": 0,
+        "attributes": [
+
         ]
       }
     },
@@ -86,6 +116,7 @@
         "move": 3,
         "attack": 3,
         "range": 0,
+        "shield": 0,
         "attributes": [
 
         ]
@@ -95,6 +126,7 @@
         "move": 3,
         "attack": 4,
         "range": 0,
+        "shield": 0,
         "attributes": [
 
         ]
@@ -106,6 +138,7 @@
         "move": 1,
         "attack": 2,
         "range": 3,
+        "shield": 0,
         "attributes": [
 
         ]
@@ -115,6 +148,7 @@
         "move": 1,
         "attack": 3,
         "range": 4,
+        "shield": 0,
         "attributes": [
 
         ]
@@ -126,6 +160,7 @@
         "move": 2,
         "attack": 2,
         "range": 0,
+        "shield": 0,
         "attributes": [
 
         ]
@@ -135,8 +170,9 @@
         "move": 2,
         "attack": 3,
         "range": 0,
+        "shield": 1,
         "attributes": [
-          "$shield$ 1"
+
         ]
       }
     },
@@ -146,6 +182,7 @@
         "move": 2,
         "attack": 1,
         "range": 0,
+        "shield": 0,
         "attributes": [
 
         ]
@@ -155,6 +192,7 @@
         "move": 2,
         "attack": 2,
         "range": 0,
+        "shield": 0,
         "attributes": [
 
         ]
@@ -166,6 +204,7 @@
         "move": 0,
         "attack": 2,
         "range": 0,
+        "shield": 0,
         "attributes": [
 
         ]
@@ -175,6 +214,7 @@
         "move": 0,
         "attack": 3,
         "range": 0,
+        "shield": 0,
         "attributes": [
 
         ]
@@ -186,6 +226,7 @@
         "move": 1,
         "attack": 3,
         "range": 0,
+        "shield": 0,
         "attributes": [
 
         ]
@@ -195,6 +236,7 @@
         "move": 2,
         "attack": 4,
         "range": 0,
+        "shield": 0,
         "attributes": [
 
         ]
@@ -206,9 +248,9 @@
         "move": 3,
         "attack": 2,
         "range": 3,
+        "shield": 0,
         "attributes": [
-          "$fly$",
-          "$shield$ 2"
+          "$fly$"
         ]
       },
       "eliteStats": {
@@ -216,9 +258,9 @@
         "move": 3,
         "attack": 2,
         "range": 3,
+        "shield": 3,
         "attributes": [
-          "$fly$",
-          "$shield$ 3"
+          "$fly$"
         ]
       }
     },
@@ -228,6 +270,7 @@
         "move": 2,
         "attack": 3,
         "range": 0,
+        "shield": 0,
         "attributes": [
 
         ]
@@ -237,6 +280,7 @@
         "move": 3,
         "attack": 3,
         "range": 0,
+        "shield": 0,
         "attributes": [
 
         ]
@@ -248,8 +292,9 @@
         "move": 3,
         "attack": 1,
         "range": 3,
+        "shield": 0,
         "attributes": [
-          "$shield$ 1"
+
         ]
       },
       "eliteStats": {
@@ -257,8 +302,9 @@
         "move": 3,
         "attack": 1,
         "range": 3,
+        "shield": 1,
         "attributes": [
-          "$shield$ 1"
+
         ]
       }
     },
@@ -268,6 +314,7 @@
         "move": 2,
         "attack": 1,
         "range": 0,
+        "shield": 0,
         "attributes": [
           "$poison$"
         ]
@@ -277,6 +324,7 @@
         "move": 2,
         "attack": 2,
         "range": 0,
+        "shield": 0,
         "attributes": [
           "$poison$"
         ]
@@ -288,6 +336,7 @@
         "move": 2,
         "attack": 2,
         "range": 0,
+        "shield": 0,
         "attributes": [
 
         ]
@@ -297,6 +346,7 @@
         "move": 2,
         "attack": 2,
         "range": 0,
+        "shield": 0,
         "attributes": [
 
         ]
@@ -308,6 +358,7 @@
         "move": 3,
         "attack": 2,
         "range": 0,
+        "shield": 0,
         "attributes": [
 
         ]
@@ -317,6 +368,7 @@
         "move": 5,
         "attack": 2,
         "range": 0,
+        "shield": 0,
         "attributes": [
 
         ]
@@ -328,6 +380,7 @@
         "move": 2,
         "attack": 2,
         "range": 2,
+        "shield": 0,
         "attributes": [
 
         ]
@@ -337,6 +390,7 @@
         "move": 2,
         "attack": 3,
         "range": 3,
+        "shield": 0,
         "attributes": [
 
         ]
@@ -348,6 +402,7 @@
         "move": 2,
         "attack": 2,
         "range": 0,
+        "shield": 0,
         "attributes": [
 
         ]
@@ -357,6 +412,7 @@
         "move": 1,
         "attack": 3,
         "range": 0,
+        "shield": 0,
         "attributes": [
           "$retaliate$ 1"
         ]
@@ -368,6 +424,7 @@
         "move": 1,
         "attack": 2,
         "range": 3,
+        "shield": 0,
         "attributes": [
 
         ]
@@ -377,6 +434,7 @@
         "move": 2,
         "attack": 3,
         "range": 3,
+        "shield": 0,
         "attributes": [
 
         ]
@@ -388,6 +446,7 @@
         "move": 2,
         "attack": 1,
         "range": 0,
+        "shield": 0,
         "attributes": [
           "$target$ 2"
         ]
@@ -397,6 +456,7 @@
         "move": 4,
         "attack": 2,
         "range": 0,
+        "shield": 0,
         "attributes": [
           "$target$ 2"
         ]
@@ -408,6 +468,7 @@
         "move": 1,
         "attack": 3,
         "range": 0,
+        "shield": 0,
         "attributes": [
 
         ]
@@ -417,6 +478,7 @@
         "move": 1,
         "attack": 3,
         "range": 0,
+        "shield": 0,
         "attributes": [
 
         ]
@@ -428,8 +490,9 @@
         "move": 2,
         "attack": 2,
         "range": 2,
+        "shield": 0,
         "attributes": [
-          "$shield$ 1"
+
         ]
       },
       "eliteStats": {
@@ -437,8 +500,9 @@
         "move": 3,
         "attack": 3,
         "range": 3,
+        "shield": 2,
         "attributes": [
-          "$shield$ 2"
+
         ]
       }
     },
@@ -448,6 +512,7 @@
         "move": 2,
         "attack": 2,
         "range": 0,
+        "shield": 0,
         "attributes": [
           "$target$ 2"
         ]
@@ -457,9 +522,9 @@
         "move": 2,
         "attack": 3,
         "range": 0,
+        "shield": 1,
         "attributes": [
-          "$target$ 2",
-          "$shield$ 1"
+          "$target$ 2"
         ]
       }
     },
@@ -469,6 +534,7 @@
         "move": 1,
         "attack": 2,
         "range": 2,
+        "shield": 0,
         "attributes": [
 
         ]
@@ -478,6 +544,7 @@
         "move": 1,
         "attack": 2,
         "range": 3,
+        "shield": 0,
         "attributes": [
 
         ]
@@ -489,6 +556,7 @@
         "move": 3,
         "attack": 3,
         "range": 0,
+        "shield": 0,
         "attributes": [
           "Attackers gain Disadvantage"
         ]
@@ -498,6 +566,7 @@
         "move": 4,
         "attack": 4,
         "range": 0,
+        "shield": 0,
         "attributes": [
           "Attackers gain Disadvantage"
         ]
@@ -509,6 +578,7 @@
         "move": 2,
         "attack": 2,
         "range": 3,
+        "shield": 0,
         "attributes": [
           "$pierce$ 3"
         ]
@@ -518,6 +588,7 @@
         "move": 2,
         "attack": 3,
         "range": 4,
+        "shield": 0,
         "attributes": [
           "$pierce$ 3"
         ]
@@ -529,6 +600,7 @@
         "move": 3,
         "attack": 2,
         "range": 0,
+        "shield": 0,
         "attributes": [
 
         ]
@@ -538,6 +610,7 @@
         "move": 3,
         "attack": 3,
         "range": 0,
+        "shield": 0,
         "attributes": [
 
         ]
@@ -549,6 +622,7 @@
         "move": 3,
         "attack": 3,
         "range": 3,
+        "shield": 0,
         "attributes": [
 
         ]
@@ -558,6 +632,7 @@
         "move": 3,
         "attack": 4,
         "range": 4,
+        "shield": 0,
         "attributes": [
 
         ]
@@ -569,6 +644,7 @@
         "move": 1,
         "attack": 3,
         "range": 0,
+        "shield": 0,
         "attributes": [
 
         ]
@@ -578,8 +654,9 @@
         "move": 2,
         "attack": 4,
         "range": 0,
+        "shield": 1,
         "attributes": [
-          "$shield$ 1"
+
         ]
       }
     },
@@ -589,9 +666,9 @@
         "move": 2,
         "attack": 2,
         "range": 0,
+        "shield": 0,
         "attributes": [
-          "Advantage",
-          "$shield$ 1"
+          "Advantage"
         ]
       },
       "eliteStats": {
@@ -599,9 +676,9 @@
         "move": 2,
         "attack": 3,
         "range": 0,
+        "shield": 1,
         "attributes": [
-          "Advantage",
-          "$shield$ 1"
+          "Advantage"
         ]
       }
     },
@@ -611,6 +688,7 @@
         "move": 3,
         "attack": 1,
         "range": 0,
+        "shield": 0,
         "attributes": [
 
         ]
@@ -620,6 +698,7 @@
         "move": 3,
         "attack": 2,
         "range": 0,
+        "shield": 0,
         "attributes": [
 
         ]
@@ -631,8 +710,9 @@
         "move": 2,
         "attack": 1,
         "range": 3,
+        "shield": 0,
         "attributes": [
-          "$shield$ 2"
+
         ]
       },
       "eliteStats": {
@@ -640,8 +720,9 @@
         "move": 3,
         "attack": 2,
         "range": 3,
+        "shield": 2,
         "attributes": [
-          "$shield$ 2"
+
         ]
       }
     },
@@ -651,6 +732,7 @@
         "move": 3,
         "attack": 3,
         "range": 0,
+        "shield": 0,
         "attributes": [
 
         ]
@@ -660,6 +742,7 @@
         "move": 4,
         "attack": 4,
         "range": 0,
+        "shield": 0,
         "attributes": [
 
         ]
@@ -671,8 +754,9 @@
         "move": 3,
         "attack": 2,
         "range": 3,
+        "shield": 0,
         "attributes": [
-          "$shield$ 1"
+
         ]
       },
       "eliteStats": {
@@ -680,8 +764,9 @@
         "move": 4,
         "attack": 3,
         "range": 4,
+        "shield": 1,
         "attributes": [
-          "$shield$ 1"
+
         ]
       }
     }

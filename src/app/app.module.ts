@@ -20,17 +20,21 @@ import { MonsterDeckComponent } from './components/monster-deck/monster-deck.com
 import { CombatBandComponent } from './containers/combat-band/combat-band.component';
 import { CombatDeckComponent } from './components/combat-deck/combat-deck.component';
 import { CombatCardComponent } from './components/combat-card/combat-card.component';
+import { TooltipComponent } from './components/tooltip/tooltip.component';
 import { ElementTrackerComponent } from './containers/element-tracker/element-tracker.component';
 import { InitativeModalComponent } from './components/initative-modal/initative-modal.component';
 
 import { FilterPipe } from './pipes/filter.pipe';
 import { OrderByPipe } from './pipes/order-by.pipe';
 
+import { TooltipDirective } from './directives/tooltip.directive';
+
 import { LineParserService } from './services/line-parser.service';
 import { RetrievalService } from './services/retrieval.service';
 import { ScenarioService } from './services/scenario.service';
 import { MonsterCardService } from './services/monster-card.service';
 import { CombatCardService } from './services/combat-card.service';
+import { TooltipService } from './services/tooltip.service';
 
 @NgModule({
   declarations: [
@@ -50,6 +54,8 @@ import { CombatCardService } from './services/combat-card.service';
     SearchDropdownComponent,
     HealthTrackerComponent,
     MonsterHealthComponent,
+    TooltipComponent,
+    TooltipDirective,
     ElementTrackerComponent,
     InitativeModalComponent,
     FilterPipe,
@@ -67,7 +73,11 @@ import { CombatCardService } from './services/combat-card.service';
     RetrievalService,
     ScenarioService,
     MonsterCardService,
-    CombatCardService
+    CombatCardService,
+    TooltipService
+  ],
+  entryComponents: [
+    TooltipComponent
   ],
   bootstrap: [AppComponent]
 })

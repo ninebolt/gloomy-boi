@@ -6,6 +6,7 @@ import { CombatCard } from '../../models/card.model';
 
 import { CombatCardService } from '../../services/combat-card.service';
 import { CombatDeckComponent } from '../../components/combat-deck/combat-deck.component';
+import { TooltipComponent } from '../../components/tooltip/tooltip.component';
 
 import 'rxjs/add/operator/map';
 
@@ -19,8 +20,8 @@ import 'rxjs/add/operator/map';
         <div class="icon curse" (click)="addTempCard('curse')"></div>
         <div class="icon bless" (click)="addTempCard('bless')"></div>
         <div class="icon shuffle" (click)="shuffleDeck()"></div>
-        <div class="icon strengthen" (click)="drawTwo()"></div>
-        <div class="icon muddle" (click)="resetDeck()"></div>
+        <div class="icon draw-two" (click)="drawTwo()"></div>
+        <div class="icon reset-deck" (click)="resetDeck()"></div>
       </div>
     </div>
   `
