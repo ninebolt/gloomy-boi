@@ -30,7 +30,7 @@ export class CombatDeckComponent implements OnInit{
     private toFlip: boolean;
     private showTwo: boolean = false;
     private card1: string;
-    private card2 : string;
+    private card2: string;
 
     ngOnInit() {
       this.activeCard = new CombatCard(null, '');
@@ -56,14 +56,14 @@ export class CombatDeckComponent implements OnInit{
       this.toFlip = false;
       card1 = this.deck.drawCard() as CombatCard;
       card2 = this.deck.drawCard() as CombatCard;
-      console.log(card1.value + ", " + card2.value);
       this.card1 = card1.value;
       this.card2 = card2.value;
       this.showTwo = true;
 
-      this.toFlip = true;
+      this.checkForRemovableCards(card1);
+      this.checkForRemovableCards(card2);
 
-      // this.activeCard = this.deck.drawCard() as CombatCard;
+      this.toFlip = true;
     }
 
     resetDeck() {
@@ -75,9 +75,7 @@ export class CombatDeckComponent implements OnInit{
       // Flip over previous card, show current one
       this.toFlip = false;
       this.showTwo = false;
-      if (['curse', 'bless'].includes(this.activeCard.value)) {
-        this.deck.removeCard(this.activeCard);
-      }
+      this.checkForRemovableCards(this.activeCard);
 
       setTimeout(() => {
         this.activeCard = this.deck.drawCard() as CombatCard;
@@ -89,6 +87,12 @@ export class CombatDeckComponent implements OnInit{
     newRound() {
       if (this.deck.shuffleMe) {
         this.shuffle();
+      }
+    }
+
+    private checkForRemovableCards(card: CombatCard) {
+      if (['curse', 'bless'].includes(card.value)) {
+        this.deck.removeCard(this.activeCard);
       }
     }
 }
