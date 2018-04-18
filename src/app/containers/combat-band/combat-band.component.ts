@@ -17,11 +17,11 @@ import 'rxjs/add/operator/map';
     <div class="combat-band">
       <combat-deck [newRoundListener$]="newRoundListener$"></combat-deck>
       <div class="actions">
-        <div class="icon curse" (click)="addTempCard('curse')"></div>
-        <div class="icon bless" (click)="addTempCard('bless')"></div>
-        <div class="icon shuffle" (click)="shuffleDeck()"></div>
-        <div class="icon draw-two" (click)="drawTwo()"></div>
-        <div class="icon reset-deck" (click)="resetDeck()"></div>
+        <div tooltip="Add Curse" class="icon curse" (click)="addTempCard('curse')"></div>
+        <div tooltip="Add Bless" class="icon bless" (click)="addTempCard('bless')"></div>
+        <div tooltip="Shuffle" class="icon shuffle" (click)="shuffleDeck()"></div>
+        <div tooltip="Draw Two" class="icon draw-two" (click)="drawTwo()"></div>
+        <div tooltip="Reset Deck" class="icon reset-deck" (click)="resetDeck()"></div>
       </div>
     </div>
   `
