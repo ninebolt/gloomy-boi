@@ -1,20 +1,23 @@
 .monster-band {
   display: flex;
   flex-wrap: nowrap;
+  flex-direction: column;
 }
 
 .monster-deck {
   margin-left: 20px;
+  zoom: 0.8;
+}
+
+.attributes {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  background-color: rgba(157, 157, 157, 1);
+  text-align: center;
 }
 
 .monster-healths {
-
-  .attributes {
-    display: flex;
-    align-items: center;
-    padding: 10px;
-    background-color: rgba(157, 157, 157, 1);
-  }
 
   padding: 0 10px 10px 10px;
   margin-left: -20px;
@@ -22,12 +25,10 @@
   flex-wrap: wrap;
   flex-direction: column;
   flex-grow: 1;
-  height: fit-content;
 
   .healths {
     display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
+    flex-direction: column;
   }
 }
 

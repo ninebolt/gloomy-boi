@@ -26,6 +26,7 @@ export interface Entity {
   id?: number;
   currentHealth?: number;
   maxHealth?: number;
+  shield?: number;
   isElite?: boolean;
 }
 
@@ -48,4 +49,5 @@ export interface Stats {
   health: number;
   move: number;
   range: number;
+  shield: number;
 }

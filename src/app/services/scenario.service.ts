@@ -80,9 +80,9 @@ export class ScenarioService {
     const e: Entity[] = [];
     newMonsters.forEach((monster) => {
       if (monster.status === 'elite') {
-        e.push({ id: monster.id, isElite: true, currentHealth: elite.health, maxHealth: elite.health });
+        e.push({ id: monster.id, isElite: true, currentHealth: elite.health, maxHealth: elite.health, shield: elite.shield });
       } else if (monster.status === 'normal') {
-        e.push({ id: monster.id, isElite: false, currentHealth: normal.health, maxHealth: normal.health });
+        e.push({ id: monster.id, isElite: false, currentHealth: normal.health, maxHealth: normal.health, shield: normal.shield });
       }
     });
     return e;

@@ -16,14 +16,13 @@ import { RetrievalService } from '../../services/retrieval.service';
   styleUrls: ['monster-band.component.scss'],
   template: `
     <div class="monster-band">
+      <div class="attributes" *ngIf="attributes">
+        <span [innerHTML]="attributes"></span>
+      </div>
       <div class="monster-deck">
         <monster-deck *ngIf="monsterDeckCreated" [deck]="monster.deck" [newRoundListener$]="newRoundListener$" (initative)="initativeChange($event)"></monster-deck>
       </div>
       <div class="monster-healths">
-        <div class="attributes" *ngIf="attributes">
-          <span class="title">Attributes:</span>
-          <span [innerHTML]="attributes"></span>
-        </div>
         <div class="healths">
           <monster-health *ngFor="let m of monster.entities | orderBy:'id'; let i = index;" [monster]="m" [image]="monster.image" (healthDepleted)="removeMonster($event)"></monster-health>
         </div>
