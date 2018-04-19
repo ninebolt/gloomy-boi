@@ -16,8 +16,12 @@ import { RetrievalService } from '../../services/retrieval.service';
   styleUrls: ['monster-band.component.scss'],
   template: `
     <div class="monster-band">
-      <div class="attributes" *ngIf="attributes">
-        <span [innerHTML]="attributes"></span>
+      <div class="attributes">
+        <img [src]="monster.image" class="monster-image" />
+        <div class="monster-info">
+          <span *ngIf="!attributes">No monster attributes!</span>
+          <span [innerHTML]="attributes"></span>
+        </div>
       </div>
       <div class="monster-deck">
         <monster-deck *ngIf="monsterDeckCreated" [deck]="monster.deck" [newRoundListener$]="newRoundListener$" (initative)="initativeChange($event)"></monster-deck>
