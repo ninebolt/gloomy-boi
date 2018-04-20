@@ -115,7 +115,7 @@ export class LineParserService {
         if (eliteValue !== value) {
           stringVal = value + ' / ' + this.KEYWORDS['ELITE'].replace('$eliteValue$', eliteValue.toString());
         } else {
-          stringVal = value;
+          stringVal = value.toString();
         }
 
         line = line.replace(parsedLine[0], this.getAction(parsedLine[1], stringVal));
