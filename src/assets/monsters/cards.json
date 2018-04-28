@@ -761,7 +761,7 @@
       "lines": [
         "x1 $attack$ +0",
         "x2 $range$ 4",
-        "x2 $earth$$consume$: $target$ 2"
+        "x1 $earth$$consume$: $target$ 2"
       ]
     },
     {
@@ -798,7 +798,7 @@
       "lines": [
         "x1 $move$ +0",
         "x1 $attack$ -1 $aoe-straight-3$",
-        "x1 $any$$consume$: $earth$"
+        "x1 $all$$consume$: $earth$"
       ]
     }
   ],
@@ -856,7 +856,7 @@
       "lines": [
         "x1 $attack$ +0",
         "x2 Target all adjacent enemies",
-        "x2 $ice$$consume$:Flame Demon suffers 1 damage."
+        "x1 $ice$$consume$: Flame Demon suffers 1 damage."
       ]
     },
     {
@@ -866,9 +866,7 @@
         "x1 $fire$$consume$: All adjacent enemies suffer 2 damage.",
         "x1 $move$ +0",
         "x1 $attack$ -2",
-        "x2 $range$ +0",
-        "x2 $wound$",
-        "x2 $target$ 2"
+        "x2 $range$ +0, $wound$, $target$ 2"
       ]
     },
     {
@@ -877,7 +875,7 @@
       "lines": [
         "x1 $move$ -1",
         "x1 Create a 4 damage trap in an adjacent empty hex closest to an enemy",
-        "x1 $any$$consume$: $fire$"
+        "x1 $all$$consume$: $fire$"
       ]
     }
   ],
@@ -1018,7 +1016,7 @@
         "x1 $move$ -1",
         "x1 $attack$ -1",
         "x2 $pierce$ 3",
-        "x1 $any$$consume$: $ice$"
+        "x1 $all$$consume$: $ice$"
       ]
     },
     {
@@ -1851,7 +1849,7 @@
         "x1 $move$ +0",
         "x1 $attack$ -1",
         "x1 All adjacent enemies and allies suffer 1 damage.",
-        "x1 $any$$consume$: $dark$"
+        "x1 $all$$consume$: $dark$"
       ]
     }
   ],
@@ -2317,7 +2315,7 @@
         "x1 $move$ +0",
         "x1 $attack$ +0",
         "x2 $range$ 3",
-        "x1 $any$$consume$: $light$"
+        "x1 $all$$consume$: $light$"
       ]
     }
   ],
@@ -2510,8 +2508,7 @@
       "lines": [
         "x1 $move$ -2",
         "x1 $attack$ -1",
-        "x2 $range$ 3",
-        "x2 $target$ 2",
+        "x2 $range$ 3, $target$ 2",
         "x2 $poison$"
       ]
     },
@@ -2555,7 +2552,7 @@
         "x1 $heal$ 1",
         "x2 Self",
         "x1 $wind$$consume$: $invisible$",
-        "Self"
+        "x2 Self"
       ]
     },
     {
@@ -2626,7 +2623,7 @@
         "x1 $move$ -1",
         "x1 $attack$ -1",
         "x2 $range$ +0",
-        "x1 $any$$consume$: $wind$"
+        "x1 $all$$consume$: $wind$"
       ]
     }
   ]

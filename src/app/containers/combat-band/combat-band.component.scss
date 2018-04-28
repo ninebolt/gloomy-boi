@@ -1,0 +1,48 @@
+.combat-band {
+  display: flex;
+  flex-wrap: nowrap;
+}
+
+.actions {
+  margin: 25px 10px;
+}
+
+combat-deck {
+  margin: 20px 10px;
+}
+
+.icon {
+  width: 1.5em;
+  height: 1.5em;
+  background-size: contain;
+}
+
+.bless {
+  position: relative;
+  display: inline-block;
+  background-image: url("assets/status/bless.png");
+}
+
+.curse {
+  position: relative;
+  display: inline-block;
+  background-image: url("assets/status/curse.png");
+}
+
+.shuffle {
+  position: relative;
+  display: inline-block;
+  background-image: url("assets/icons/shuffle-black.png");
+}
+
+.draw-two {
+  position: relative;
+  display: inline-block;
+  background-image: url("assets/icons/advantage.png");
+}
+
+.reset-deck {
+  position: relative;
+  display: inline-block;
+  background-image: url("assets/icons/reset-deck.png");
+}

@@ -1,8 +1,12 @@
 import { Component, OnInit } from '@angular/core';
-import { DeckComponent } from "./containers/deck/deck.component";
+import { Subject } from 'rxjs/Subject';
+import { Observable } from 'rxjs/Observable';
 
 import { MonsterDeck } from "./models/deck.model";
 import { MonsterCard } from './models/card.model';
+import { Monster, CharacterInitative } from './models/state.model';
+import { ScenarioService } from './services/scenario.service';
+import { RetrievalService } from './services/retrieval.service';
 
 @Component({
   selector: 'app-root',
@@ -11,36 +15,106 @@ import { MonsterCard } from './models/card.model';
 })
 
 export class AppComponent implements OnInit {
-  title = 'app';
 
-  deck: MonsterDeck = new MonsterDeck([]);
+  monsterModalVisible = false;
+  playerModalVisible = false;
+  currentMonster: Monster;
+  initatives: CharacterInitative[] = [];
+  monsters: Monster[] = [];
 
-  decks: MonsterDeck[] = [this.deck];
+  newRoundSubject: Subject<any> = new Subject();
+  newRound$: Observable<any>;
 
-  constructor() { }
+  sortSubject: Subject<any> = new Subject();
+  sort$: Observable<any>;
+
+  constructor(
+    private scenario: ScenarioService,
+    private retrieval: RetrievalService
+  ) { }
 
   ngOnInit() {
+    this.scenario.initative$.subscribe((initatives) => this.updateInitatives(initatives));
+    this.scenario.monsters$.subscribe((monsters) => this.monsters = monsters);
+    this.newRound$ = this.newRoundSubject.asObservable();
+    this.sort$ = this.sortSubject.asObservable();
+  }
 
-    // generate some gloomy test cards
+  monsterSearched(name: string) {
+    this.scenario.getMonster(name)
+      .subscribe((monster) => {
+        this.currentMonster = monster;
+        this.monsterModalVisible = true;
+      });
+  }
 
-    for (let i = 0; i < 10; i++) {
-        this.deck.insertCard(
-            new MonsterCard(
-                'Bandit Archer',
-                4,
-                [ `<span class="title">Bandit Archer - 4</span>`,
-                  `<span class="initiative">initiative</span>`,
-                  `<span class="large">body content here</span>`,
-                  `<span class="small">body content here</span>`,
-                  `<span class="shuffle">shuffle</span>`
-                ],
-                50,
-                false
-            )
-        )
+  addMonsters($event) {
+    this.monsterModalVisible = false;
+    if ($event.length > 0) {
+      this.scenario.addMonster(this.currentMonster, $event);
     }
+  }
 
-    // add in a test shuffle card
-    this.deck.cards[5].shuffle = true;
+  removeMonster($event) {
+    this.scenario.removeMonter($event);
+  }
+
+  addPlayer($event) {
+    this.scenario.addPlayer($event);
+  }
+
+  newRound() {
+    this.playerModalVisible = true;
+  }
+
+  continueNewRound() {
+    this.playerModalVisible = false;
+    this.newRoundSubject.next();
+  }
+
+  closeMonsterModal() {
+    this.monsterModalVisible = false;
+  }
+
+  closeInitativeModal() {
+    this.playerModalVisible = false;
+  }
+
+  updateInitatives(newInitatives: CharacterInitative[]) {
+    newInitatives.forEach((init) => {
+      const oldValue = this.getInitativeFromName(init.name, this.initatives);
+      if (oldValue !== -1) {
+        init.initative = oldValue;
+      }
+    });
+    this.initatives = newInitatives;
+    this.sortSubject.next();
+  }
+
+  getInitativeFromName(name: string, initatives: CharacterInitative[]): number {
+    for (var i = 0; i < initatives.length; i++) {
+      if (initatives[i].name === name) {
+        return initatives[i].initative;
+      }
+    }
+    return -1;
+  }
+
+  initativeChange(initative: number, monsterName: string) {
+    const index = this.initatives.findIndex((initative) => {
+      return initative.name === monsterName;
+    });
+    if (index !== -1) {
+      this.initatives[index].initative = initative;
+    }
+    this.sortSubject.next();
+  }
+
+  deleteCharacter(character: CharacterInitative) {
+    if (character.type === 'monster') {
+      this.scenario.removeMonter(character.name);
+    } else if (character.type === 'player') {
+      this.scenario.removePlayer(character.name);
+    }
   }
 }

@@ -1,3 +1,10 @@
+export interface SimpleCharacter {
+  name: string;
+  maxAllowed?: number;
+  type: string;
+  image: string;
+}
+
 export class Character {
   constructor(
     public type: string,

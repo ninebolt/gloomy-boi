@@ -1,0 +1,80 @@
+.monster-modal {
+  position: fixed;
+  top: 10%;
+  left: 18.5%;
+  z-index: 1050;
+  width: 80%;
+  height: fit-content;
+  max-height: 80%;
+  margin-left: -10%;
+
+  border: solid 1px #cccccc;
+  box-shadow: 0 3px 7px rgba(0, 0, 0, 0.3);
+  background-clip: padding-box;
+  background-color: white;
+
+  overflow-y: scroll;
+
+  display: flex;
+  flex-direction: column;
+
+  font-size: 1.4rem;
+
+  .monster-info {
+    display: flex;
+    align-items: center;
+    border-bottom: solid 1px #cccccc;
+    padding: 20px 30px;
+  }
+
+  .monster-level {
+    justify-content: right;
+    margin-left: auto;
+
+    input {
+      font-size: 1.4rem;
+      text-align: center;
+    }
+  }
+
+  .monster-list {
+    padding: 20px 30px;
+    display: flex;
+    flex-direction: column;
+
+    .monster-row {
+      display: flex;
+      align-items: space-evenly;
+
+      .monster-buttons {
+        display: flex;
+        flex-grow: 1;
+        justify-content: space-around;
+        align-items: center;
+      }
+
+      &.disabled {
+        background-color: rgba(153, 153, 153, 0.3);
+      }
+    }
+  }
+
+  .buttons {
+    display: flex;
+    flex-direction: row-reverse;
+    padding: 0 30px 20px 0;
+
+    & > * {
+      margin-left: 5px;
+    }
+
+    .cancel {
+      background-color: rgba(255, 0, 0, 0.8);
+      color: white;
+    }
+  }
+}
+
+.elite {
+  color: gold;
+}

@@ -1,7 +1,7 @@
 .container {
   display: grid;
-  grid-template-rows: 50px 393px auto;
-  grid-template-columns: 12rem auto;
+  grid-template-rows: 50px auto 1fr;
+  grid-template-columns: 10rem 1fr;
   grid-template-areas:
     "action-bar action-bar"
     "initative-band combat-band"
@@ -18,29 +18,23 @@
     border-right: solid 1px #eeeeee;
   }
 
-  .combat-band {
-    grid-area: combat-band;
-    border-bottom: solid 0.5px #cccccc;
-    display: grid;
-    grid-template:
-      "combat-deck" "monster-deck" 1fr 1fr;
-    border-bottom: solid 1px #eeeeee;
-  }
-
   .monster-band {
     grid-area: monster-band;
-    display: grid;
-    grid-template-rows: 340px;
-    grid-template-columns: 500px auto;
-    grid-template-areas:
-      "monster-deck health-tracker";
+    display: flex;
+    flex-direction: row;
 
-    [deck] {
-      grid-area: monster-deck;
-    }
+    height: calc(100vh - 250px);
+  }
 
-    [health-tracker] {
-      grid-area: health-tracker;
+  .combat-band {
+    grid-area: combat-band;
+    display: flex;
+    flex-direction: row;
+    border-bottom: solid 1px #eeeeee;
+
+    element-tracker {
+      margin-left: auto;
+      margin-right: 50px;
     }
   }
 }

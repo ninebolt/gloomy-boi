@@ -1,0 +1,44 @@
+[
+  {
+    "shuffle": false,
+    "value": "min2",
+    "amount": 1,
+    "image": "assets/cards/attack-modifiers/full-cards/attack-card-front-minus-2.png"
+  },
+  {
+    "shuffle": false,
+    "value": "min1",
+    "amount": 5,
+    "image": "assets/cards/attack-modifiers/full-cards/attack-card-front-minus-1.png"
+  },
+  {
+    "shuffle": false,
+    "value": "zero",
+    "amount": 6,
+    "image": "assets/cards/attack-modifiers/full-cards/attack-card-front-plus-0.png"
+  },
+  {
+    "shuffle": false,
+    "value": "plus1",
+    "amount": 5,
+    "image": "assets/cards/attack-modifiers/full-cards/attack-card-front-plus-1.png"
+  },
+  {
+    "shuffle": false,
+    "value": "plus2",
+    "amount": 1,
+    "image": "assets/cards/attack-modifiers/full-cards/attack-card-front-plus-2.png"
+  },
+  {
+    "shuffle": true,
+    "value": "whiff",
+    "amount": 1,
+    "image": "assets/cards/attack-modifiers/full-cards/attack-card-front-whiff.png"
+  },
+  {
+    "shuffle": true,
+    "value": "crit",
+    "amount": 1,
+    "image": "assets/cards/attack-modifiers/full-cards/attack-card-front-crit.png"
+  }
+]

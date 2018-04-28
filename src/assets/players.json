@@ -1,0 +1,70 @@
+[
+    {
+      "name": "Brute",
+      "image": "assets/character-icons/brute.png"
+    },
+    {
+      "name": "Cragheart",
+      "image": "assets/character-icons/cragheart.png"
+    },
+    {
+      "name": "Mindthief",
+      "image": "assets/character-icons/mindthief.png"
+    },
+    {
+      "name": "Scoundrel",
+      "image": "assets/character-icons/scoundrel.png"
+    },
+    {
+      "name": "Spellweaver",
+      "image": "assets/character-icons/spellweaver.png"
+    },
+    {
+      "name": "Tinkerer",
+      "image": "assets/character-icons/tinkerer.png"
+    },
+    {
+      "name": "Circle",
+      "image": "assets/character-icons/circle.png"
+    },
+    {
+      "name": "Cocentric Circles",
+      "image": "assets/character-icons/cocentric-circles.png"
+    },
+    {
+      "name": "Dragon",
+      "image": "assets/character-icons/dragon.png"
+    },
+    {
+      "name": "Face",
+      "image": "assets/character-icons/face.png"
+    },
+    {
+      "name": "Kthulu",
+      "image": "assets/character-icons/kthulu.png"
+    },
+    {
+      "name": "Lightning Bolts",
+      "image": "assets/character-icons/lightning.png"
+    },
+    {
+      "name": "Music Note",
+      "image": "assets/character-icons/music.png"
+    },
+    {
+      "name": "Saw",
+      "image": "assets/character-icons/saw.png"
+    },
+    {
+      "name": "Spear",
+      "image": "assets/character-icons/spear.png"
+    },
+    {
+      "name": "Triforce",
+      "image": "assets/character-icons/triforce.png"
+    },
+    {
+      "name": "Wheel",
+      "image": "assets/character-icons/wheel.png"
+    }
+  ]

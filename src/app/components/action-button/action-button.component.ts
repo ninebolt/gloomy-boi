@@ -15,9 +15,9 @@ import { Observable } from 'rxjs/Observable';
 export class ActionButtonComponent {
 
   @Input() placeholder = '';
-  @Input('searchTerms') searchTerms: any;
+  @Input('searchTerms') searchTerms: string[];
 
-  @Output() characterEmitter: EventEmitter<Character> = new EventEmitter();
+  @Output('selected') characterEmitter: EventEmitter<Character> = new EventEmitter();
 
   selected = false;
 

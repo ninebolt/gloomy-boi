@@ -5,7 +5,7 @@ import { Pipe, PipeTransform } from '@angular/core';
 })
 export class OrderByPipe implements PipeTransform {
   transform(value: any[], args: any) {
-    if (!args || !Object.keys(value[0]).includes(args)) {
+    if (!value || !args) {
       return value;
     }
 

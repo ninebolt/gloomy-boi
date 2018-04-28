@@ -9,8 +9,8 @@ import { Observable } from 'rxjs/Observable';
     <div class="search">
       <input #input type="text" [placeholder]="placeholder" [(ngModel)]="characterName">
       <div class="character-list">
-        <div *ngFor="let c of searchTerms | nameFilter:characterName; let i = index;" class="character" (click)="characterSelected(c)">
-          {{ c.name }}
+        <div *ngFor="let c of searchTerms | filter:characterName; let i = index;" class="character" (click)="characterSelected(c)">
+          {{ c }}
         </div>
       </div>
     </div>
@@ -21,7 +21,7 @@ export class SearchDropdownComponent implements OnInit {
   @ViewChild('input') inputComponent: ElementRef;
 
   @Input() placeholder: string = '';
-  @Input('searchTerms') searchTerms:any;
+  @Input('searchTerms') searchTerms: string[];
 
   @Output()
   selected: EventEmitter<Character> = new EventEmitter();

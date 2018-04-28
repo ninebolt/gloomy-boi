@@ -1,85 +1,46 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit, Output, EventEmitter } from '@angular/core';
+import { Observable } from 'rxjs/Observable';
 
 import { OrderByPipe } from '../../pipes/order-by.pipe';
-
-import * as rawCharacters from '../../../assets/characters.json';
-import { Character, Player, Monster } from '../../models/character.model';
-import { LineParserService } from '../../services/line-parser.service';
+import { CharacterInitative } from '../../models/state.model';
 
 @Component({
   selector: 'initative-tracker',
   styleUrls: ['initative-tracker.component.scss'],
   template: `
-    <div class="tracker">
-      <div class="characters">
-        <div *ngFor="let c of characters">
-          <character-initative [character]="c" (resort)="sortCards(100)"></character-initative>
-        </div>
+    <div>
+      <div *ngFor="let c of characters">
+        <initative [character]="c" (resort)="sortCards(150)" (delete)="deleteCharacter($event)"></initative>
       </div>
-      <span class="name">
-        Initative Tracker
-      </span>
     </div>
   `,
   providers: [OrderByPipe]
 })
 export class InitativeTrackerComponent implements OnInit {
 
-  characters: Character[];
+  @Input() characters: CharacterInitative[];
+  @Input() newRoundListener$: Observable<any>;
+  @Input() sortListener$: Observable<any>;
+
+  @Output() delete: EventEmitter<CharacterInitative> = new EventEmitter();
 
   constructor(
-    private lineParser: LineParserService,
-    private orderByPipe: OrderByPipe
-  ) {
-
-    let card = {
-      "shuffle": false,
-      "initiative": "14",
-      "lines": [
-        "x1 $move$ -1",
-        "x1 $attack$ -1",
-        "x2 $range$ +0",
-        "x1 $attack$ -1 $aoe-triangle-large-self$ ",
-        "x1 <span class='small'> Create a 3 damage trap in an adjacent empty hex closest to an enemy </span>"
-      ]
-    };
-
-    let monster = {
-      "Bandit Guard":
-      {
-      "normalStats": {
-        "health": 6,
-        "move": 1,
-        "attack": 3,
-        "range": 4,
-        "attributes": [
-
-        ]
-      },
-      "eliteStats": {
-        "health": 7,
-        "move": 1,
-        "attack": 4,
-        "range": 5,
-        "attributes": [
-          "$pierce$ 2",
-          "$shield$ 1"
-        ]
-      }
-    }
-    };
-
-    console.log(lineParser.parseCurrentCard(card, monster["Bandit Guard"]));
-    console.log(lineParser.parseAttributes(monster["Bandit Guard"]));
-  }
+    private orderByPipe: OrderByPipe,
+  ) { }
 
   ngOnInit() {
-    this.characters = [
-      new Monster(2, rawCharacters[5].name, rawCharacters[5].image, 11, 0, true, [], 52),
-      new Monster(3, rawCharacters[4].name, rawCharacters[4].image, 11, 1, false, [], 24)
-    ];
-    this.sortCards();
+    this.newRoundListener$
+      .subscribe(() => {
+        this.characters.forEach((c) => {
+          this.sortCards(100);
+        })
+      });
+    this.sortListener$
+      .subscribe(() => {
+        this.sortCards(100);
+      });
   }
+
 
   sortCards(timeout: number = 0) {
     setTimeout(() => {
@@ -87,4 +48,7 @@ export class InitativeTrackerComponent implements OnInit {
     }, timeout);
   }
 
+  deleteCharacter(character: CharacterInitative) {
+    this.delete.emit(character);
+  }
 }

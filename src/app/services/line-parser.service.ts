@@ -3,28 +3,28 @@ import { Injectable } from '@angular/core';
 @Injectable()
 export class LineParserService {
 
-  private ACTIONS = ['attack', 'move', 'heal', 'range', 'target', 'pierce', 'heal', 'shield', 'retaliate', 'push', 'pull'];
-  private STATUSES = ['bless', 'curse', 'immobilize', 'invisible', 'muddle', 'poison', 'strengthen', 'stun', 'wound'];
+  private ACTIONS = ['attack', 'move', 'heal', 'loot', 'range', 'target', 'pierce', 'heal', 'shield', 'retaliate', 'push', 'pull'];
+  private STATUSES = ['bless', 'curse', 'disarm', 'immobilize', 'invisible', 'muddle', 'poison', 'strengthen', 'stun', 'wound'];
   private AOES = ['aoe-1', 'aoe-1-self-center', 'aoe-1-self-side', 'aoe-triangle', 'aoe-triangle-self',
     'aoe-triangle-large-self', 'aoe-cone-2-self', 'aoe-straight-2', 'aoe-straight-3', 'aoe-straight-5'];
   private ELEMENTS = ['all', 'dark', 'earth', 'fire', 'ice', 'light', 'wind'];
 
   private LINE_FORMAT_REGEX = '(x[1-4](?: elite)?) (.*)';
   private ACTION_REGEX = '\\$(attack|move|heal|range|target|pierce|heal|shield|retaliate|loot|push|pull)\\$ ?([\\+|-])?(\\d+)?';
-  private STATUS_REGEX = '\\$(bless|curse|immobilize|invisible|muddle|poison|strengthen|stun|wound)\\$';
+  private STATUS_REGEX = '\\$(bless|curse|disarm|immobilize|invisible|muddle|poison|strengthen|stun|wound)\\$';
   private ELEMENT_REGEX = '\\$(all|dark|earth|fire|ice|light|wind)\\$';
   private AOE_REGEX = '\\$(aoe-[^\\$]*)\\$';
 
   private KEYWORDS = {
     BASE: '<span class="$lineSize$">$base$</span>',
     ELITE: '<span class="elite">$eliteValue$</span>',
-    ACTION: '$actionCap$ <img src="assets/icons/$action$.png"> $value$',
-    AOE: '<img class="$aoeClass$" src="assets/icons/$AOE$.png">',
-    ELEMENT: '<img class="element" src="assets/elements/$element$.png">',
-    STATUS: '$statusCap$ <img src="assets/status/$status$.png">',
-    $consume$: '<img class="element consume" src="assets/elements/consume.png">',
-    $fly$: '<img src="assets/icons/fly.png">',
-    $jump$: '<img src="assets/icons/jump.png">'
+    ACTION: '$actionCap$ <img class="icon" src="assets/icons/$action$.png"> $value$',
+    AOE: '<img class="aoe" src="assets/icons/$AOE$.png">',
+    ELEMENT: '<img class="icon-element" src="assets/elements/$element$.png">',
+    STATUS: '$statusCap$ <img class="icon" src="assets/status/$status$.png">',
+    $consume$: '<img class="icon-element consume" src="assets/elements/consume.png">',
+    $fly$: '<img class="icon" src="assets/icons/fly.png">',
+    $jump$: '<img class="icon" src="assets/icons/jump.png">'
   };
 
   constructor() { }
@@ -47,7 +47,7 @@ export class LineParserService {
       return null;
     }
 
-    let lines = [this.parseLine('x1 Attributes', monster)];
+    let lines = [];
     let normal = [];
     let elite = [];
 
@@ -100,8 +100,10 @@ export class LineParserService {
     // Basic action; get monster's stats and put both normal and elite number
     while (parsedLine = re.exec(line)) {
       if (this.ACTIONS.includes(parsedLine[1])) {
-        let value = parsedLine[3];
-        let eliteValue = parsedLine[3];
+        console.log('PARSED LINES: ', parsedLine);
+        let value = parsedLine[3] || '';
+        let eliteValue = parsedLine[3] || '';
+        // MATT THIS IS WHAT I DID
         let stringVal = '';
 
         if (value && parsedLine[2] === '+') {
@@ -157,7 +159,6 @@ export class LineParserService {
       if (this.AOES.includes(parsedLine[1])) {
         line = line.replace(parsedLine[0],
           this.KEYWORDS['AOE']
-            .replace('$aoeClass$', 'small')
             .replace('$AOE$', parsedLine[1]));
       }
     }

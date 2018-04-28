@@ -7,8 +7,8 @@
   position: relative;
   transform-style: preserve-3d;
   user-select: none;
-  width: 437px;
-  height: 296px;
+  width: 400px;
+  height: 250px;
 }
 
 :host.flipped {
@@ -37,18 +37,20 @@
   backface-visibility: hidden;
   border-radius: 29px;
   border: 1px solid black;
+  font-family: 'PirataOne';
+  text-shadow: 2px 2px #000;
 }
 
 .card-front {
   width: 100%;
   height: 100%;
-  background-image: url(/assets/cards/monster-ability-front.jpg);
+  background-image: url(assets/cards/monster-ability-front.jpg);
   transform: rotateX(180deg);
 }
 
 :host /deep/ .card-name {
   position: absolute;
-  bottom: 25px;
+  bottom: 0.1em;
   width: 100%;
   text-align: center;
   color: white;
@@ -59,37 +61,76 @@
   height: 100%;
   display: grid;
   margin: 0;
-  grid-gap: 10px;
-  grid-template-areas:
-    "title title title"
-    "initiative large ."
-    "initiative small shuffle";
-  grid-template-columns: 88px 1fr 88px;
-  grid-template-rows: 65px auto auto;
+  // grid-gap: 10px;
+  // grid-template-areas:
+  //   "title title title"
+  //   "initiative body ."
+  //   "initiative body shuffle";
+  grid-template-columns: [corner-top] 80px [title] auto [shuffle] 50px [end-col];
+  grid-template-rows: [title-row] 50px [initiative-row] 30px [second-buffer] 10px [main-body] auto [shuffle-row] 50px [end-row];
+
+  // grid-template-columns: 88px 1fr 88px;
+  // grid-template-rows: 65px auto auto;
   text-align: center;
 
   .title {
-    grid-area: title;
+    grid-column-start: title;
+    grid-column-end: span shuffle;
+    grid-row-start: title-row;
+    grid-row-end: span initiative-row;
     font-size: 1.5em;
     align-self: center;
   }
 
   .initiative {
-    grid-area: initiative;
+    grid-column-start: corner-top;
+    grid-column-end: span title;
+    grid-row-start: initiative-row;
+    grid-row-end: span main-body;
+    position: relative;
+    top: -0.5em;
+    left: 0.05em;
+    font-size: 2em;
   }
 
+  .x1,
   .large {
-    grid-area: large;
+    grid-column-start: title;
+    grid-column-end: span shuffle;
+    grid-row-start: second-buffer;
+    grid-row-end: span shuffle-row;
+    white-space: pre-line;
+    display: block;
   }
 
+  .x2,
   .small {
-    grid-area: small;
+    grid-column-start: title;
+    grid-column-end: span shuffle;
+    grid-row-start: second-buffer;
+    grid-row-end: span shuffle-row;
+    white-space: pre-line;
+    display: block;
+  }
+
+  .line-row {
+    grid-column-start: title;
+    grid-column-end: span shuffle;
+    grid-row-start: second-buffer;
+    grid-row-end: span shuffle-row;
+    white-space: pre;
+    display: block;
   }
 
   .shuffle {
-    grid-area: shuffle;
     align-self: end;
+    position: absolute;
+    top: 82%;
+    left: 89%;
+    width: 2em;
+    height: 2em;
   }
+
 }
 
 .card-back {
@@ -98,48 +139,5 @@
   height: 100%;
   top: 0;
   background-size: cover;
-  background-image: url(/assets/cards/monster-ability-back.jpg);
-}
-
-@keyframes flipToFront {
-  0% {
-    transform: translate(0px, 0px) rotateX( 0deg );
-  }
-  50% {
-    transform: translate(10px, 50px) rotateX( 90deg );
-  }
-  100% {
-    transform: translate(10px, -10px) rotateX( 180deg );
-  }
-}
-
-@keyframes sendToBack {
-  0% {
-    transform: translate(0px, 0px) rotateX( 180deg );
-    z-index: 1;
-  }
-  50% {
-    transform: translate(150px, 0px) rotateX( 60deg );
-    z-index: 0;
-  }
-  75% {
-    transform: rotateX( 0deg );
-    z-index: 0;
-  }
-  100% {
-    transform: translate(0px, 0px) rotateX( 0deg );
-    z-index: 0;
-  }
-}
-
-@keyframes shuffle {
-  0% {
-      transform: rotateZ( 0 );
-  }
-  50% {
-      transform: rotateZ( 5deg );
-  }
-  100% {
-      transform: rotateZ( 0 );
-  }
+  background-image: url(assets/cards/monster-ability-back.jpg);
 }
