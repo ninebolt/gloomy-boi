@@ -9,6 +9,7 @@ import { MonsterCard } from '../../models/card.model';
   styleUrls: ['monster-deck.component.scss'],
   template: `
       <div class="card-back"> </div>
+      <monster-card></monster-card>
       <monster-card (click)="flip()"
           [ngClass]="{
               'flipped flip-to-front': toFlip,
