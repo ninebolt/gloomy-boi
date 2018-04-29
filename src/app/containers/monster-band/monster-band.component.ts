@@ -19,8 +19,8 @@ import { RetrievalService } from '../../services/retrieval.service';
       <div class="attributes">
         <img [src]="monster.image" class="monster-image" />
         <div class="monster-info">
-          <span *ngIf="!attributes">No monster attributes!</span>
-          <span [innerHTML]="attributes"></span>
+          <span [innerHTML]="attributes.normal"></span><br/>
+          <span [innerHTML]="attributes.elite"></span>
         </div>
       </div>
       <div class="monster-deck">
@@ -42,7 +42,7 @@ export class MonsterBandComponent implements OnInit {
   @Output() initative: EventEmitter<number> = new EventEmitter();
 
   monsterDeckCreated: boolean = false;
-  attributes: string[] = [];
+  attributes: any = {normal: '', elite: ''};
 
   constructor(
     private monsterCardService: MonsterCardService,
