@@ -18,6 +18,7 @@ export class AppComponent implements OnInit {
 
   monsterModalVisible = false;
   playerModalVisible = false;
+  globalLevel: number = 1;
   currentMonster: Monster;
   initatives: CharacterInitative[] = [];
   monsters: Monster[] = [];
@@ -51,6 +52,7 @@ export class AppComponent implements OnInit {
     this.scenario.getMonster(name)
       .subscribe((monster) => {
         this.currentMonster = monster;
+        this.currentMonster.level = this.globalLevel;
         this.monsterModalVisible = true;
       });
   }

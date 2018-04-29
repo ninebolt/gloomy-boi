@@ -1,6 +1,6 @@
 <div class="container">
   <div class="action-bar">
-    <action-bar (monsterSearched)="monsterSearched($event)" (playerSearched)="addPlayer($event)" (newRound)="newRound()" (reset)="reset()"></action-bar>
+    <action-bar (monsterSearched)="monsterSearched($event)" (playerSearched)="addPlayer($event)" (newRound)="newRound()" (reset)="reset()" [globalLevel]="globalLevel" (globalLevel)="globalLevel = $event"></action-bar>
   </div>
   <div class="initative-band">
     <initative-tracker [characters]="initatives" [newRoundListener$]="newRound$" [sortListener$]="sort$" (delete)="deleteCharacter($event)"></initative-tracker>
