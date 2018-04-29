@@ -21,6 +21,46 @@ body {
   user-select: none;
 }
 
+button {
+  padding: 1em 2em;
+  background-color: white;
+  border: 1px solid #3E5C73;
+  color: #3E5C73;
+  border-radius: 7px;
+  text-transform: uppercase;
+  transition: 0.3s all;
+  cursor: pointer;
+}
+
+button:hover {
+  color: white;
+  background-color: #546979;
+}
+
+button:active {
+  background-color: #164468;
+  color: white;
+}
+
+// removes browser blue outline for anchor links
+button:active, button:focus {
+  outline: 0;
+  border: 1px solid #3E5C73;
+  -moz-outline-style: none
+}
+
+input {
+  padding: 1em;
+  border-radius: 7px;
+  border: 1px solid #3E5C73;
+}
+
+input:active, input:focus {
+  outline: 0;
+  border: 1px solid #3E5C73;
+  -moz-outline-style: none
+}
+
 .x1 {
   font-size: 1.4em;
   font-family: 'Nyala';

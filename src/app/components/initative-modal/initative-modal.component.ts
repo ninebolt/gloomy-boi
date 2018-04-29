@@ -5,6 +5,7 @@ import { CharacterInitative } from '../../models/state.model';
   selector: 'initative-modal',
   styleUrls: ['initative-modal.component.scss'],
   template: `
+    <div class="modal-background" (click)="close()"></div>
     <div class="initative-modal">
       <div class="title">
         Enter New Round Initatives

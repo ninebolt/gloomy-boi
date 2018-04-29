@@ -1,9 +1,23 @@
+:host {
+  position: relative;
+}
+
+.modal-background {
+  position: fixed;
+  z-index: 10;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(100, 100, 100, 0.7);
+}
+
 .initative-modal {
   position: fixed;
   top: 10%;
-  left: 18.5%;
+  left: 35%;
   z-index: 1050;
-  width: 80%;
+  width: 50%;
   height: fit-content;
   max-height: 80%;
   margin-left: -10%;
