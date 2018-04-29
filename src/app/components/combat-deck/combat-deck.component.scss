@@ -1,0 +1,16 @@
+:host {
+  position: relative;
+}
+
+.card-back {
+  z-index: 1;
+  border-radius: 29px;
+  display: block;
+  position: absolute;
+  user-select: none;
+  width: 285px;
+  height: 197px;
+  top: 0;
+  background-size: cover;
+  background-image: url('assets/cards/attack-modifiers/card-parts/attack-card-back.jpg');
+}

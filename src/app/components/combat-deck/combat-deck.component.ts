@@ -1,13 +1,14 @@
 import { Component, OnInit, Input, OnChanges } from '@angular/core';
 import { Observable } from 'rxjs/Observable';
 
-import { CombatDeck } from "../../models/deck.model";
+import { CombatDeck } from '../../models/deck.model';
 import { Card, CombatCard } from '../../models/card.model';
 
 @Component({
     selector: 'combat-deck',
     styleUrls: ['combat-deck.component.scss'],
     template: `
+      <div class="card-back"></div>
       <combat-card (click)="flip()"
           [ngClass]="{
               'flipped flip-to-front': toFlip,
@@ -20,15 +21,14 @@ import { Card, CombatCard } from '../../models/card.model';
       </combat-card>
     `
 })
-
-export class CombatDeckComponent implements OnInit{
+export class CombatDeckComponent implements OnInit {
 
     @Input() newRoundListener$: Observable<any>;
 
     deck: CombatDeck;
     activeCard: CombatCard;
     private toFlip: boolean;
-    private showTwo: boolean = false;
+    private showTwo = false;
     private card1: string;
     private card2: string;
 
@@ -73,6 +73,7 @@ export class CombatDeckComponent implements OnInit{
 
     flip() {
       // Flip over previous card, show current one
+      // 🤔 to flip, or not to flip. that is the question
       this.toFlip = false;
       this.showTwo = false;
       this.checkForRemovableCards(this.activeCard);
