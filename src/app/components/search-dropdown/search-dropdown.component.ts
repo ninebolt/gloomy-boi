@@ -20,7 +20,7 @@ export class SearchDropdownComponent implements OnInit {
 
   @ViewChild('input') inputComponent: ElementRef;
 
-  @Input() placeholder: string = '';
+  @Input() placeholder = '';
   @Input('searchTerms') searchTerms: string[];
 
   @Output()
