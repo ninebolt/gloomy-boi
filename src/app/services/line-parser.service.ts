@@ -100,10 +100,8 @@ export class LineParserService {
     // Basic action; get monster's stats and put both normal and elite number
     while (parsedLine = re.exec(line)) {
       if (this.ACTIONS.includes(parsedLine[1])) {
-        console.log('PARSED LINES: ', parsedLine);
         let value = parsedLine[3] || '';
         let eliteValue = parsedLine[3] || '';
-        // MATT THIS IS WHAT I DID
         let stringVal = '';
 
         if (value && parsedLine[2] === '+') {
