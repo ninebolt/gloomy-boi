@@ -15,34 +15,27 @@ combat-deck {
   width: 1.5em;
   height: 1.5em;
   background-size: contain;
+  position: relative;
+  display: inline-block;
+  margin: 0.5em 0;
 }
 
 .bless {
-  position: relative;
-  display: inline-block;
   background-image: url("assets/status/bless.png");
 }
 
 .curse {
-  position: relative;
-  display: inline-block;
   background-image: url("assets/status/curse.png");
 }
 
 .shuffle {
-  position: relative;
-  display: inline-block;
   background-image: url("assets/icons/shuffle-black.png");
 }
 
 .draw-two {
-  position: relative;
-  display: inline-block;
   background-image: url("assets/icons/advantage.png");
 }
 
 .reset-deck {
-  position: relative;
-  display: inline-block;
   background-image: url("assets/icons/reset-deck.png");
 }
