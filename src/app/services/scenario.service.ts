@@ -28,6 +28,21 @@ export class ScenarioService {
     this.monsters$ = this.monsterSubject.asObservable();
   }
 
+  saveState() {
+    localStorage.setItem('state', JSON.stringify(this.scenarioState));
+  }
+
+  loadState() {
+    const s = localStorage.getItem('state');
+    console.log('LOADING State', s);
+    if (s) {
+      this.scenarioState = JSON.parse(s);
+      console.log(this.scenarioState);
+      this.monsterSubject.next(this.scenarioState.monsters);
+      this.updateInitatives();
+    }
+  }
+
   addPlayer(name: string) {
     if (this.findCharacterIndex(name, 'players') !== -1) {
       return;
@@ -121,6 +136,15 @@ export class ScenarioService {
     } else {
       this.scenarioState.monsters[monsterIndex] = m;
     }
+    this.monsterSubject.next(this.scenarioState.monsters);
+    this.updateInitatives();
+  }
+
+  reset() {
+    this.scenarioState = {
+      players: [],
+      monsters: []
+    };
     this.monsterSubject.next(this.scenarioState.monsters);
     this.updateInitatives();
   }

@@ -10,6 +10,7 @@ import { RetrievalService } from '../../services/retrieval.service';
         Gloomy Boy
       </div>
       <div class="action-buttons">
+        <button (click)="this.resetEmitter.emit()">Reset</button>
         <action-button placeholder="Search Classes" [searchTerms]="players" (selected)="playerSearched($event)">Add Player</action-button>
         <action-button placeholder="Search Monsters" [searchTerms]="monsters" (selected)="monsterSearched($event)">Add Monster</action-button>
         <button (click)="triggerNewRound()">New Round</button>
@@ -24,6 +25,7 @@ export class ActionBarComponent implements OnInit {
   @Output('monsterSearched') monsterEmitter: EventEmitter<string> = new EventEmitter();
   @Output('playerSearched') playerEmitter: EventEmitter<string> = new EventEmitter();
   @Output() newRound: EventEmitter<any> = new EventEmitter();
+  @Output('reset') resetEmitter: EventEmitter<void> = new EventEmitter();
 
   constructor (
     private retrieve: RetrievalService

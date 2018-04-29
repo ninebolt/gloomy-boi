@@ -1,6 +1,6 @@
 <div class="container">
   <div class="action-bar">
-    <action-bar (monsterSearched)="monsterSearched($event)" (playerSearched)="addPlayer($event)" (newRound)="newRound()"></action-bar>
+    <action-bar (monsterSearched)="monsterSearched($event)" (playerSearched)="addPlayer($event)" (newRound)="newRound()" (reset)="reset()"></action-bar>
   </div>
   <div class="initative-band">
     <initative-tracker [characters]="initatives" [newRoundListener$]="newRound$" [sortListener$]="sort$" (delete)="deleteCharacter($event)"></initative-tracker>
@@ -12,7 +12,6 @@
   <div class="monster-band">
     <monster-band *ngFor="let m of monsters" [monster]="m" (destroyMonster)="removeMonster($event)" [newRoundListener$]="newRound$" (initative)="initativeChange($event, m.name)"></monster-band>
   </div>
-
   <monster-modal *ngIf="monsterModalVisible" [monster]="currentMonster" (addMonsters)="addMonsters($event)" (cancel)="closeMonsterModal()"></monster-modal>
   <initative-modal *ngIf="playerModalVisible" [initatives]="initatives" (complete)="continueNewRound()" (cancel)="closeInitativeModal()"></initative-modal>
 </div>

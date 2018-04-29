@@ -24,6 +24,11 @@
     flex-direction: row;
 
     height: calc(100vh - 250px);
+
+    monster-band {
+      height: calc(100vh - 250px);
+      overflow-y: scroll;
+    }
   }
 
   .combat-band {
