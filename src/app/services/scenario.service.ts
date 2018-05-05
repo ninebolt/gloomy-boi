@@ -12,7 +12,8 @@ export class ScenarioService {
 
   private scenarioState: ScenarioState = {
     players: [],
-    monsters: []
+    monsters: [],
+    globalLevel: 1
   };
 
   private initativeSubject: Subject<CharacterInitative[]> = new Subject();
@@ -140,10 +141,19 @@ export class ScenarioService {
     this.updateInitatives();
   }
 
+  getGlobalLevel() {
+    return this.scenarioState.globalLevel;
+  }
+
+  setGlobalLevel(l: number) {
+    this.scenarioState.globalLevel = l;
+  }
+
   reset() {
     this.scenarioState = {
       players: [],
-      monsters: []
+      monsters: [],
+      globalLevel: 1
     };
     this.monsterSubject.next(this.scenarioState.monsters);
     this.updateInitatives();

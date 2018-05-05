@@ -1,8 +1,8 @@
 [
   { "name": "Fire", "image": "assets/elements/fire.png", "status": "inert", "top": 0, "left": 10 },
-  { "name": "Ice", "image": "assets/elements/ice.png", "status": "inert", "top": 0, "left": 70 },
-  { "name": "Wind", "image": "assets/elements/wind.png", "status": "inert", "top": 60, "left": 10 },
-  { "name": "Earth", "image": "assets/elements/earth.png", "status": "inert", "top": 60, "left": 70 },
-  { "name": "Light", "image": "assets/elements/light.png", "status": "inert", "top": 120, "left": 10 },
-  { "name": "Dark", "image": "assets/elements/dark.png", "status": "inert", "top": 120, "left": 70 }
+  { "name": "Ice", "image": "assets/elements/ice.png", "status": "inert", "top": 0, "left": 60 },
+  { "name": "Wind", "image": "assets/elements/wind.png", "status": "inert", "top": 50, "left": 10 },
+  { "name": "Earth", "image": "assets/elements/earth.png", "status": "inert", "top": 50, "left": 60 },
+  { "name": "Light", "image": "assets/elements/light.png", "status": "inert", "top": 100, "left": 10 },
+  { "name": "Dark", "image": "assets/elements/dark.png", "status": "inert", "top": 100, "left": 60 }
 ]

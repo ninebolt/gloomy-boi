@@ -3,6 +3,7 @@ import { Deck } from "./deck.model";
 export interface ScenarioState {
   players: Player[];
   monsters: Monster[];
+  globalLevel: number;
 }
 
 export interface Player {
