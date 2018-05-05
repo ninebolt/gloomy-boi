@@ -54,10 +54,15 @@
     & > * {
       margin-left: 5px;
     }
-
-    .cancel {
-      background-color: rgba(255, 0, 0, 0.8);
-      color: white;
-    }
   }
+}
+
+.cancel {
+  background-color: rgba(225, 83, 38, 0.8);
+  color: white;
+}
+
+.new-round {
+  background-color: #15c3ed;
+  color: white;
 }

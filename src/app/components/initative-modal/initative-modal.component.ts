@@ -18,7 +18,7 @@ import { CharacterInitative } from '../../models/state.model';
         </div>
       </div>
       <div class="buttons">
-        <button (click)="startNewRound()">New Round</button>
+        <button (click)="startNewRound()" class="new-round">New Round</button>
         <button class="cancel" (click)="close()">Cancel</button>
       </div>
     </div>

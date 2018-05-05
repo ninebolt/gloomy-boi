@@ -14,10 +14,10 @@ import { RetrievalService } from '../../services/retrieval.service';
           <span>Global Level</span>
           <input type="number" min="0" max="7" [(ngModel)]="globalLevel" (change)="globalLevelEmitter.emit(globalLevel)" />
         </div>
-        <button (click)="this.resetEmitter.emit()">Reset</button>
+        <button (click)="this.resetEmitter.emit()" class="reset">Reset</button>
         <action-button placeholder="Search Classes" [searchTerms]="players" (selected)="playerSearched($event)">Add Player</action-button>
         <action-button placeholder="Search Monsters" [searchTerms]="monsters" (selected)="monsterSearched($event)">Add Monster</action-button>
-        <button (click)="triggerNewRound()">New Round</button>
+        <button (click)="triggerNewRound()" class="new-round">New Round</button>
       </div>
     </div>
   `
