@@ -11,8 +11,8 @@ import { TooltipDirective } from '../../directives/tooltip.directive';
   `
 })
 export class TooltipComponent implements OnInit {
-  private top: string;
-  private left: string;
+  top: string;
+  left: string;
   @ViewChild('tooltipContainer') private tooltipContainer;
 
   constructor(@Inject('tooltipConfig') private config) { }
