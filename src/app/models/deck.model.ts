@@ -15,6 +15,10 @@ export class Deck {
     this.cards.push(card);
   }
 
+  getRemainingCards() {
+    return this.cards.length;
+  }
+
   drawCard() {
     if (this.cards[0].discardMe) {
       this.discardCard(this.cards[0]);

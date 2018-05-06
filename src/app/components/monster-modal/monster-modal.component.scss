@@ -54,9 +54,14 @@
       }
 
       &.disabled {
-        background-color: rgba(153, 153, 153, 0.3);
+        background-color: rgba(153, 153, 153, 0.8) !important;
+      }
+
+      &:nth-of-type(even) {
+        background-color: #eeeeee;
       }
     }
+
   }
 
   .buttons {

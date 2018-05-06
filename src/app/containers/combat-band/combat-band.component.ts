@@ -21,7 +21,7 @@ import 'rxjs/add/operator/map';
         <div tooltip="Add Bless" class="icon bless" (click)="addTempCard('bless')"><h2 class="counter">{{this.combatDeck.deck.getBlesses()}}</h2></div>
         <div tooltip="Shuffle" class="icon shuffle" (click)="shuffleDeck()"></div>
         <div tooltip="Draw Two" class="icon draw-two" (click)="drawTwo()"></div>
-        <div tooltip="Reset Deck" class="icon reset-deck" (click)="resetDeck()"></div>
+        <div tooltip="Reset Deck" class="icon reset-deck" (click)="resetDeck()"><h2 class="counter">{{this.combatDeck.deck.getRemainingCards()}}</h2></div>
       </div>
     </div>
   `

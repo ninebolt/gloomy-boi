@@ -1,10 +1,10 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, HostListener } from '@angular/core';
 import { Subject } from 'rxjs/Subject';
 import { Observable } from 'rxjs/Observable';
 
 import { MonsterDeck } from "./models/deck.model";
 import { MonsterCard } from './models/card.model';
-import { Monster, CharacterInitative } from './models/state.model';
+import { Monster, CharacterInitative, ScenarioState } from './models/state.model';
 import { ScenarioService } from './services/scenario.service';
 import { RetrievalService } from './services/retrieval.service';
 
@@ -18,9 +18,11 @@ export class AppComponent implements OnInit {
 
   monsterModalVisible = false;
   playerModalVisible = false;
+  globalLevel: number = 1;
   currentMonster: Monster;
   initatives: CharacterInitative[] = [];
   monsters: Monster[] = [];
+  state$: Observable<ScenarioState>;
 
   newRoundSubject: Subject<any> = new Subject();
   newRound$: Observable<any>;
@@ -38,12 +40,19 @@ export class AppComponent implements OnInit {
     this.scenario.monsters$.subscribe((monsters) => this.monsters = monsters);
     this.newRound$ = this.newRoundSubject.asObservable();
     this.sort$ = this.sortSubject.asObservable();
+    this.scenario.loadState();
+  }
+
+  @HostListener('window:beforeunload', ['$event'])
+  beforeunloadHandler(event) {
+    this.scenario.saveState();
   }
 
   monsterSearched(name: string) {
     this.scenario.getMonster(name)
       .subscribe((monster) => {
         this.currentMonster = monster;
+        this.currentMonster.level = this.globalLevel;
         this.monsterModalVisible = true;
       });
   }
@@ -116,5 +125,9 @@ export class AppComponent implements OnInit {
     } else if (character.type === 'player') {
       this.scenario.removePlayer(character.name);
     }
+  }
+
+  reset() {
+    this.scenario.reset();
   }
 }

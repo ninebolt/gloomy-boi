@@ -3,6 +3,8 @@ import { Component, Input, Output, EventEmitter, OnDestroy, OnInit } from '@angu
 import { Monster } from '../../models/character.model';
 import { Entity } from '../../models/state.model';
 
+import { TooltipComponent } from '../../components/tooltip/tooltip.component';
+
 @Component({
   selector: 'monster-health',
   styleUrls: ['monster-health.component.scss'],
@@ -29,14 +31,14 @@ import { Entity } from '../../models/state.model';
         </div>
       </div>
       <div class="conditions">
-        <div class="status disarm" title="Disarm" (click)="setStatus($event)"></div>
-        <div class="status immobilize" title="Immobilize" (click)="setStatus($event)"></div>
-        <div class="status invisible" title="Invisible" (click)="setStatus($event)"></div>
-        <div class="status muddle" title="Muddle" (click)="setStatus($event)"></div>
-        <div class="status poison" title="Poison" (click)="setStatus($event)"></div>
-        <div class="status strengthen" title="Strengthen" (click)="setStatus($event)"></div>
-        <div class="status stun" title="Stun" (click)="setStatus($event)"></div>
-        <div class="status wound" title="Wound" (click)="setStatus($event)"></div>
+        <div tooltip="Disarm" class="status disarm" title="Disarm" (click)="setStatus($event)"></div>
+        <div tooltip="Immobilize" class="status immobilize" title="Immobilize" (click)="setStatus($event)"></div>
+        <div tooltip="Invisible" class="status invisible" title="Invisible" (click)="setStatus($event)"></div>
+        <div tooltip="Muddle" class="status muddle" title="Muddle" (click)="setStatus($event)"></div>
+        <div tooltip="Poison" class="status poison" title="Poison" (click)="setStatus($event)"></div>
+        <div tooltip="Strengthen" class="status strengthen" title="Strengthen" (click)="setStatus($event)"></div>
+        <div tooltip="Stun" class="status stun" title="Stun" (click)="setStatus($event)"></div>
+        <div tooltip="Wound" class="status wound" title="Wound" (click)="setStatus($event)"></div>
       </div>
     </div>
   `

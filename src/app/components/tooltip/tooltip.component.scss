@@ -1,8 +1,9 @@
 .tooltip {
-  background-color: rgba(0, 0, 0, 0.6);
+  background-color: rgba(0, 0, 0, 0.9);
   color: #fff;
   display: inline-block;
   padding: 0.5em;
   position: absolute;
   font-family: 'Nyala';
+  z-index: 1000;
 }
