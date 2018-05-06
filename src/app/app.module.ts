@@ -28,6 +28,7 @@ import { FilterPipe } from './pipes/filter.pipe';
 import { OrderByPipe } from './pipes/order-by.pipe';
 
 import { TooltipDirective } from './directives/tooltip.directive';
+import { ClickOutsideDirective } from './directives/clickOutside.directive';
 
 import { LineParserService } from './services/line-parser.service';
 import { RetrievalService } from './services/retrieval.service';
@@ -56,6 +57,7 @@ import { TooltipService } from './services/tooltip.service';
     MonsterHealthComponent,
     TooltipComponent,
     TooltipDirective,
+    ClickOutsideDirective,
     ElementTrackerComponent,
     InitativeModalComponent,
     FilterPipe,

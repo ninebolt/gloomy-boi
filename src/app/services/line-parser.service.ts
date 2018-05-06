@@ -43,19 +43,18 @@ export class LineParserService {
     let normalAttributes = monster.normalStats.attributes;
     let eliteAttributes = monster.eliteStats.attributes;
 
-    if (!normalAttributes || !eliteAttributes || (normalAttributes.length <= 0 && eliteAttributes.length <= 0)) {
-      return null;
-    }
-
-    let lines = [];
+    let lines = {normal: '', elite: ''};
     let normal = [];
     let elite = [];
+
+    normal.push('Max HP: ' + monster.normalStats.health);
+    elite.push('Max HP: ' + monster.eliteStats.health);
 
     normalAttributes.forEach(x => normal.push(x));
     eliteAttributes.forEach(x => elite.push(x));
 
-    normal.length > 0 && lines.push(this.parseLine('x2 ' + normal.join(', '), monster));
-    elite.length > 0 && lines.push(this.parseLine('x2 elite ' + elite.join(', '), monster));
+    lines.normal = this.parseLine('x2 ' + normal.join(', '), monster);
+    lines.elite = this.parseLine('x2 elite ' + elite.join(', '), monster);
 
     return lines;
   }
@@ -100,9 +99,8 @@ export class LineParserService {
     // Basic action; get monster's stats and put both normal and elite number
     while (parsedLine = re.exec(line)) {
       if (this.ACTIONS.includes(parsedLine[1])) {
-        let value = parsedLine[3] || '';
-        let eliteValue = parsedLine[3] || '';
-        let stringVal = '';
+        let value = parsedLine[3];
+        let eliteValue = parsedLine[3];
 
         if (value && parsedLine[2] === '+') {
           value = monster.normalStats[parsedLine[1]] + parseInt(parsedLine[3]);
@@ -113,12 +111,10 @@ export class LineParserService {
         }
 
         if (eliteValue !== value) {
-          stringVal = value + ' / ' + this.KEYWORDS['ELITE'].replace('$eliteValue$', eliteValue.toString());
-        } else {
-          stringVal = value.toString();
+          value = value + ' / ' + this.KEYWORDS['ELITE'].replace('$eliteValue$', eliteValue.toString());
         }
 
-        line = line.replace(parsedLine[0], this.getAction(parsedLine[1], stringVal));
+        line = line.replace(parsedLine[0], this.getAction(parsedLine[1], value));
       }
     }
 

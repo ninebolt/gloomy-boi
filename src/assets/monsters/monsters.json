@@ -3,7 +3,7 @@
   {"name": "Bandit Archer", "maxAllowed": 6, "type": "monster", "image": "assets/monsters/hexes/bandit-archer.png"},
   {"name": "Bandit Guard", "maxAllowed": 6, "type": "monster", "image": "assets/monsters/hexes/bandit-guard.png"},
   {"name": "Black Imp", "maxAllowed": 10, "type": "monster", "image": "assets/monsters/hexes/black-imp.png"},
-  {"name": "Boss", "maxAllowed": 1, "type": "monster", "image": "assets/monsters/hexes/bandit-guard.png"},
+  {"name": "Boss", "maxAllowed": 1, "type": "monster", "image": "assets/monsters/hexes/boss.png"},
   {"name": "Cave Bear", "maxAllowed": 4, "type": "monster", "image": "assets/monsters/hexes/cave-bear.png"},
   {"name": "City Archer", "maxAllowed": 6, "type": "monster", "image": "assets/monsters/hexes/city-archer.png"},
   {"name": "City Guard", "maxAllowed": 6, "type": "monster", "image": "assets/monsters/hexes/city-guard.png"},

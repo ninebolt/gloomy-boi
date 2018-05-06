@@ -3,6 +3,8 @@ import { Observable } from 'rxjs/Observable';
 import { Element } from '../../models/element.model';
 import { RetrievalService } from '../../services/retrieval.service';
 
+import { TooltipComponent } from '../../components/tooltip/tooltip.component';
+
 @Component({
   selector: 'element-tracker',
   styleUrls: ['element-tracker.component.scss'],
@@ -15,7 +17,7 @@ import { RetrievalService } from '../../services/retrieval.service';
         <div class="subtitle">Inert</div>
         <div class="elements-list">
           <div class="element-container" *ngFor="let el of elements; let i = index" [style.top.px]="el.top" [style.left.px]="el.left" (click)="shift(el, false)">
-            <img class="element" [src]="el.image"/>
+            <img [tooltip]="el.name" class="element" [src]="el.image"/>
           </div>
         </div>
       </div>

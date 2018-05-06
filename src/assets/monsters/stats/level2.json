@@ -261,7 +261,7 @@
         "shield": 4,
         "attributes": [
           "$fly$",
-          "$retaliate$ 3, Range 2"
+          "$retaliate$ 3, $range$ 2"
         ]
       }
     },

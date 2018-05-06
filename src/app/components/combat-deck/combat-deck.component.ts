@@ -44,10 +44,6 @@ export class CombatDeckComponent implements OnInit {
       this.deck.shuffle();
       this.toFlip = false;
       this.showTwo = false;
-
-      setTimeout(() => {
-        this.activeCard = this.deck.drawCard() as CombatCard;
-      }, 500);
     }
 
     drawTwo() {
@@ -92,7 +88,7 @@ export class CombatDeckComponent implements OnInit {
     }
 
     private checkForRemovableCards(card: CombatCard) {
-      if (['curse', 'bless'].includes(card.value)) {
+      if (card && ['curse', 'bless'].includes(card.value)) {
         this.deck.removeCard(this.activeCard);
       }
     }
