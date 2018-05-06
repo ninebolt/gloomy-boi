@@ -41,6 +41,7 @@ export class AppComponent implements OnInit {
     this.newRound$ = this.newRoundSubject.asObservable();
     this.sort$ = this.sortSubject.asObservable();
     this.scenario.loadState();
+    this.globalLevel = this.scenario.getGlobalLevel();
   }
 
   @HostListener('window:beforeunload', ['$event'])
@@ -125,6 +126,11 @@ export class AppComponent implements OnInit {
     } else if (character.type === 'player') {
       this.scenario.removePlayer(character.name);
     }
+  }
+
+  updateGlobalLevel(l: number) {
+    this.globalLevel = l;
+    this.scenario.setGlobalLevel(l);
   }
 
   reset() {

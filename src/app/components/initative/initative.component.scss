@@ -6,7 +6,7 @@
     "icon name"
     "icon initative";
 
-  padding: .75em 1.5em;
+  padding: 10px;
   border-bottom: solid 1px black;
 
   position: relative;
@@ -63,4 +63,12 @@ input[type=number]::-webkit-outer-spin-button {
   -webkit-appearance: none;
   margin: 0;
   font-family: PirataOne;
+}
+
+.red {
+  color: red;
+}
+
+.blue {
+  color: rgba(56, 133, 185, 0.8);
 }

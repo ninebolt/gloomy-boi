@@ -7,8 +7,8 @@ import { CharacterInitative } from '../../models/state.model';
   template: `
   <div class="character">
     <img class="icon" [ngClass]="character.type" [src]="character.image" />
-    <span class="name">{{ character.name }}</span>
-    <input class="initative" type="number" min="0" max="100" value="character.initative" [(ngModel)]="character.initative" (blur)="sortCards()" min="0" max="99" />
+    <span class="name" [ngClass]="{ 'red': character.name === 'Boss', 'blue': character.type === 'player'}">{{ character.name }}</span>
+    <input class="initative" type="number" min="0" max="100" value="character.initative" [(ngModel)]="character.initative" (blur)="sortCards()" (focus)="character.initative = ''" min="0" max="99" />
     <img (click)="deleteCharacter()" class="delete" [src]="cancelIcon" />
   </div>
   `

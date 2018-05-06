@@ -54,12 +54,12 @@ export class ElementTrackerComponent implements OnInit {
   }
 
   shift(el: Element, newRound: boolean) {
-    if (newRound && el.left < 130) {
+    if (newRound && el.left < 120) {
       return;
     }
-    el.left -= 130;
+    el.left -= 120;
     if (el.left < 0) {
-      el.left += 390;
+      el.left += 360;
     }
   }
 }
