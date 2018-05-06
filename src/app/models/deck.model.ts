@@ -25,6 +25,7 @@ export class Deck {
     }
     if (this.cards.length <= 0) {
       this.shuffle();
+      console.log("Out of cards; reshuffling");
     }
     this.cards[0].discardMe = true;
     return this.cards[0];
@@ -45,6 +46,7 @@ export class Deck {
     tempDeck.forEach(card => card.discardMe = false);
     this.shuffleMe = false;
     this.cards = tempDeck;
+    this.discardPile = [];
   }
 }
 
@@ -64,7 +66,7 @@ export class CombatDeck extends Deck {
   }
 
   getBlesses() {
-    return this.numBlesses
+    return this.numBlesses;
   }
 
   addCurse() {

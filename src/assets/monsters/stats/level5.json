@@ -252,7 +252,7 @@
         "shield": 0,
         "attributes": [
           "$fly$",
-          "$retaliate$ 3, Range 2"
+          "$retaliate$ 3, $range$ 2"
         ]
       },
       "eliteStats": {
@@ -263,7 +263,7 @@
         "shield": 5,
         "attributes": [
           "$fly$",
-          "$retaliate$ 4, Range 3"
+          "$retaliate$ 4, $range$ 3"
         ]
       }
     },

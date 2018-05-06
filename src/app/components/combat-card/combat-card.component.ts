@@ -7,8 +7,8 @@ import { CombatCard } from '../../models/card.model';
     styleUrls: ['combat-card.component.scss'],
     template: `
         <div class="card-back"></div>
-        <div class="card-front">
-          <div *ngIf="!showTwo" [ngClass]="getCardValue()"></div>
+        <div class="card-front" *ngIf="card">
+          <div *ngIf="!showTwo" [ngClass]="card.value"></div>
           <div *ngIf="showTwo" class="blank-front">
             <div [ngClass]="'denomination--' + advOne" [ngStyle]="{'left': '-4.5em'}"></div>
             <div [ngClass]="'denomination--' + advTwo" [ngStyle]="{'left': '4.5em'}"></div>
@@ -24,9 +24,4 @@ export class CombatCardComponent {
   @Input() advTwo: string;
 
   constructor() {}
-
-  getCardValue() {
-    return this.card.value;
-  }
-
 }

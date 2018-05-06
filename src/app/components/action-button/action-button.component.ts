@@ -2,6 +2,8 @@ import { Component, Input, Output, EventEmitter } from '@angular/core';
 import { Character } from '../../models/character.model';
 import { Observable } from 'rxjs/Observable';
 
+import { ClickOutsideDirective } from '../../directives/clickOutside.directive';
+
 @Component({
   selector: 'action-button',
   styleUrls: ['action-button.component.scss'],
@@ -9,7 +11,7 @@ import { Observable } from 'rxjs/Observable';
     <button type="button" *ngIf="!selected" (click)="showInput()">
       <ng-content></ng-content>
     </button>
-    <search-dropdown *ngIf="selected" [placeholder]="placeholder" [searchTerms]="searchTerms" (selected)="characterSelected($event)" (close)="hideInput()"></search-dropdown>
+    <search-dropdown *ngIf="selected" [placeholder]="placeholder" [searchTerms]="searchTerms" (clickOutside)="hideInput()" (selected)="characterSelected($event)" (close)="hideInput()"></search-dropdown>
   `
 })
 export class ActionButtonComponent {
@@ -27,7 +29,9 @@ export class ActionButtonComponent {
   }
 
   showInput() {
-    this.selected = true;
+    setTimeout(() => {
+      this.selected = true;
+    }, 50);
   }
 
   hideInput() {

@@ -9,12 +9,16 @@
   margin-left: 20px;
 }
 
+.normal-text {
+  color: white;
+}
+
 .attributes {
   display: flex;
   align-items: center;
   padding: 10px;
   margin-right: 10px;
-  background: rgba(157, 157, 157, 0.5);
+  background: rgba(157, 157, 157, 1);
   text-align: center;
 
   height: 50px;

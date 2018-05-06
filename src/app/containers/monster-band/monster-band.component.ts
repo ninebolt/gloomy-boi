@@ -19,7 +19,7 @@ import { RetrievalService } from '../../services/retrieval.service';
       <div class="attributes">
         <img [src]="monster.image" class="monster-image" />
         <div class="monster-info">
-          <span [innerHTML]="attributes.normal"></span><br/>
+          <span class="normal-text" [innerHTML]="attributes.normal"></span><br/>
           <span [innerHTML]="attributes.elite"></span>
         </div>
       </div>
