@@ -6,6 +6,7 @@ import { RetrievalService } from '../../services/retrieval.service';
   styleUrls: ['action-bar.component.scss'],
   template: `
     <div class="action-bar">
+      <img class="logo" src="assets/logo.png" />
       <div class="name">
         Gloomy Boy
       </div>
