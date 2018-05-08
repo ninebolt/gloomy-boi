@@ -54,6 +54,10 @@ export class MonsterDeckComponent implements OnInit {
   flip() {
     // Flip over previous card, show current one
     this.toFlip = false;
+    
+    if (this.deck.shuffleMe) {
+      this.shuffle();
+    }
 
     setTimeout(() => {
       this.activeCard = this.deck.drawCard() as MonsterCard;
@@ -68,9 +72,6 @@ export class MonsterDeckComponent implements OnInit {
   }
 
   newRound() {
-    if (this.deck.shuffleMe) {
-      this.shuffle();
-    }
     this.flip();
   }
 }

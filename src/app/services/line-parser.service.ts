@@ -114,6 +114,10 @@ export class LineParserService {
           value = value + ' / ' + this.KEYWORDS['ELITE'].replace('$eliteValue$', eliteValue.toString());
         }
 
+        if (value != null && value == 0) {
+          value = value.toString();
+        }
+
         line = line.replace(parsedLine[0], this.getAction(parsedLine[1], value));
       }
     }
@@ -122,15 +126,11 @@ export class LineParserService {
   }
 
   private getAction(action, value) {
-    let line = '';
-
-    if (value) {
-      line = this.KEYWORDS['ACTION']
+    let line = this.KEYWORDS['ACTION']
       .replace('$actionCap$', action.charAt(0).toUpperCase() + action.slice(1))
       .replace('$action$', action);
-    }
 
-    return line.replace('$value$', value);
+    return line.replace('$value$', value ? value : '');
   }
 
   private checkForStatuses(line) {
