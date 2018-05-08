@@ -122,11 +122,15 @@ export class LineParserService {
   }
 
   private getAction(action, value) {
-    let line = this.KEYWORDS['ACTION']
+    let line = '';
+
+    if (value) {
+      line = this.KEYWORDS['ACTION']
       .replace('$actionCap$', action.charAt(0).toUpperCase() + action.slice(1))
       .replace('$action$', action);
+    }
 
-    return line.replace('$value$', value ? value : '');
+    return line.replace('$value$', value);
   }
 
   private checkForStatuses(line) {
