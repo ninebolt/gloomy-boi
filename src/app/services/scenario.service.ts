@@ -22,11 +22,15 @@ export class ScenarioService {
   private monsterSubject: Subject<Monster[]> = new Subject();
   monsters$: Observable<Monster[]>;
 
+  private globalLevelSubject: Subject<number> = new Subject();
+  globalLevel$: Observable<number>;
+
   constructor(
     private r: RetrievalService
   ) {
     this.initative$ = this.initativeSubject.asObservable();
     this.monsters$ = this.monsterSubject.asObservable();
+    this.globalLevel$ = this.globalLevelSubject.asObservable();
   }
 
   saveState() {
@@ -35,11 +39,10 @@ export class ScenarioService {
 
   loadState() {
     const s = localStorage.getItem('state');
-    console.log('LOADING State', s);
     if (s) {
       this.scenarioState = JSON.parse(s);
-      console.log(this.scenarioState);
       this.monsterSubject.next(this.scenarioState.monsters);
+      this.globalLevelSubject.next(this.scenarioState.globalLevel);
       this.updateInitatives();
     }
   }
@@ -141,12 +144,9 @@ export class ScenarioService {
     this.updateInitatives();
   }
 
-  getGlobalLevel() {
-    return this.scenarioState.globalLevel;
-  }
-
   setGlobalLevel(l: number) {
     this.scenarioState.globalLevel = l;
+    this.globalLevelSubject.next(this.scenarioState.globalLevel);
   }
 
   reset() {
@@ -156,6 +156,7 @@ export class ScenarioService {
       globalLevel: 1
     };
     this.monsterSubject.next(this.scenarioState.monsters);
+    this.globalLevelSubject.next(this.scenarioState.globalLevel);
     this.updateInitatives();
   }
 }

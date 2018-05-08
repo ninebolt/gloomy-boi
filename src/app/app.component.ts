@@ -38,10 +38,10 @@ export class AppComponent implements OnInit {
   ngOnInit() {
     this.scenario.initative$.subscribe((initatives) => this.updateInitatives(initatives));
     this.scenario.monsters$.subscribe((monsters) => this.monsters = monsters);
+    this.scenario.globalLevel$.subscribe((globalLevel) => this.globalLevel = globalLevel);
     this.newRound$ = this.newRoundSubject.asObservable();
     this.sort$ = this.sortSubject.asObservable();
     this.scenario.loadState();
-    this.globalLevel = this.scenario.getGlobalLevel();
   }
 
   @HostListener('window:beforeunload', ['$event'])

@@ -27,10 +27,10 @@ export class CombatDeckComponent implements OnInit {
 
     deck: CombatDeck;
     activeCard: CombatCard;
-    private toFlip: boolean;
-    private showTwo = false;
-    private card1: string;
-    private card2: string;
+    toFlip: boolean;
+    showTwo = false;
+    card1: string;
+    card2: string;
 
     ngOnInit() {
       this.activeCard = new CombatCard(null, '');
