@@ -56,9 +56,6 @@ export class CombatDeckComponent implements OnInit {
       this.card2 = card2.value;
       this.showTwo = true;
 
-      this.checkForRemovableCards(card1);
-      this.checkForRemovableCards(card2);
-
       this.toFlip = true;
     }
 
@@ -72,7 +69,6 @@ export class CombatDeckComponent implements OnInit {
       // 🤔 to flip, or not to flip. that is the question
       this.toFlip = false;
       this.showTwo = false;
-      this.checkForRemovableCards(this.activeCard);
 
       setTimeout(() => {
         this.activeCard = this.deck.drawCard() as CombatCard;
@@ -84,12 +80,6 @@ export class CombatDeckComponent implements OnInit {
     newRound() {
       if (this.deck.shuffleMe) {
         this.shuffle();
-      }
-    }
-
-    private checkForRemovableCards(card: CombatCard) {
-      if (card && ['curse', 'bless'].includes(card.value)) {
-        this.deck.removeCard(this.activeCard);
       }
     }
 }
