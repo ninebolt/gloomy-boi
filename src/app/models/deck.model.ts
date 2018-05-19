@@ -80,9 +80,16 @@ export class CombatDeck extends Deck {
     return this.numCurses;
   }
 
-  removeCard(toRemove: CombatCard) {
-    this.cards = this.cards.filter(card => card != toRemove);
-    toRemove.value === "bless" ? this.numBlesses-- : toRemove.value === "curse" ? this.numCurses-- : null;
+  // Override base method in order to handle curses and blesses
+  discardCard(card: CombatCard) {
+    card.discardMe = false;
+    this.cards = this.cards.filter((c) => !Object.is(c, card));
+
+    if (card && !['curse', 'bless'].includes(card.value)) {
+      this.discardPile.unshift(card)
+    } else {
+      card.value === "bless" ? this.numBlesses-- : card.value === "curse" ? this.numCurses-- : null;
+    }
   }
 
   resetDeck() {
