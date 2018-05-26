@@ -59,10 +59,14 @@ export class CombatDeck extends Deck {
   }
 
   addBless() {
-    let pos = Math.floor(Math.random() * this.cards.length);
-    let blessCard = new CombatCard("bless", "assets/cards/attack-modifiers/full-cards/attack-card-front-bless.png", true, false);
-    this.cards.splice(pos, 0, blessCard);
-    this.numBlesses++;
+    if (this.numBlesses < 10) {
+      let pos = Math.floor(Math.random() * this.cards.length);
+      let blessCard = new CombatCard("bless", "assets/cards/attack-modifiers/full-cards/attack-card-front-bless.png", true, false);
+      this.cards.splice(pos, 0, blessCard);
+      this.numBlesses++;
+    } else {
+      console.log("Max number of blesses reached");
+    }
   }
 
   getBlesses() {
@@ -70,10 +74,14 @@ export class CombatDeck extends Deck {
   }
 
   addCurse() {
-    let pos = Math.floor(Math.random() * this.cards.length);
-    let curseCard = new CombatCard("curse", "assets/cards/attack-modifiers/full-cards/attack-card-front-curse.png", true, false);
-    this.cards.splice(pos, 0, curseCard);
-    this.numCurses++;
+    if (this.numCurses < 10) {
+      let pos = Math.floor(Math.random() * this.cards.length);
+      let curseCard = new CombatCard("curse", "assets/cards/attack-modifiers/full-cards/attack-card-front-curse.png", true, false);
+      this.cards.splice(pos, 0, curseCard);
+      this.numCurses++;
+    } else {
+      console.log("Max number of curses reached");
+    }
   }
 
   getCurses() {
