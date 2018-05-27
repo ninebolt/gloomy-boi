@@ -295,8 +295,9 @@
         "move": 4,
         "attack": 3,
         "range": 4,
-        "shield": 0,
+        "shield": 2,
         "attributes": [
+          "$fly$",
           "$curse$"
         ]
       },
@@ -307,6 +308,7 @@
         "range": 4,
         "shield": 2,
         "attributes": [
+          "$fly$",
           "$curse$"
         ]
       }
@@ -733,7 +735,7 @@
         ]
       }
     },
-    "Vicious Drake": {
+    "Rending Drake": {
       "normalStats": {
         "health": 11,
         "move": 5,

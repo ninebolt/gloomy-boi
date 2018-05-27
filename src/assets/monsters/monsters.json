@@ -32,6 +32,6 @@
   {"name": "Sun Demon", "maxAllowed": 6, "type": "monster", "image": "assets/monsters/hexes/sun-demon.png"},
   {"name": "Vermling Scout", "maxAllowed": 10, "type": "monster", "image": "assets/monsters/hexes/vermling-scout.png"},
   {"name": "Vermling Shaman", "maxAllowed": 6, "type": "monster", "image": "assets/monsters/hexes/vermling-shaman.png"},
-  {"name": "Vicious Drake", "maxAllowed": 6, "type": "monster", "image": "assets/monsters/hexes/vicious-drake.png"},
+  {"name": "Rending Drake", "maxAllowed": 6, "type": "monster", "image": "assets/monsters/hexes/rending-drake.png"},
   {"name": "Wind Demon", "maxAllowed": 6, "type": "monster", "image": "assets/monsters/hexes/wind-demon.png"}
 ]
