@@ -89,6 +89,28 @@
         ]
       }
     },
+    "Boss": {
+      "normalStats": {
+        "health": 0,
+        "move": 0,
+        "attack": 0,
+        "range": 0,
+        "shield": 0,
+        "attributes": [
+
+        ]
+      },
+      "eliteStats": {
+        "health": 0,
+        "move": 0,
+        "attack": 0,
+        "range": 0,
+        "shield": 0,
+        "attributes": [
+
+        ]
+      }
+    },
     "Cave Bear": {
       "normalStats": {
         "health": 13,
