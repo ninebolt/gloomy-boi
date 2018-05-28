@@ -248,7 +248,7 @@
         "move": 3,
         "attack": 2,
         "range": 3,
-        "shield": 0,
+        "shield": 2,
         "attributes": [
           "$fly$"
         ]
@@ -490,9 +490,9 @@
         "move": 2,
         "attack": 2,
         "range": 2,
-        "shield": 0,
+        "shield": 1,
         "attributes": [
-
+          "$fly$"
         ]
       },
       "eliteStats": {
@@ -502,7 +502,7 @@
         "range": 3,
         "shield": 2,
         "attributes": [
-
+          "$fly$"
         ]
       }
     },
@@ -572,6 +572,28 @@
         ]
       }
     },
+    "Rending Drake": {
+      "normalStats": {
+        "health": 5,
+        "move": 3,
+        "attack": 3,
+        "range": 0,
+        "shield": 0,
+        "attributes": [
+
+        ]
+      },
+      "eliteStats": {
+        "health": 7,
+        "move": 4,
+        "attack": 4,
+        "range": 0,
+        "shield": 0,
+        "attributes": [
+
+        ]
+      }
+    },
     "Savvas Icestorm": {
       "normalStats": {
         "health": 7,
@@ -624,7 +646,7 @@
         "range": 3,
         "shield": 0,
         "attributes": [
-
+          "$fly$"
         ]
       },
       "eliteStats": {
@@ -634,7 +656,7 @@
         "range": 4,
         "shield": 0,
         "attributes": [
-
+          "$fly$"
         ]
       }
     },
@@ -666,8 +688,9 @@
         "move": 2,
         "attack": 2,
         "range": 0,
-        "shield": 0,
+        "shield": 1,
         "attributes": [
+          "$fly$",
           "Advantage"
         ]
       },
@@ -678,6 +701,7 @@
         "range": 0,
         "shield": 1,
         "attributes": [
+          "$fly$",
           "Advantage"
         ]
       }
@@ -710,7 +734,7 @@
         "move": 2,
         "attack": 1,
         "range": 3,
-        "shield": 0,
+        "shield": 2,
         "attributes": [
 
         ]
@@ -726,37 +750,15 @@
         ]
       }
     },
-    "Rending Drake": {
-      "normalStats": {
-        "health": 5,
-        "move": 3,
-        "attack": 3,
-        "range": 0,
-        "shield": 0,
-        "attributes": [
-
-        ]
-      },
-      "eliteStats": {
-        "health": 7,
-        "move": 4,
-        "attack": 4,
-        "range": 0,
-        "shield": 0,
-        "attributes": [
-
-        ]
-      }
-    },
     "Wind Demon": {
       "normalStats": {
         "health": 3,
         "move": 3,
         "attack": 2,
         "range": 3,
-        "shield": 0,
+        "shield": 1,
         "attributes": [
-
+          "$fly$"
         ]
       },
       "eliteStats": {
@@ -766,7 +768,7 @@
         "range": 4,
         "shield": 1,
         "attributes": [
-
+          "$fly$"
         ]
       }
     }
