@@ -56,6 +56,8 @@ export class CombatDeckComponent implements OnInit {
       this.card2 = card2.value;
       this.showTwo = true;
 
+      this.deck.shuffleMe = this.deck.shuffleMe || card1.shuffle || card2.shuffle;
+
       this.toFlip = true;
     }
 

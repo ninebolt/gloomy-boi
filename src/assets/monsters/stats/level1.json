@@ -160,7 +160,7 @@
         "move": 2,
         "attack": 2,
         "range": 0,
-        "shield": 0,
+        "shield": 1,
         "attributes": [
 
         ]
@@ -248,7 +248,7 @@
         "move": 3,
         "attack": 2,
         "range": 3,
-        "shield": 0,
+        "shield": 3,
         "attributes": [
           "$fly$"
         ]
@@ -447,7 +447,7 @@
         "move": 3,
         "attack": 1,
         "range": 0,
-        "shield": 0,
+        "shield": 1,
         "attributes": [
           "$target$ 2"
         ]
@@ -491,9 +491,9 @@
         "move": 2,
         "attack": 2,
         "range": 2,
-        "shield": 0,
+        "shield": 2,
         "attributes": [
-
+          "$fly$"
         ]
       },
       "eliteStats": {
@@ -503,7 +503,7 @@
         "range": 3,
         "shield": 3,
         "attributes": [
-
+          "$fly$"
         ]
       }
     },
@@ -537,7 +537,7 @@
         "move": 1,
         "attack": 2,
         "range": 2,
-        "shield": 0,
+        "shield": 1,
         "attributes": [
 
         ]
@@ -572,6 +572,28 @@
         "shield": 0,
         "attributes": [
           "Attackers gain Disadvantage"
+        ]
+      }
+    },
+    "Rending Drake": {
+      "normalStats": {
+        "health": 6,
+        "move": 3,
+        "attack": 3,
+        "range": 0,
+        "shield": 0,
+        "attributes": [
+          "$wound$"
+        ]
+      },
+      "eliteStats": {
+        "health": 7,
+        "move": 4,
+        "attack": 5,
+        "range": 0,
+        "shield": 0,
+        "attributes": [
+          "$wound$"
         ]
       }
     },
@@ -627,7 +649,7 @@
         "range": 3,
         "shield": 0,
         "attributes": [
-
+          "$fly$"
         ]
       },
       "eliteStats": {
@@ -637,6 +659,7 @@
         "range": 4,
         "shield": 0,
         "attributes": [
+          "$fly$",
           "$muddle$"
         ]
       }
@@ -647,7 +670,7 @@
         "move": 1,
         "attack": 3,
         "range": 0,
-        "shield": 0,
+        "shield": 1,
         "attributes": [
 
         ]
@@ -669,8 +692,9 @@
         "move": 2,
         "attack": 2,
         "range": 0,
-        "shield": 0,
+        "shield": 1,
         "attributes": [
+          "$fly$",
           "Advantage"
         ]
       },
@@ -681,6 +705,7 @@
         "range": 0,
         "shield": 1,
         "attributes": [
+          "$fly$",
           "Advantage"
         ]
       }
@@ -713,7 +738,7 @@
         "move": 2,
         "attack": 1,
         "range": 3,
-        "shield": 0,
+        "shield": 3,
         "attributes": [
 
         ]
@@ -729,37 +754,15 @@
         ]
       }
     },
-    "Rending Drake": {
-      "normalStats": {
-        "health": 6,
-        "move": 3,
-        "attack": 3,
-        "range": 0,
-        "shield": 0,
-        "attributes": [
-          "$wound$"
-        ]
-      },
-      "eliteStats": {
-        "health": 7,
-        "move": 4,
-        "attack": 5,
-        "range": 0,
-        "shield": 0,
-        "attributes": [
-          "$wound$"
-        ]
-      }
-    },
     "Wind Demon": {
       "normalStats": {
         "health": 3,
         "move": 3,
         "attack": 2,
         "range": 3,
-        "shield": 0,
+        "shield": 2,
         "attributes": [
-
+          "$fly$"
         ]
       },
       "eliteStats": {
@@ -769,7 +772,7 @@
         "range": 4,
         "shield": 2,
         "attributes": [
-
+          "$fly$"
         ]
       }
     }
