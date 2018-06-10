@@ -18,7 +18,7 @@ import { RetrievalService } from '../../services/retrieval.service';
     <div class="monster-band">
       <div class="attributes">
         <img [src]="monster.image" class="monster-image" (click)="addMonster.emit()"/>
-        <img src="/assets/icons/add.png" class="add-monster" (click)="addMonster.emit()"/>
+        <img src="assets/icons/add.png" class="add-monster" (click)="addMonster.emit()"/>
         <div class="monster-info">
           <span class="normal-text" [innerHTML]="attributes.normal"></span><br/>
           <span [innerHTML]="attributes.elite"></span>
