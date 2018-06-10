@@ -12,6 +12,9 @@ import { RetrievalService } from '../../services/retrieval.service';
       </div>
       <div class="action-buttons">
         <div class="globalLevel">
+          <span>Round: {{ round }}</span>
+        </div>
+        <div class="globalLevel">
           <span>Global Level</span>
           <input type="number" min="0" max="7" [(ngModel)]="globalLevel" (change)="globalLevelEmitter.emit(globalLevel)" />
         </div>
@@ -28,6 +31,7 @@ export class ActionBarComponent implements OnInit {
   players: string[] = [];
   monsters: string[] = [];
   @Input() globalLevel: number = 1;
+  @Input() round: number = 0;
   @Output('monsterSearched') monsterEmitter: EventEmitter<string> = new EventEmitter();
   @Output('playerSearched') playerEmitter: EventEmitter<string> = new EventEmitter();
   @Output() newRound: EventEmitter<any> = new EventEmitter();

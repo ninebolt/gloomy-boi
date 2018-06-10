@@ -13,7 +13,8 @@ export class ScenarioService {
   private scenarioState: ScenarioState = {
     players: [],
     monsters: [],
-    globalLevel: 1
+    globalLevel: 1,
+    rounds: 0
   };
 
   private initativeSubject: Subject<CharacterInitative[]> = new Subject();
@@ -25,12 +26,16 @@ export class ScenarioService {
   private globalLevelSubject: Subject<number> = new Subject();
   globalLevel$: Observable<number>;
 
+  private roundSubject: Subject<number> = new Subject();
+  round$: Observable<number>;
+
   constructor(
     private r: RetrievalService
   ) {
     this.initative$ = this.initativeSubject.asObservable();
     this.monsters$ = this.monsterSubject.asObservable();
     this.globalLevel$ = this.globalLevelSubject.asObservable();
+    this.round$ = this.roundSubject.asObservable();
   }
 
   saveState() {
@@ -149,14 +154,21 @@ export class ScenarioService {
     this.globalLevelSubject.next(this.scenarioState.globalLevel);
   }
 
+  updateRound() {
+    this.scenarioState.rounds++;
+    this.roundSubject.next(this.scenarioState.rounds);
+  }
+
   reset() {
     this.scenarioState = {
       players: [],
       monsters: [],
-      globalLevel: 1
+      globalLevel: 1,
+      rounds: 0
     };
     this.monsterSubject.next(this.scenarioState.monsters);
     this.globalLevelSubject.next(this.scenarioState.globalLevel);
+    this.roundSubject.next(this.scenarioState.rounds);
     this.updateInitatives();
   }
 }

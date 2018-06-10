@@ -32,6 +32,15 @@
   .monster-info {
     padding-left: 100px;
   }
+
+  .add-monster {
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    bottom: 2px;
+    right: 2px;
+    cursor: pointer;
+  }
 }
 
 .monster-healths {

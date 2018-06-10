@@ -39,6 +39,7 @@ import { TooltipComponent } from '../../components/tooltip/tooltip.component';
         <div tooltip="Strengthen" class="status strengthen" title="Strengthen" (click)="setStatus($event)"></div>
         <div tooltip="Stun" class="status stun" title="Stun" (click)="setStatus($event)"></div>
         <div tooltip="Wound" class="status wound" title="Wound" (click)="setStatus($event)"></div>
+        <div tooltip="Delete" class="status delete" title="Delete" (click)="killMonster()"></div>
       </div>
     </div>
   `
@@ -65,5 +66,10 @@ export class MonsterHealthComponent {
 
   setStatus(event) {
     event.target.classList.toggle('active');
+  }
+
+  killMonster() {
+    this.monster.currentHealth = 0;
+    this.healthDepleted.emit(this.monster.id);
   }
 }

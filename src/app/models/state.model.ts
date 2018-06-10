@@ -4,6 +4,7 @@ export interface ScenarioState {
   players: Player[];
   monsters: Monster[];
   globalLevel: number;
+  rounds: number;
 }
 
 export interface Player {

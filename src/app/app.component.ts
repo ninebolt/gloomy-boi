@@ -19,6 +19,7 @@ export class AppComponent implements OnInit {
   monsterModalVisible = false;
   playerModalVisible = false;
   globalLevel: number = 1;
+  round: number = 0;
   currentMonster: Monster;
   initatives: CharacterInitative[] = [];
   monsters: Monster[] = [];
@@ -39,6 +40,7 @@ export class AppComponent implements OnInit {
     this.scenario.initative$.subscribe((initatives) => this.updateInitatives(initatives));
     this.scenario.monsters$.subscribe((monsters) => this.monsters = monsters);
     this.scenario.globalLevel$.subscribe((globalLevel) => this.globalLevel = globalLevel);
+    this.scenario.round$.subscribe((round) => this.round = round);
     this.newRound$ = this.newRoundSubject.asObservable();
     this.sort$ = this.sortSubject.asObservable();
     this.scenario.loadState();
@@ -79,6 +81,7 @@ export class AppComponent implements OnInit {
 
   continueNewRound() {
     this.playerModalVisible = false;
+    this.scenario.updateRound();
     this.newRoundSubject.next();
   }
 
